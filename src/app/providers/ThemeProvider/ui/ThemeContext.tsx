@@ -2,7 +2,7 @@ import {createContext} from "react";
 
 export const LOCAL_STORAGE_THEME_KEY = 'theme_key'
 
-export enum Theme{
+export enum Theme {
     LIGHT = 'light',
     DARK = 'dark'
 }

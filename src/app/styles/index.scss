@@ -19,16 +19,14 @@ body {
 }
 
 .app {
-  //background-color: var(--bg-color);
-  //color: var(--primary-color);
   min-height: 100vh;
-}
-
-.page-content {
-  display: flex;
 }
 
 .page-wrapper {
   padding: 15px 20px;
   flex-grow: 1;
+}
+
+.content-page {
+  display: flex;
 }

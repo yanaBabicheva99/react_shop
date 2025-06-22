@@ -1,0 +1,24 @@
+.SideBar {
+  position: relative;
+  width: var(--sidabar-width);
+  height: calc(100vh - var(--navbar-height));
+  background-color: var(--inverted-bg-color);
+  transition: width 0.3s;
+}
+
+.collapsed {
+  width: var(--sidebar-collapsed-width);
+}
+
+.switchers {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  transform: translate(-50%, 50%);
+}
+
+.langBtn {
+  margin-left: 30px;
+}

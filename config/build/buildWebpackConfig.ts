@@ -20,7 +20,7 @@ export function buildWebpackConfig(options: BuildOptions): webpack.Configuration
             clean: true
         },
         devServer: isDev ? buildDevServer(port) : undefined,
-        plugins: buildPlugins(paths),
+        plugins: buildPlugins(options),
         module: {
             rules: buildLoaders(options)
         },
