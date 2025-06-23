@@ -1,0 +1,75 @@
+module.exports = {
+    env: {
+        browser: true,
+        es2021: true,
+        jest: true,
+    },
+    extends: [
+        'plugin:react-hooks/recommended',
+        'plugin:react/recommended',
+        'airbnb',
+    // 'plugin:storybook/recommended',
+    ],
+    parser: '@typescript-eslint/parser',
+    parserOptions: {
+        ecmaFeatures: {
+            jsx: true,
+        },
+        ecmaVersion: 'latest',
+        sourceType: 'module',
+    },
+    plugins: [
+        'react',
+        '@typescript-eslint',
+        'i18next',
+    ],
+    rules: {
+        'react/jsx-indent': [2, 4],
+        'react/jsx-indent-props': [2, 4],
+        indent: [2, 4],
+        'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx', '.tsx'] }],
+        'import/no-unresolved': 'off',
+        'import/prefer-default-export': 'off',
+        'no-unused-vars': 'off',
+        '@typescript-eslint/no-unused-vars': [
+            'error',
+            { argsIgnorePattern: '^_' },
+        ],
+        'react/require-default-props': 'off',
+        'react/react-in-jsx-scope': 'off',
+        'react/jsx-props-no-spreading': 'warn',
+        'react/function-component-definition': 'off',
+        'no-shadow': 'off',
+        'import/extensions': 'off',
+        'import/no-extraneous-dependencies': 'off',
+        'no-underscore-dangle': 'off',
+        'react/button-has-type': 'warn',
+        'no-redeclare': 'off',
+        'jsx-a11y/anchor-is-valid': 'warn',
+        'no-undef': 'warn',
+        'jsx-a11y/click-events-have-key-events': 'off',
+        'jsx-a11y/no-static-element-interactions': 'off',
+        'no-param-reassign': 'off',
+        'react/jsx-one-expression-per-line': 'off',
+        'max-len': ['error', { code: 120, ignoreComments: true }],
+        'no-promise-executor-return': 'warn',
+        'i18next/no-literal-string': ['error',
+            {
+                markupOnly: true,
+                ignoreAttribute: ['alt', 'to', 'data-testid', 'placeholder'],
+            },
+        ],
+    },
+    globals: {
+        __IS_DEV__: true,
+    },
+    // overrides: [
+    //   {
+    //     files: ['**/src/**/*.{test,stories}.{ts,tsx}'],
+    //     rules: {
+    //       'i18next/no-literal-string': 'off',
+    //       'max-len': 'off',
+    //     },
+    //   },
+    // ],
+};
