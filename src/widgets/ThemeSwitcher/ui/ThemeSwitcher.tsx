@@ -1,8 +1,8 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Theme, useTheme } from 'app/providers/ThemeProvider';
 import { ButtonHTMLAttributes } from 'react';
-import IconSwitcherLight from 'shared/assets/switcher-light.svg';
 import IconSwitcherDark from 'shared/assets/switcher-dark.svg';
+import IconSwitcherLight from 'shared/assets/switcher-light.svg';
 import { Button } from 'shared/ui/Button/Button';
 
 interface ThemeSwitcherProps extends ButtonHTMLAttributes<HTMLButtonElement> {
