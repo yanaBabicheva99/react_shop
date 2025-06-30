@@ -1,13 +1,13 @@
 import './styles/index.scss';
 import { AppRouter } from 'app/providers/router';
-import { Navbar } from 'widgets/Navbar';
+import { NavBar } from 'widgets/Navbar';
 import { SideBar } from 'widgets/SideBar/ui';
 import React, { Suspense } from 'react';
 
 const App = () => (
     <div className="app">
         <Suspense fallback="">
-            <Navbar />
+            <NavBar />
             <div className="content-page">
                 <SideBar />
                 <AppRouter />

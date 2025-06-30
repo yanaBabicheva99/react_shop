@@ -5,15 +5,16 @@ import { LOCAL_STORAGE_THEME_KEY, Theme, ThemeContext } from './ThemeContext';
 
 interface ThemeProvider {
     children: ReactNode;
+    themeForTest?: Theme;
 }
 
-const ThemeProvider: FC<ThemeProvider> = ({ children }) => {
+const ThemeProvider: FC<ThemeProvider> = ({ children, themeForTest }) => {
     const defaultTheme = localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme || Theme.LIGHT;
 
-    const [theme, setTheme] = useState<Theme>(defaultTheme);
+    const [theme, setTheme] = useState<Theme>(themeForTest || defaultTheme);
 
     useEffect(() => {
-        document.body.className = defaultTheme;
+        document.body.className = theme;
     }, []);
 
     const defaultThemeProps = useMemo(() => ({

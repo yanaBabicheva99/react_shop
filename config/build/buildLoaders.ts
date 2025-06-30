@@ -1,13 +1,10 @@
 import webpack from 'webpack';
-import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { BuildOptions } from './types/config';
+import { buildCSSLoader } from './loaders/buildCSSLoader';
+import { buildSVGLoader } from './loaders/buildSVGLoader';
 
 export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
-    const svgLoader = {
-        test: /\.svg$/i,
-        issuer: /\.[jt]sx?$/,
-        use: ['@svgr/webpack'],
-    };
+    const svgLoader = buildSVGLoader();
 
     const fileLoader = {
         test: /\.(png|jpe?g|gif)$/i,
@@ -43,23 +40,7 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
         exclude: /node_modules/,
     };
 
-    const cssLoader = {
-        test: /\.s[ac]ss$/i,
-        use: [
-            isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
-            {
-                loader: 'css-loader',
-                options: {
-                    modules: {
-                        localIdentName: isDev ? '[path][name]__[local]' : '[hash:base64:8]',
-                        auto: /\.module./,
-                    },
-                },
-            },
-            'sass-loader',
-        ],
-
-    };
+    const cssLoader = buildCSSLoader(isDev);
 
     return [
         svgLoader,

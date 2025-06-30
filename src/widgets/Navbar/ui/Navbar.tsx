@@ -4,7 +4,7 @@ import { NavLink } from 'shared/ui/NavLink/NavLink';
 import { useTranslation } from 'react-i18next';
 import cls from './Navbar.module.scss';
 
-export const Navbar = () => {
+export const NavBar = () => {
     const { t } = useTranslation();
 
     return (
