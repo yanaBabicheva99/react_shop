@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { ThemeDecorator } from 'shared/config/storybook/decorators/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
-import { Button, ThemeButton } from './Button';
+import { Button, SizeButton, ThemeButton } from './Button';
 
 const meta: Meta<typeof Button> = {
     title: 'shared/Button',
@@ -34,6 +34,46 @@ export const ClearDark: Story = {
 
 ClearDark.decorators = ThemeDecorator(Theme.DARK);
 
+export const ClearSizeM: Story = {
+    args: {
+        children: 'Text',
+        theme: ThemeButton.CLEAR,
+        size: SizeButton.M,
+    },
+};
+
+ClearSizeM.decorators = ThemeDecorator(Theme.LIGHT);
+
+export const ClearSizeMDark: Story = {
+    args: {
+        children: 'Text',
+        theme: ThemeButton.CLEAR,
+        size: SizeButton.M,
+    },
+};
+
+ClearSizeMDark.decorators = ThemeDecorator(Theme.DARK);
+
+export const ClearSizeL: Story = {
+    args: {
+        children: 'Text',
+        theme: ThemeButton.CLEAR,
+        size: SizeButton.L,
+    },
+};
+
+ClearSizeL.decorators = ThemeDecorator(Theme.LIGHT);
+
+export const ClearSizeXL: Story = {
+    args: {
+        children: 'Text',
+        theme: ThemeButton.CLEAR,
+        size: SizeButton.XL,
+    },
+};
+
+ClearSizeXL.decorators = ThemeDecorator(Theme.LIGHT);
+
 export const Outline: Story = {
     args: {
         children: 'Text',
@@ -51,3 +91,43 @@ export const OutlineDark: Story = {
 };
 
 OutlineDark.decorators = ThemeDecorator(Theme.DARK);
+
+export const BackgroundLite: Story = {
+    args: {
+        children: 'Text',
+        theme: ThemeButton.BACKGROUND,
+    },
+};
+
+BackgroundLite.decorators = ThemeDecorator(Theme.LIGHT);
+
+export const BackgroundDark: Story = {
+    args: {
+        children: 'Text',
+        theme: ThemeButton.BACKGROUND,
+    },
+};
+
+BackgroundDark.decorators = ThemeDecorator(Theme.DARK);
+
+export const BackgroundInvertedLite: Story = {
+    args: {
+        children: '<',
+        theme: ThemeButton.BACKGROUND_INVERTED,
+        square: true,
+        size: SizeButton.XL,
+    },
+};
+
+BackgroundInvertedLite.decorators = ThemeDecorator(Theme.LIGHT);
+
+export const BackgroundInvertedDark: Story = {
+    args: {
+        children: '<',
+        theme: ThemeButton.BACKGROUND_INVERTED,
+        square: true,
+        size: SizeButton.L,
+    },
+};
+
+BackgroundInvertedDark.decorators = ThemeDecorator(Theme.DARK);
