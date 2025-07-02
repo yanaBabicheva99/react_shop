@@ -1,4 +1,6 @@
 .Navbar {
+  padding-left: 20px;
+  padding-right: 20px;
   width: 100%;
   height: var(--navbar-height);
   background-color: var(--inverted-bg-color);
@@ -6,6 +8,6 @@
   align-items: center;
 }
 
-.mainLink {
-  margin-right: 15px;
+.authBtn {
+  margin-left: auto;
 }
