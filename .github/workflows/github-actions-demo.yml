@@ -33,7 +33,7 @@ jobs:
         run: npm run test:ui:ci
         if: always()
 
-      - name: artifact
+      - name: artifact my
         uses: actions/upload-artifact@v4
         with:
           name: my-artifact
