@@ -37,5 +37,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: my-artifact
-          path: .loki/difference/chrome_laptop_features_LoginModal_Login_Modal_Dark.png
+          path: build
 
