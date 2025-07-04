@@ -8,8 +8,10 @@ interface ModalProps {
     isOpen: boolean;
     className?: string;
     onClose: () => void;
+    lazy?: boolean;
 }
 
+const ANIMATION_DELAY_OPENED = 100;
 const ANIMATION_DELAY = 300;
 
 export const Modal: FC<ModalProps> = (props) => {
@@ -18,20 +20,36 @@ export const Modal: FC<ModalProps> = (props) => {
         onClose,
         children,
         className,
+        lazy,
     } = props;
 
     const [isClosed, setIsClosed] = useState(false);
-    const timerRef = useRef<ReturnType<typeof setTimeout>>(null);
+    const [isOpened, setIsOpened] = useState(false);
+    const [isMounted, setIsMounted] = useState(false);
+
+    const timerRefOpened = useRef<ReturnType<typeof setTimeout>>(null);
+    const timerRefClosed = useRef<ReturnType<typeof setTimeout>>(null);
+
+    useEffect(() => {
+        if (isOpen) {
+            setIsMounted(true);
+            timerRefOpened.current = setTimeout(() => {
+                setIsOpened(true);
+            }, ANIMATION_DELAY_OPENED);
+        }
+    }, [isOpen]);
 
     const mods = {
-        [cls.opened]: isOpen,
+        [cls.opened]: isOpened,
         [cls.closed]: isClosed,
     };
 
     const closeHandler = useCallback(() => {
         setIsClosed(true);
-        timerRef.current = setTimeout(() => {
+        timerRefClosed.current = setTimeout(() => {
             setIsClosed(false);
+            setIsOpened(false);
+            setIsMounted(false);
             onClose();
         }, ANIMATION_DELAY);
     }, [onClose]);
@@ -55,11 +73,16 @@ export const Modal: FC<ModalProps> = (props) => {
     }, [isOpen, onKeyDown]);
 
     useEffect(() => () => {
-        clearTimeout(timerRef?.current);
+        clearTimeout(timerRefClosed?.current);
+        clearTimeout(timerRefOpened?.current);
         window.removeEventListener('keydown', (e) => {
             onKeyDown(e);
         });
     }, []);
+
+    if (lazy && !isMounted) {
+        return null;
+    }
 
     return (
         <div className={classNames(cls.Modal, mods, [className])}>
