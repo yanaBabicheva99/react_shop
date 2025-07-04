@@ -33,6 +33,8 @@ jobs:
         run: npm run test:ui:ci
         if: always()
 
+      - run: mkdir -p .loki/difference/chrome_laptop_features_LoginModal_Login_Modal_Dark.png
+      - run: echo hello > .loki/difference/chrome_laptop_features_LoginModal_Login_Modal_Dark.png
       - uses: actions/upload-artifact@v4
         with:
           name: my-artifact
