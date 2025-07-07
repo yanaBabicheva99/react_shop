@@ -13,5 +13,7 @@
   "Текст модального окна": "Modal Text",
   "Инкремент": "Increment",
   "Декремент": "Decrement",
-  "Имя пользователя": "Username"
+  "Имя пользователя": "Username",
+  "Некорректные данные авторизации": "Incorrect login or password",
+  "Форма авторизации": "Authorization form"
 }

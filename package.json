@@ -7,6 +7,7 @@
     "start": "webpack serve --env port=3000",
     "start:dev": "webpack --env mode=development",
     "start:build": "webpack --env mode=production",
+    "start:server": "node ./json-server/index.js",
     "lint:ts": " eslint \"**/*.{ts,tsx}\"",
     "lint:ts:fix": "eslint \"**/*.{ts,tsx}\" --fix",
     "lint:scss": "stylelint \"**/*.scss\"",
@@ -88,6 +89,7 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.0",
+    "axios": "^0.26.1",
     "eslint-plugin-i18next": "^5.1.2",
     "i18next": "^21.6.11",
     "i18next-browser-languagedetector": "^6.1.3",

@@ -3,11 +3,15 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { Button } from 'shared/ui/Button/Button';
 import { useTranslation } from 'react-i18next';
 import { Portal } from 'shared/ui/Portal/Portal';
-import { LoginModal } from 'features/AuthByUserName';
+import { loginActions, LoginModal } from 'features/AuthByUserName';
+import { useDispatch, useSelector } from 'react-redux';
+import { getUserAuthData, userActions } from 'entities/User';
 import cls from './Navbar.module.scss';
 
 export const NavBar = () => {
     const [isOpenModal, setIsOpenModal] = useState(false);
+    const isAuth = useSelector(getUserAuthData);
+    const dispatch = useDispatch();
 
     const { t } = useTranslation();
 
@@ -17,7 +21,20 @@ export const NavBar = () => {
 
     const handleCloseModal = useCallback(() => {
         setIsOpenModal(false);
-    }, []);
+        dispatch(loginActions.resetLoginData());
+    }, [dispatch]);
+
+    const handleClickLogout = useCallback(() => {
+        dispatch(userActions.logout());
+    }, [dispatch]);
+
+    if (isAuth) {
+        return (
+            <div className={classNames(cls.Navbar, {})}>
+                <Button onClick={handleClickLogout} className={cls.authBtn}>{t('Выйти')}</Button>
+            </div>
+        );
+    }
 
     return (
         <div className={classNames(cls.Navbar, {})}>

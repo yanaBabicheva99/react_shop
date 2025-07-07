@@ -1,6 +1,7 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Modal } from 'shared/ui/Modal/Modal';
 import { LoginForm } from 'features/AuthByUserName/ui/LoginForm/LoginForm';
+import { useTranslation } from 'react-i18next';
 
 interface LoginModalProps {
     isOpen: boolean;
@@ -15,14 +16,17 @@ export const LoginModal = (props: LoginModalProps) => {
         className,
     } = props;
 
+    const { t } = useTranslation();
+
     return (
         <Modal
+            title={t('Форма авторизации')}
             isOpen={isOpen}
             onClose={onClose}
             className={classNames('', {}, [className])}
             lazy
         >
-            <LoginForm />
+            <LoginForm onCloseModal={onClose} />
         </Modal>
     );
 };

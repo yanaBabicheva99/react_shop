@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { ThemeDecorator } from 'shared/config/storybook/decorators/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
+import { StoreDecorator } from 'shared/config/storybook/decorators/StoreDecorator';
 import { LoginModal } from './LoginModal';
 
 const meta: Meta<typeof LoginModal> = {
@@ -22,7 +23,7 @@ export const LoginModalLite: Story = {
     },
 };
 
-LoginModalLite.decorators = ThemeDecorator(Theme.LIGHT);
+LoginModalLite.decorators = [ThemeDecorator(Theme.LIGHT), StoreDecorator()];
 
 export const LoginModalDark: Story = {
     args: {
@@ -30,4 +31,4 @@ export const LoginModalDark: Story = {
     },
 };
 
-LoginModalDark.decorators = ThemeDecorator(Theme.DARK);
+LoginModalDark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator()];

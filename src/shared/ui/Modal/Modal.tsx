@@ -2,9 +2,11 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import React, {
     FC, useEffect, useRef, useState, useCallback,
 } from 'react';
+import { Text } from 'shared/ui/Text/Text';
 import cls from './Modal.module.scss';
 
 interface ModalProps {
+    title?: string;
     isOpen: boolean;
     className?: string;
     onClose: () => void;
@@ -16,6 +18,7 @@ const ANIMATION_DELAY = 300;
 
 export const Modal: FC<ModalProps> = (props) => {
     const {
+        title,
         isOpen,
         onClose,
         children,
@@ -88,6 +91,7 @@ export const Modal: FC<ModalProps> = (props) => {
         <div className={classNames(cls.Modal, mods, [className])}>
             <div className={classNames(cls.overlay)} onClick={closeHandler}>
                 <div className={classNames(cls.content)} onClick={contentClickHandler}>
+                    {title && <Text title={title} className={cls.title} /> }
                     {children}
                 </div>
             </div>
