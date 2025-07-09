@@ -6,7 +6,7 @@ import cls from './Input.module.scss';
 
 interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange'>{
     className?: string;
-    value: string;
+    value?: string;
     onChange?: (v: string) => void;
     autoFocus?: boolean;
 }
