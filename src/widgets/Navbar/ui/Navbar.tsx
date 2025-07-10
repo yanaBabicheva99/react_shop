@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { memo, useCallback, useState } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Button } from 'shared/ui/Button/Button';
 import { useTranslation } from 'react-i18next';
@@ -8,7 +8,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getUserAuthData, userActions } from 'entities/User';
 import cls from './Navbar.module.scss';
 
-export const NavBar = () => {
+export const NavBar = memo(() => {
     const [isOpenModal, setIsOpenModal] = useState(false);
     const isAuth = useSelector(getUserAuthData);
     const dispatch = useDispatch();
@@ -44,4 +44,4 @@ export const NavBar = () => {
             </Portal>
         </div>
     );
-};
+});

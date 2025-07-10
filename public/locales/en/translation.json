@@ -15,5 +15,6 @@
   "Декремент": "Decrement",
   "Имя пользователя": "Username",
   "Некорректные данные авторизации": "Incorrect login or password",
-  "Форма авторизации": "Authorization form"
+  "Форма авторизации": "Authorization form",
+  "Профиль": "Profile"
 }

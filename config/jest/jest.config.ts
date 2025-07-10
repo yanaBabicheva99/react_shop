@@ -56,6 +56,7 @@ export default {
     moduleNameMapper: {
         '\\.(s?css)$': 'identity-obj-proxy',
         '\\.svg$': '<rootDir>config/jest/svgTransformer.tsx',
+        '^axios$': require.resolve('axios'),
     },
 
     setupFilesAfterEnv: ['<rootDir>config/jest/setupTests.ts'],

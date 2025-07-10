@@ -2,15 +2,15 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { Button, ThemeButton } from 'shared/ui/Button/Button';
 import { Input } from 'shared/ui/Input/Input';
 import { useTranslation } from 'react-i18next';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { memo, useCallback } from 'react';
-import { AppDispatch } from 'app/providers/StoreProvider/config/store';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
-import { getUsername } from 'features/AuthByUserName/model/selectors/getUsername/getUsername';
-import { getPassword } from 'features/AuthByUserName/model/selectors/getPassword/getPassword';
-import { getError } from 'features/AuthByUserName/model/selectors/getError/getError';
-import { getLoading } from 'features/AuthByUserName/model/selectors/getLoading/getLoading';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { getUsername } from '../../model/selectors/getUsername/getUsername';
+import { getPassword } from '../../model/selectors/getPassword/getPassword';
+import { getError } from '../../model/selectors/getError/getError';
+import { getLoading } from '../../model/selectors/getLoading/getLoading';
 import { loginByUsername } from '../../model/service/LoginByUsername/LoginByUsername';
 import { loginActions, loginReducer } from '../../model/slice/LoginSlice';
 import cls from './LoginForm.module.scss';
@@ -30,7 +30,7 @@ const LoginForm = memo((props: LoginFormProps) => {
         onCloseModal,
     } = props;
 
-    const dispatch = useDispatch<AppDispatch>();
+    const dispatch = useAppDispatch();
     const username = useSelector(getUsername);
     const password = useSelector(getPassword);
     const error = useSelector(getError);
@@ -60,14 +60,14 @@ const LoginForm = memo((props: LoginFormProps) => {
                 )}
                 <Input
                     placeholder={t('Имя пользователя')}
-                    value={username || ''}
+                    value={username}
                     onChange={handleChangeUsername}
                     className={cls.input}
                     autoFocus
                 />
                 <Input
                     placeholder={t('Пароль')}
-                    value={password || ''}
+                    value={password}
                     className={cls.input}
                     onChange={handleChangePassword}
                 />
