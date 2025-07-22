@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
 import { LoginSchema } from 'features/AuthByUserName';
-import { loginByUsername } from '../service/LoginByUsername/LoginByUsername';
+import { loginByUsername } from '../services/LoginByUsername/LoginByUsername';
 
 const initialState: LoginSchema = {
     username: '',

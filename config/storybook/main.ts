@@ -15,22 +15,28 @@ const config: StorybookConfig = {
         '@storybook/addon-interactions',
     ],
     webpackFinal: async (config) => {
-        config.module.rules.push(buildCSSLoader(true));
-        config.resolve.extensions.push('.tsx', '.ts');
-        config.resolve.modules.push(path.resolve(__dirname, '../', '../', 'src'));
-        config.resolve.alias = {
-            entities: path.resolve(__dirname, '../', '../', 'src', 'entities'),
-        };
-        config.module.rules.map((rule: webpack.RuleSetRule) => {
-            if (/svg/.test(rule.test as string) || /file-loader/.test(rule.loader)) {
+        config?.module?.rules?.push(buildCSSLoader(true));
+        config?.resolve?.extensions?.push('.tsx', '.ts');
+        config?.resolve?.modules?.push(path.resolve(__dirname, '../', '../', 'src'));
+
+        if (config?.resolve?.alias) {
+            config.resolve.alias = {
+                entities: path.resolve(__dirname, '../', '../', 'src', 'entities'),
+            };
+        }
+        // @ts-ignore
+        config?.module?.rules?.map?.((rule: webpack.RuleSetRule) => {
+            if (/svg/.test(rule.test as string) || /file-loader/.test(rule.loader as string)) {
                 rule.exclude = /\.svg$/i;
             }
             return rule;
         });
 
-        config.module.rules.push(buildSVGLoader());
-        config.plugins.push(new webpack.DefinePlugin({
+        config?.module?.rules?.push(buildSVGLoader());
+        config?.plugins?.push(new webpack.DefinePlugin({
             __IS_DEV__: JSON.stringify(true),
+            __API__: JSON.stringify(''),
+            __Project__: JSON.stringify('storybook'),
         }));
 
         return config;

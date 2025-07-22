@@ -19,6 +19,8 @@ export default {
     // A set of global variables that need to be available in all test environments
     globals: {
         __IS_DEV__: true,
+        __API__: '',
+        __Project__: 'jest',
     },
 
     // An array of regexp pattern strings used to skip coverage collection

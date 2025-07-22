@@ -1,7 +1,6 @@
 import { screen } from '@testing-library/react';
 import ComponentRender from 'shared/lib/test/ComponentRender/ComponentRender';
 import { StateSchema } from 'app/providers/StoreProvider';
-import { DeepPartial } from '@reduxjs/toolkit';
 import { userEvent } from '@storybook/test';
 import { Counter } from './Counter';
 

@@ -1,28 +1,28 @@
-import { useTranslation } from 'react-i18next';
-import { classNames } from 'shared/lib/classNames/classNames';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { profileReducer } from 'entities/Profile';
-
-interface ProfilePageProps {
-    className?: string;
-}
+import { useEffect } from 'react';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { profileReducer } from 'features/EditableProfileCard/model/slice/profileSlice';
+import { fetchProfileData } from 'features/EditableProfileCard/model/services/FetchProfileData/FetchProfileData';
+import { EditableProfileCard } from 'features/EditableProfileCard';
 
 const reducersList: ReducersList = {
     profile: profileReducer,
 };
 
-const ProfilePage = (props: ProfilePageProps) => {
-    const {
-        className,
-    } = props;
+const ProfilePage = () => {
+    const dispatch = useAppDispatch();
 
-    const { t } = useTranslation();
+    // const { t } = useTranslation('profile');
+
+    useEffect(() => {
+        if (__Project__ === 'frontend') {
+            dispatch(fetchProfileData());
+        }
+    }, [dispatch]);
 
     return (
         <DynamicModuleLoader reducers={reducersList} removeAfterMount>
-            <div className={classNames('', {}, [className])}>
-                {t('Профиль')}
-            </div>
+            <EditableProfileCard />
         </DynamicModuleLoader>
     );
 };

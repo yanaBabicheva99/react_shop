@@ -7,11 +7,11 @@ import { memo, useCallback } from 'react';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { loginByUsername } from '../../model/services/LoginByUsername/LoginByUsername';
 import { getUsername } from '../../model/selectors/getUsername/getUsername';
 import { getPassword } from '../../model/selectors/getPassword/getPassword';
 import { getError } from '../../model/selectors/getError/getError';
 import { getLoading } from '../../model/selectors/getLoading/getLoading';
-import { loginByUsername } from '../../model/service/LoginByUsername/LoginByUsername';
 import { loginActions, loginReducer } from '../../model/slice/LoginSlice';
 import cls from './LoginForm.module.scss';
 

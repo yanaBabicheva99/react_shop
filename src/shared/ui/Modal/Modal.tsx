@@ -1,6 +1,6 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import React, {
-    FC, useEffect, useRef, useState, useCallback,
+    FC, useEffect, useRef, useState, useCallback, MutableRefObject,
 } from 'react';
 import { Text } from 'shared/ui/Text/Text';
 import cls from './Modal.module.scss';
@@ -30,8 +30,8 @@ export const Modal: FC<ModalProps> = (props) => {
     const [isOpened, setIsOpened] = useState(false);
     const [isMounted, setIsMounted] = useState(false);
 
-    const timerRefOpened = useRef<ReturnType<typeof setTimeout>>(null);
-    const timerRefClosed = useRef<ReturnType<typeof setTimeout>>(null);
+    const timerRefOpened = useRef() as MutableRefObject<ReturnType<typeof setTimeout> | undefined>;
+    const timerRefClosed = useRef() as MutableRefObject<ReturnType<typeof setTimeout> | undefined>;
 
     useEffect(() => {
         if (isOpen) {

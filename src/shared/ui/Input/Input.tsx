@@ -1,14 +1,15 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import {
-    ChangeEvent, InputHTMLAttributes, memo, useEffect, useRef,
+import React, {
+    ChangeEvent, InputHTMLAttributes, memo, useCallback, useEffect, useRef,
 } from 'react';
 import cls from './Input.module.scss';
 
 interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange'>{
     className?: string;
-    value?: string;
+    value?: string | number;
     onChange?: (v: string) => void;
     autoFocus?: boolean;
+    onlyNumber?: boolean;
 }
 
 export const Input = memo((props: InputProps) => {
@@ -19,23 +20,32 @@ export const Input = memo((props: InputProps) => {
         placeholder,
         className,
         autoFocus,
+        onlyNumber,
         ...otherProps
     } = props;
 
-    const ref = useRef<HTMLInputElement>();
+    const ref = useRef<HTMLInputElement>(null);
 
     useEffect(() => {
         if (autoFocus) {
-            ref.current.focus();
+            ref?.current?.focus();
         }
-    }, [autoFocus]);
+    }, [autoFocus, props.readOnly]);
 
-    const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const handleChange = useCallback((e: ChangeEvent<HTMLInputElement>) => {
+        if (onlyNumber) {
+            onChange?.(e.target.value.replace(/[^0-9]/, ''));
+            return;
+        }
         onChange?.(e.target.value);
+    }, [onChange, onlyNumber]);
+
+    const mods = {
+        [cls.readOnly]: props.readOnly,
     };
 
     return (
-        <div className={classNames(cls.InputWrapper, {}, [className])}>
+        <div className={classNames(cls.InputWrapper, mods, [className])}>
             {placeholder && (
                 <span className={cls.placeholder}>
                     {`${placeholder} >`}
@@ -43,7 +53,7 @@ export const Input = memo((props: InputProps) => {
             )}
             <input
                 type={type}
-                value={value}
+                value={value || ''}
                 onChange={handleChange}
                 className={cls.input}
                 ref={ref}

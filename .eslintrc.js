@@ -47,7 +47,7 @@ module.exports = {
         'react/button-has-type': 'warn',
         'no-redeclare': 'off',
         'jsx-a11y/anchor-is-valid': 'warn',
-        'no-undef': 'warn',
+        'no-undef': 'off',
         'jsx-a11y/click-events-have-key-events': 'off',
         'jsx-a11y/no-static-element-interactions': 'off',
         'no-param-reassign': 'off',
@@ -65,6 +65,8 @@ module.exports = {
     },
     globals: {
         __IS_DEV__: true,
+        __API__: true,
+        __PROJECT__: true,
     },
     overrides: [
         {

@@ -5,6 +5,8 @@ import cls from './Button.module.scss';
 export enum ThemeButton {
     CLEAR = 'clear',
     OUTLINE = 'outline',
+    OUTLINE_INVERTED = 'outline_inverted',
+    OUTLINE_RED = 'outline_red',
     BACKGROUND = 'background',
     BACKGROUND_INVERTED = 'background_inverted'
 }

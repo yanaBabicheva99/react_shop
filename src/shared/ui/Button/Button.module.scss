@@ -10,8 +10,13 @@
   background: none;
 }
 
-.outline {
+.outline,
+.outline_inverted,
+.outline_red {
   background: none;
+}
+
+.outline {
   border: 1px solid var(--primary-color);
 }
 
@@ -60,4 +65,12 @@
 
 .disabled {
   opacity: 0.5;
+}
+
+.outline_red {
+  border: 1px solid var(--red-light);
+}
+
+.outline_inverted {
+  border: 1px solid var(--inverted-primary-color);
 }
