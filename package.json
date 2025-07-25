@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack serve --env port=3000",
+    "start": "concurrently 'webpack serve --env port=3000' 'npm run start:server'",
     "start:dev": "webpack --env mode=development",
     "start:build": "webpack --env mode=production",
     "start:server": "node ./json-server/index.js",
@@ -55,6 +55,7 @@
     "@typescript-eslint/parser": "^5.12.1",
     "babel-loader": "^8.2.3",
     "babel-plugin-i18next-extract": "^0.8.3",
+    "concurrently": "^9.2.0",
     "css-loader": "^6.6.0",
     "eslint": "^8.10.0",
     "eslint-config-airbnb": "^19.0.4",

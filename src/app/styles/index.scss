@@ -1,6 +1,7 @@
 @import "reset";
 @import "themes/dark";
 @import "themes/normal";
+@import "themes/orange";
 @import "variables/global";
 
 @font-face {
@@ -22,8 +23,10 @@ body {
 }
 
 .page-wrapper {
-  padding: 15px 20px;
+  padding: 15px 20px 15px 40px;
   width: 100%;
+  height: calc(100vh - var(--navbar-height));
+  overflow-y: auto;
 }
 
 .content-page {

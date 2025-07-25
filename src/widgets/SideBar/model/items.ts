@@ -3,11 +3,13 @@ import { routesPath } from 'shared/config/routerConfig/routerConfig';
 import MainPageIcon from 'shared/assets/main-20-20.svg';
 import AboutPageIcon from 'shared/assets/about-20-20.svg';
 import ProfilePageIcon from 'shared/assets/profile.svg';
+import ArticlesPageIcon from 'shared/assets/articles.svg';
 
 export interface SideBarItemType {
     to: string;
     Icon: React.FunctionComponent<React.SVGAttributes<SVGAElement>>;
     text: string;
+    authOnly?: boolean;
 }
 
 export const sideBarItems: SideBarItemType[] = [
@@ -25,5 +27,12 @@ export const sideBarItems: SideBarItemType[] = [
         to: routesPath.profile,
         Icon: ProfilePageIcon,
         text: 'Профиль',
+        authOnly: true,
+    },
+    {
+        to: routesPath.articles,
+        Icon: ArticlesPageIcon,
+        text: 'Статьи',
+        authOnly: true,
     },
 ];

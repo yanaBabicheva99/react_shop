@@ -3,9 +3,11 @@ import { StoreProvider } from 'app/providers/StoreProvider';
 import { StateSchema } from 'app/providers/StoreProvider/config/StateSchema';
 import { ReducersMapObject } from '@reduxjs/toolkit';
 import { loginReducer } from 'features/AuthByUserName';
+import { articleDetailsReducer } from 'entities/Article';
 
 const defaultAsyncReducers: DeepPartial<ReducersMapObject<StateSchema>> = {
     login: loginReducer,
+    articleDetails: articleDetailsReducer,
 };
 
 export const StoreDecorator = (

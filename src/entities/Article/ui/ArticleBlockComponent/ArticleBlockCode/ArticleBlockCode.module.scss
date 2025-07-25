@@ -1,0 +1,19 @@
+.ArticleBlockCode {
+  position: relative;
+  padding: 16px 32px;
+  border: 1px solid #000;
+  background-color: var(--code-bg);
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.copyBtn {
+  position: absolute;
+  right: 10px;
+}
+
+.icon {
+  path {
+    stroke: var(--primary-color);
+  }
+}

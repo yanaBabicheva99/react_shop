@@ -4,7 +4,8 @@ export const LOCAL_STORAGE_THEME_KEY = 'theme_key';
 
 export enum Theme {
     LIGHT = 'light',
-    DARK = 'dark'
+    DARK = 'dark',
+    ORANGE = 'orange_theme',
 }
 
 export interface ThemeContextProps {

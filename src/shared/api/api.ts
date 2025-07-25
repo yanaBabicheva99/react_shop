@@ -7,3 +7,5 @@ export const $api = axios.create({
         Authorization: JSON.stringify(localStorage.getItem(USER_LOCALSTORAGE_KEY)),
     },
 });
+
+console.log('init');

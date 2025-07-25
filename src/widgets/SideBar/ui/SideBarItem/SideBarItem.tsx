@@ -2,12 +2,14 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { NavLink } from 'shared/ui/NavLink/NavLink';
 import React, { memo } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
+import { getUserAuthData } from 'entities/User';
 import cls from './SideBarItem.module.scss';
 import { SideBarItemType } from '../../model/items';
 
 interface SideBarItemProps {
    item: SideBarItemType;
-    collapsed: boolean;
+   collapsed: boolean;
 }
 
 export const SideBarItem = memo((props: SideBarItemProps) => {
@@ -17,6 +19,11 @@ export const SideBarItem = memo((props: SideBarItemProps) => {
     } = props;
 
     const { t } = useTranslation();
+    const auth = useSelector(getUserAuthData);
+
+    if (!auth && item.authOnly) {
+        return null;
+    }
 
     return (
         <div className={classNames('', { [cls.collapsed]: collapsed })}>
