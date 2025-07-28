@@ -59,7 +59,7 @@ module.exports = {
         'i18next/no-literal-string': ['error',
             {
                 markupOnly: true,
-                ignoreAttribute: ['alt', 'to', 'data-testid'],
+                ignoreAttribute: ['alt', 'to', 'data-testid', 'path'],
             },
         ],
     },

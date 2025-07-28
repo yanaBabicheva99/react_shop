@@ -9,6 +9,7 @@ import type { To } from 'history';
 import { NavigateOptions } from 'react-router';
 import { ProfileSchema } from 'features/EditableProfileCard';
 import { ArticleDetailsSchema } from 'entities/Article';
+import { ArticleCommentListSchema } from 'features/ArticleCommentList';
 
 export interface StateSchema {
     counter: CounterSchema;
@@ -16,6 +17,7 @@ export interface StateSchema {
     login?: LoginSchema;
     profile?: ProfileSchema;
     articleDetails?: ArticleDetailsSchema;
+    articleCommentList?: ArticleCommentListSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;

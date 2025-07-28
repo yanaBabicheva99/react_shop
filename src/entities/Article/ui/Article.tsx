@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { memo, useCallback, useEffect } from 'react';
+import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
@@ -10,6 +10,7 @@ import { Icon } from 'shared/ui/Icon/Icon';
 import ViewIcon from 'shared/assets/eye.svg';
 import CalendarIcon from 'shared/assets/calendar.svg';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
+import { useFetchData } from 'shared/lib/hooks/useFetchData/useFetchData';
 import { ArticleBlockText } from './ArticleBlockComponent/ArticleBlockText/ArticleBlockText';
 import { ArticleBlockImage } from './ArticleBlockComponent/ArticleBlockImage/ArticleBlockImage';
 import { ArticleBlockCode } from './ArticleBlockComponent/ArticleBlockCode/ArticleBlockCode';
@@ -57,11 +58,9 @@ export const Article = memo((props: ArticleDetailProps) => {
 
     let content;
 
-    useEffect(() => {
-        if (__Project__ !== 'storybook') {
-            dispatch(fetchArticleDetails(id));
-        }
-    }, [dispatch, id]);
+    useFetchData(() => {
+        dispatch(fetchArticleDetails(id));
+    });
 
     if (isLoading) {
         content = (
