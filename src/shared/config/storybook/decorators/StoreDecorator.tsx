@@ -5,11 +5,13 @@ import { ReducersMapObject } from '@reduxjs/toolkit';
 import { loginReducer } from 'features/AuthByUserName';
 import { articleDetailsReducer } from 'entities/Article';
 import { articleCommentListReducer } from 'features/ArticleCommentList';
+import { addCommentFormReducer } from 'features/AddCommentForm';
 
 const defaultAsyncReducers: DeepPartial<ReducersMapObject<StateSchema>> = {
     login: loginReducer,
     articleDetails: articleDetailsReducer,
     articleCommentList: articleCommentListReducer,
+    addCommentForm: addCommentFormReducer,
 };
 
 export const StoreDecorator = (

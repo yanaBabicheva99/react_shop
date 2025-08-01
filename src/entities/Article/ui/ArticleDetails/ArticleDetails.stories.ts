@@ -2,8 +2,8 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { ThemeDecorator } from 'shared/config/storybook/decorators/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
 import { StoreDecorator } from 'shared/config/storybook/decorators/StoreDecorator';
-import { ArticleBlockType, ArticleType } from '../model/types/article';
-import { Article } from './Article';
+import { ArticleBlockType, ArticleType } from '../../model/types/article';
+import { ArticleDetails } from './ArticleDetails';
 
 const articleInfo = {
     id: '1',
@@ -38,9 +38,9 @@ const articleInfo = {
     ],
 };
 
-const meta: Meta<typeof Article> = {
-    title: 'entities/Article',
-    component: Article,
+const meta: Meta<typeof ArticleDetails> = {
+    title: 'entities/ArticleDetails',
+    component: ArticleDetails,
     parameters: {
         layout: 'centered',
     },
@@ -49,7 +49,7 @@ const meta: Meta<typeof Article> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof Article>;
+type Story = StoryObj<typeof ArticleDetails>;
 
 export const NormalArticleDetail: Story = {
     args: {},

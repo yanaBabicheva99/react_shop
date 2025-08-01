@@ -5,6 +5,7 @@ import { ValidateProfileError } from '../../types/profileSchema';
 import { validateProfileData } from './ValidateProfileData';
 
 const data: Profile = {
+    id: '1',
     first: 'Маша',
     lastname: 'Наша',
     age: 6,

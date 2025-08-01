@@ -12,7 +12,7 @@ export const profileSlice = createSlice({
     name: 'profile',
     initialState,
     reducers: {
-        setFormData: (state, action: PayloadAction<Profile>) => {
+        setFormData: (state, action: PayloadAction<Omit<Profile, 'id'>>) => {
             state.form = {
                 ...state.form,
                 ...action.payload,

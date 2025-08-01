@@ -2,8 +2,9 @@ import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Text } from 'shared/ui/Text/Text';
 import { Button, ThemeButton } from 'shared/ui/Button/Button';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useCallback } from 'react';
+import { getVisibleEdit } from '../../model/selectors/getVisibleEdit/getVisibleEdit';
 import { profileActions } from '../../model/slice/profileSlice';
 import cls from './ProfilePageHeader.module.scss';
 import {
@@ -23,6 +24,7 @@ export const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
 
     const { t } = useTranslation();
     const dispatch = useDispatch();
+    const isEdit = useSelector(getVisibleEdit);
 
     const handleChangeReadOnly = useCallback(() => {
         dispatch(profileActions.changeReadOnly(false));
@@ -39,32 +41,36 @@ export const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
     return (
         <div className={classNames(cls.ProfilePageHeader, {}, [className])}>
             <Text title={t('Профиль')} />
-            {readOnly
-                ? (
-                    <Button
-                        theme={ThemeButton.OUTLINE}
-                        onClick={handleChangeReadOnly}
-                    >
-                        {t('Редактировать')}
-                    </Button>
-                )
-                : (
-                    <div className={cls.actionBtn}>
-                        <Button
-                            theme={ThemeButton.OUTLINE_RED}
-                            onClick={handleCancel}
-                        >
-                            {t('Отменить')}
-                        </Button>
-                        <Button
-                            theme={ThemeButton.OUTLINE_INVERTED}
-                            onClick={handleSave}
-                            className={cls.saveBtn}
-                        >
-                            {t('Сохранить')}
-                        </Button>
-                    </div>
-                )}
+            {isEdit && (
+                <div>
+                    {readOnly
+                        ? (
+                            <Button
+                                theme={ThemeButton.OUTLINE}
+                                onClick={handleChangeReadOnly}
+                            >
+                                {t('Редактировать')}
+                            </Button>
+                        )
+                        : (
+                            <div className={cls.actionBtn}>
+                                <Button
+                                    theme={ThemeButton.OUTLINE_RED}
+                                    onClick={handleCancel}
+                                >
+                                    {t('Отменить')}
+                                </Button>
+                                <Button
+                                    theme={ThemeButton.OUTLINE_INVERTED}
+                                    onClick={handleSave}
+                                    className={cls.saveBtn}
+                                >
+                                    {t('Сохранить')}
+                                </Button>
+                            </div>
+                        )}
+                </div>
+            )}
         </div>
     );
 };

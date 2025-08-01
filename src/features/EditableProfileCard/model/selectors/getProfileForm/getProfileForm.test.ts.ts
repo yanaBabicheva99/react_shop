@@ -5,6 +5,7 @@ import { Country } from 'entities/Country';
 import { getProfileForm } from './getProfileForm';
 
 const data: Profile = {
+    id: '1',
     first: 'Маша',
     lastname: 'Наша',
     age: 6,

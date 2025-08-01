@@ -23,7 +23,7 @@ export const NormalCommentCard: Story = {
             id: '1',
             text: 'Text Card comments',
             user: {
-                id: 1,
+                id: '1',
                 username: 'username',
                 avatar: Img,
             },
@@ -39,7 +39,7 @@ export const DarkCommentCard: Story = {
             id: '1',
             text: 'Text Card comments',
             user: {
-                id: 1,
+                id: '1',
                 username: 'username',
                 avatar: Img,
             },
@@ -55,7 +55,7 @@ export const OrangeCommentCard: Story = {
             id: '1',
             text: 'Text Card comments',
             user: {
-                id: 1,
+                id: '1',
                 username: 'username',
                 avatar: Img,
             },

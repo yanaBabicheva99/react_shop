@@ -8,6 +8,9 @@ import {
     fetchCommentsByArticleId,
 } from '../servicices/FetchCommentsByArticleId/FetchCommentsByArticleId';
 import { ArticleCommentListSchema } from '../types/ArticleCommentListSchema';
+import {
+    addNewCommentArticle,
+} from '../servicices/AddNewCommentArticle/AddNewCommentArticle';
 
 const articleCommentListAdapter = createEntityAdapter({
     selectId: (comment: Comment) => comment.id,
@@ -36,6 +39,18 @@ const articleCommentListSlice = createSlice({
                 articleCommentListAdapter.setAll(state, action.payload);
             })
             .addCase(fetchCommentsByArticleId.rejected, (state, action) => {
+                state.isLoading = false;
+                state.error = action.payload;
+            })
+            .addCase(addNewCommentArticle.pending, (state) => {
+                state.error = undefined;
+                state.isLoading = true;
+            })
+            .addCase(addNewCommentArticle.fulfilled, (state) => {
+                state.isLoading = false;
+                // articleCommentListAdapter.setOne(state, action.payload);
+            })
+            .addCase(addNewCommentArticle.rejected, (state, action) => {
                 state.isLoading = false;
                 state.error = action.payload;
             });

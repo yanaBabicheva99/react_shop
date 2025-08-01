@@ -54,6 +54,7 @@ module.exports = {
         'react/jsx-one-expression-per-line': 'off',
         'max-len': ['error', { code: 120, ignoreComments: true }],
         'no-promise-executor-return': 'warn',
+        'react/no-array-index-key': 'off',
         // 'react-hooks/rules-of-hooks': 'error',
         // 'react-hooks/exhaustive-deps': 'warn',
         'i18next/no-literal-string': ['error',

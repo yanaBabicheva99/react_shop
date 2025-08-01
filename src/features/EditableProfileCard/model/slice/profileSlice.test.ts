@@ -8,6 +8,7 @@ import { Profile, ProfileSchema, ValidateProfileError } from '../types/profileSc
 import { profileActions, profileReducer } from './profileSlice';
 
 const data: Profile = {
+    id: '1',
     first: 'Маша',
     lastname: 'Наша',
     age: 6,
@@ -58,7 +59,7 @@ describe('profileSlice.test', () => {
         const state: DeepPartial<ProfileSchema> = {
             isLoading: true,
         };
-        expect(profileReducer(state as ProfileSchema, fetchProfileData.fulfilled(data, ''))).toEqual({
+        expect(profileReducer(state as ProfileSchema, fetchProfileData.fulfilled(data, '', ''))).toEqual({
             isLoading: false,
             data,
             form: data,

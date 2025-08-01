@@ -11,7 +11,7 @@ const args = {
         id: '1',
         text: 'Text Card comments 1',
         user: {
-            id: 1,
+            id: '1',
             username: 'username',
             avatar: Img,
         },
@@ -20,7 +20,7 @@ const args = {
         id: '2',
         text: 'Text Card comments 2',
         user: {
-            id: 2,
+            id: '2',
             username: 'username 2',
             avatar: JsImg,
         },

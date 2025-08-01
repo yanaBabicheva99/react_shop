@@ -20,7 +20,13 @@ export const CommentList = (props: CommentListProps) => {
     const { t } = useTranslation();
 
     if (isLoading) {
-        return <CommentCard isLoading />;
+        return (
+            <div>
+                <CommentCard isLoading />
+                <CommentCard isLoading />
+                <CommentCard isLoading />
+            </div>
+        );
     }
 
     return (

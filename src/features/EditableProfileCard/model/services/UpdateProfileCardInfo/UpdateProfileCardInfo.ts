@@ -1,5 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { ThunkConfig } from 'app/providers/StoreProvider';
+import { getProfileData } from 'features/EditableProfileCard/model/selectors/getProfileData/getProfileData';
 import { validateProfileData } from '../../services/ValidateProfileData/ValidateProfileData';
 import { Profile, ValidateProfileError } from '../../types/profileSchema';
 import { getProfileForm } from '../../selectors/getProfileForm/getProfileForm';
@@ -10,11 +11,12 @@ export const updateProfileCardInfo = createAsyncThunk<Profile, void, ThunkConfig
         const { extra, rejectWithValue, getState } = thunkAPI;
         try {
             const formData = getProfileForm(getState());
+            const profileData = getProfileData(getState());
             const validateErrors = validateProfileData(formData);
-            if (validateErrors.length) {
+            if (validateErrors.length || !profileData?.id) {
                 return rejectWithValue(validateErrors);
             }
-            const response = await extra.api.put('/profile', formData);
+            const response = await extra.api.put(`/profile/${profileData.id}`, formData);
             if (!response.data) {
                 throw new Error('error');
             }

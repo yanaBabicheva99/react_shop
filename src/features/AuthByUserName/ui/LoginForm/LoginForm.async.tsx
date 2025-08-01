@@ -1,5 +1,5 @@
 import { FC, lazy } from 'react';
-import { LoginFormProps } from 'features/AuthByUserName/ui/LoginForm/LoginForm';
+import { LoginFormProps } from '../LoginForm/LoginForm';
 
 export const LoginFormAsync = lazy<FC<LoginFormProps>>(() => new Promise((res) => setTimeout(() => {
     // @ts-ignore

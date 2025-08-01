@@ -11,14 +11,14 @@ import ViewIcon from 'shared/assets/eye.svg';
 import CalendarIcon from 'shared/assets/calendar.svg';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { useFetchData } from 'shared/lib/hooks/useFetchData/useFetchData';
-import { ArticleBlockText } from './ArticleBlockComponent/ArticleBlockText/ArticleBlockText';
-import { ArticleBlockImage } from './ArticleBlockComponent/ArticleBlockImage/ArticleBlockImage';
-import { ArticleBlockCode } from './ArticleBlockComponent/ArticleBlockCode/ArticleBlockCode';
-import { getArticle, getArticleError, getArticleIsLoading } from '../model/selectors/articleDetails';
-import { fetchArticleDetails } from '../model/services/FetchArticleDetails/FetchArticleDetails';
-import cls from './Article.module.scss';
-import { articleDetailsReducer } from '../model/slice/articleDetailsSlice';
-import { ArticleBlock, ArticleBlockType } from '../model/types/article';
+import { ArticleBlockText } from '../ArticleBlockComponent/ArticleBlockText/ArticleBlockText';
+import { ArticleBlockImage } from '../ArticleBlockComponent/ArticleBlockImage/ArticleBlockImage';
+import { ArticleBlockCode } from '../ArticleBlockComponent/ArticleBlockCode/ArticleBlockCode';
+import { getArticle, getArticleError, getArticleIsLoading } from '../../model/selectors/articleDetails';
+import { fetchArticleDetails } from '../../model/services/FetchArticleDetails/FetchArticleDetails';
+import cls from './ArticleDetails.module.scss';
+import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
+import { ArticleBlock, ArticleBlockType } from '../../model/types/article';
 
 interface ArticleDetailProps {
     className?: string;
@@ -29,7 +29,7 @@ const reducer: ReducersList = {
     articleDetails: articleDetailsReducer,
 };
 
-export const Article = memo((props: ArticleDetailProps) => {
+export const ArticleDetails = memo((props: ArticleDetailProps) => {
     const {
         id,
         className,

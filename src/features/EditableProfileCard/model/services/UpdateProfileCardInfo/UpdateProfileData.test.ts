@@ -6,6 +6,7 @@ import { Profile, ValidateProfileError } from '../../types/profileSchema';
 import clearAllMocks = jest.clearAllMocks;
 
 const data: Profile = {
+    id: '1',
     first: 'Маша',
     lastname: 'Наша',
     age: 6,
@@ -35,6 +36,7 @@ describe('FetchProfileData.test', () => {
         const classThunk = new TestAsyncThunk(updateProfileCardInfo, {
             profile: {
                 form: data,
+                data: { ...data, id: '1' },
             },
         });
         classThunk.api.put.mockReturnValue(Promise.resolve({ data }));
@@ -48,6 +50,7 @@ describe('FetchProfileData.test', () => {
         const classThunk = new TestAsyncThunk(updateProfileCardInfo, {
             profile: {
                 form: data,
+                data: { ...data, id: '1' },
             },
         });
         classThunk.api.put.mockReturnValue(Promise.resolve({ status: 403 }));

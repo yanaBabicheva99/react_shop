@@ -2,6 +2,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Text } from 'shared/ui/Text/Text';
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
+import { NavLink } from 'shared/ui/NavLink/NavLink';
 import { Comment } from '../../model/types/comment';
 
 import cls from './CommentCard.module.scss';
@@ -21,7 +22,7 @@ export const CommentCard = (props: CommentCardProps) => {
 
     if (isLoading) {
         return (
-            <div className={classNames(cls.CommentCard, {}, [className])}>
+            <div className={classNames(cls.CommentCard, {}, [className, cls.loading])}>
                 <div className={cls.header}>
                     <Skeleton width={30} height={30} border="50%" className={cls.avatar} />
                     <Skeleton width={200} height={20} />
@@ -31,10 +32,12 @@ export const CommentCard = (props: CommentCardProps) => {
         );
     }
 
+    if (!comment) return null;
+
     return (
         <div className={classNames(cls.CommentCard, {}, [className])}>
-            <div className={cls.header}>
-                {comment?.user.avatar && (
+            <NavLink to={`/profile/${comment.user.id}`} className={cls.header}>
+                {comment.user.avatar && (
                     <Avatar
                         url={comment.user.avatar}
                         alt="avatar"
@@ -42,9 +45,9 @@ export const CommentCard = (props: CommentCardProps) => {
                         className={cls.avatar}
                     />
                 )}
-                <Text text={comment?.user.username} />
-            </div>
-            <Text text={comment?.text} />
+                <Text text={comment.user.username} />
+            </NavLink>
+            <Text text={comment.text} />
         </div>
     );
 };

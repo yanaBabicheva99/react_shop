@@ -6,6 +6,7 @@ import { Profile } from '../../types/profileSchema';
 import clearAllMocks = jest.clearAllMocks;
 
 const data: Profile = {
+    id: '1',
     first: 'Маша',
     lastname: 'Наша',
     age: 6,
@@ -22,7 +23,7 @@ describe('FetchProfileData.test', () => {
     test('fetch data success', async () => {
         const classThunk = new TestAsyncThunk(fetchProfileData);
         classThunk.api.get.mockReturnValue(Promise.resolve({ data }));
-        const result = await classThunk.callActionCreator();
+        const result = await classThunk.callActionCreator('1');
         expect(classThunk.api.get).toHaveBeenCalled();
         expect(result.meta.requestStatus).toBe('fulfilled');
     });
@@ -30,7 +31,7 @@ describe('FetchProfileData.test', () => {
     test('return error', async () => {
         const classThunk = new TestAsyncThunk(fetchProfileData);
         classThunk.api.get.mockReturnValue(Promise.resolve({ status: 403 }));
-        const result = await classThunk.callActionCreator();
+        const result = await classThunk.callActionCreator('1');
         expect(classThunk.api.get).toHaveBeenCalled();
         expect(result.meta.requestStatus).toBe('rejected');
         expect(result.payload).toBe('error');
