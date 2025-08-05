@@ -1,11 +1,10 @@
-import { classNames } from 'shared/lib/classNames/classNames';
-import { ArticleListSkeleton } from 'entities/Article/ui/ArticleList/ArticleListSkeleton';
-import { ArticleListItem, ViewItem } from '../ArticleListItem/ArticleListItem';
-import cls from './ArticleList.module.scss';
-
-interface ArticleListProps {
-    className?: string;
-}
+import type { Meta, StoryObj } from '@storybook/react';
+import { ThemeDecorator } from 'shared/config/storybook/decorators/ThemeDecorator';
+import { Theme } from 'app/providers/ThemeProvider';
+import Image from 'shared/assets/test/storybook/img.png';
+import { Article, ArticleBlockType, ArticleType } from 'entities/Article';
+import { ArticleListItem } from './ArticleListItem';
+import { ArticleView } from '../../model/types/articleView';
 
 const article = {
     id: '1',
@@ -15,18 +14,19 @@ const article = {
     views: 1022,
     createdAt: '26.02.2022',
     type: [
-        'IT',
-        'SCIENCE',
+        ArticleType.IT,
+        ArticleType.SCIENCE,
+        ArticleType.ECONOMICS,
     ],
     user: {
         id: '1',
         username: 'admin',
-        avatar: 'https://pic.rutubelist.ru/user/3b/27/3b2758ad5492a76b578f7ee072e4e894.jpg',
+        avatar: Image,
     },
     blocks: [
         {
             id: '1',
-            type: 'TEXT',
+            type: ArticleBlockType.TEXT,
             title: 'Заголовок этого блока',
             paragraphs: [
                 'Программа, которую по традиции называют «Hello, world!», очень проста. Она выводит куда-либо фразу'
@@ -42,35 +42,74 @@ const article = {
         },
         {
             id: '4',
-            type: 'CODE',
+            type: ArticleBlockType.CODE,
             code: '<!DOCTYPE html>\n<html>\n  <body>\n    <p id="hello"></p>\n\n    <script>\n   '
                 + '   document.getElementById("hello").innerHTML = "Hello, world!";\n   '
                 + ' </script>\n  </body>\n</html>;',
         },
     ],
+} as Article;
+
+const meta: Meta<typeof ArticleListItem> = {
+    title: 'entities/ArticleListItem',
+    component: ArticleListItem,
+    parameters: {
+        layout: 'centered',
+    },
+    tags: ['autodocs'],
+    argTypes: {},
 };
 
-export const ArticleList = (props: ArticleListProps) => {
-    const {
-        className,
-    } = props;
+export default meta;
+type Story = StoryObj<typeof ArticleListItem>;
 
-    // const { t } = useTranslation();
-    const isLoading = false;
-
-    if (isLoading) {
-        return (
-            <div className={classNames(cls.ArticleList, {}, [className])}>
-                <ArticleListSkeleton view={ViewItem.BIG} />
-            </div>
-        );
-    }
-
-    return (
-        <div className={classNames(cls.ArticleList, {}, [className])}>
-            {new Array(8).fill(article).map((article) => (
-                <ArticleListItem view={ViewItem.SMALL} article={article} />
-            ))}
-        </div>
-    );
+export const NormalArticleListItem: Story = {
+    args: {
+        article,
+    },
 };
+
+NormalArticleListItem.decorators = ThemeDecorator(Theme.LIGHT);
+
+export const DarkArticleListItem: Story = {
+    args: {
+        article,
+    },
+};
+
+DarkArticleListItem.decorators = ThemeDecorator(Theme.DARK);
+
+export const OrangeArticleListItem: Story = {
+    args: {
+        article,
+    },
+};
+
+OrangeArticleListItem.decorators = ThemeDecorator(Theme.ORANGE);
+
+export const NormalArticleListItemBig: Story = {
+    args: {
+        article,
+        view: ArticleView.BIG,
+    },
+};
+
+NormalArticleListItemBig.decorators = ThemeDecorator(Theme.LIGHT);
+
+export const DarkArticleListItemBig: Story = {
+    args: {
+        article,
+        view: ArticleView.BIG,
+    },
+};
+
+DarkArticleListItemBig.decorators = ThemeDecorator(Theme.DARK);
+
+export const OrangeArticleListItemBig: Story = {
+    args: {
+        article,
+        view: ArticleView.BIG,
+    },
+};
+
+OrangeArticleListItemBig.decorators = ThemeDecorator(Theme.ORANGE);

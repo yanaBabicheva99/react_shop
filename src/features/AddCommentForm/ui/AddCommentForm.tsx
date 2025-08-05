@@ -37,7 +37,7 @@ const AddCommentForm = memo((props: AddCommentFormProps) => {
     const onSendCommentHandler = useCallback(() => {
         onSendComment(text);
         dispatch(addCommentFormActions.setTextComment(''));
-    }, [onSendComment, text]);
+    }, [dispatch, onSendComment, text]);
 
     return (
         <DynamicModuleLoader reducers={reducer}>

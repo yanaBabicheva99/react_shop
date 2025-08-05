@@ -3,7 +3,8 @@ import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
 import { Button, SizeButton, ThemeButton } from 'shared/ui/Button/Button';
 import React, { memo, useState } from 'react';
 import { LangSwitcher } from 'widgets/LangSwitcher';
-import { sideBarItems } from '../../model/items';
+import { useSelector } from 'react-redux';
+import { getSidebarItem } from 'widgets/SideBar';
 import { SideBarItem } from '../SideBarItem/SideBarItem';
 import cls from './SideBar.module.scss';
 
@@ -17,12 +18,13 @@ export const SideBar = memo((props: SideBarProps) => {
     } = props;
 
     const [collapsed, setCollapsed] = useState(false);
+    const sideBarItems = useSelector(getSidebarItem);
     const handleToggle = () => {
         setCollapsed((prev) => !prev);
     };
 
     return (
-        <div
+        <menu
             data-testid="sidebar"
             className={classNames(cls.SideBar, { [cls.collapsed]: collapsed }, [className])}
         >
@@ -48,6 +50,6 @@ export const SideBar = memo((props: SideBarProps) => {
                     className={cls.langBtn}
                 />
             </div>
-        </div>
+        </menu>
     );
 });

@@ -7,6 +7,7 @@ import { useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { useFetchData } from 'shared/lib/hooks/useFetchData/useFetchData';
+import { Page } from 'widgets/Page/Page';
 
 const reducersList: ReducersList = {
     profile: profileReducer,
@@ -25,12 +26,18 @@ const ProfilePage = () => {
     });
 
     if (!id) {
-        return <Text text={t('Профиль пользователя не найден')} theme={TextTheme.ERROR} />;
+        return (
+            <Page>
+                <Text text={t('Профиль пользователя не найден')} theme={TextTheme.ERROR} />
+            </Page>
+        );
     }
 
     return (
         <DynamicModuleLoader reducers={reducersList} removeAfterMount>
-            <EditableProfileCard />
+            <Page>
+                <EditableProfileCard />
+            </Page>
         </DynamicModuleLoader>
     );
 };

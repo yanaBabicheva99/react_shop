@@ -24,7 +24,7 @@ export const ArticleBlockCode = memo((props: ArticleBlockCodeProps) => {
     return (
         <div className={classNames(cls.ArticleBlockCode, {}, [className])}>
             <Button className={cls.copyBtn} onClick={copyText}>
-                <Icon Icon={CopyIcon} className={cls.icon} />
+                <Icon Icon={CopyIcon} className={cls.icon} fill={false} />
             </Button>
             <pre>
                 <code>{block.code}</code>

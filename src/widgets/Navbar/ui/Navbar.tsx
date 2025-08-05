@@ -30,18 +30,18 @@ export const NavBar = memo(() => {
 
     if (isAuth) {
         return (
-            <div className={classNames(cls.Navbar, {})}>
+            <header className={classNames(cls.Navbar, {})}>
                 <Button onClick={handleClickLogout} className={cls.authBtn}>{t('Выйти')}</Button>
-            </div>
+            </header>
         );
     }
 
     return (
-        <div className={classNames(cls.Navbar, {})}>
+        <header className={classNames(cls.Navbar, {})}>
             <Button onClick={handleOpenModal} className={cls.authBtn}>{t('Войти')}</Button>
             <Portal>
                 <LoginModal isOpen={isOpenModal} onClose={handleCloseModal} />
             </Portal>
-        </div>
+        </header>
     );
 });

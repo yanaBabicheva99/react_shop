@@ -1,25 +1,38 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import { useTranslation } from 'react-i18next';
-import { ArticleList } from 'entities/Article';
-// import cls from './ArticlesPage.module.scss';
+// import { useTranslation } from 'react-i18next';
+import { ArticleList, fetchArticleNextPage, getArticleListLoadingNextPage } from 'features/ArticleList';
+import { Page } from 'widgets/Page/Page';
+import { memo, useCallback } from 'react';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { useSelector } from 'react-redux';
 
 interface ArticlesPageProps {
     className?: string;
 }
 
-const ArticlesPage = (props: ArticlesPageProps) => {
+const ArticlesPage = memo((props: ArticlesPageProps) => {
     const {
         className,
     } = props;
 
-    const { t } = useTranslation();
+    // const { t } = useTranslation();
+    const dispatch = useAppDispatch();
+    const isLoadingNext = useSelector(getArticleListLoadingNextPage);
+
+    const onLoadNextPage = useCallback(() => {
+        if (__Project__ !== 'storybook') {
+            dispatch(fetchArticleNextPage());
+        }
+    }, [dispatch]);
 
     return (
-        <div className={classNames('', {}, [className])}>
-            {t('ARTICLES PAGE')}
+        <Page
+            onScrollEnd={!isLoadingNext ? onLoadNextPage : undefined}
+            className={classNames('', {}, [className])}
+        >
             <ArticleList />
-        </div>
+        </Page>
     );
-};
+});
 
 export default ArticlesPage;

@@ -9,26 +9,23 @@ import { Button, ThemeButton } from 'shared/ui/Button/Button';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import { routesPath } from 'shared/config/routerConfig/routerConfig';
+import {
+    ArticleBlockText, Article, ArticleBlockTextType, ArticleBlockType,
+} from 'entities/Article';
 import cls from './ArticleListItem.module.scss';
-import { Article, ArticleBlockText as ArticleBlockTextType, ArticleBlockType } from '../../model/types/article';
-import { ArticleBlockText } from '../ArticleBlockComponent/ArticleBlockText/ArticleBlockText';
-
-export enum ViewItem {
-    SMALL = 'SMALL',
-    BIG = 'BIG'
-}
+import { ArticleView } from '../../model/types/articleView';
 
 interface ArticleListItemProps {
     className?: string;
     article: Article;
-    view?: ViewItem;
+    view?: ArticleView;
 }
 
 export const ArticleListItem = memo((props: ArticleListItemProps) => {
     const {
         className,
         article,
-        view = ViewItem.SMALL,
+        view = ArticleView.SMALL,
     } = props;
 
     const { t } = useTranslation();
@@ -49,7 +46,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
         </div>
     );
 
-    if (view === ViewItem.SMALL) {
+    if (view === ArticleView.SMALL) {
         return (
             <Card
                 className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}

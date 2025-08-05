@@ -11,6 +11,7 @@ import { ProfileSchema } from 'features/EditableProfileCard';
 import { ArticleDetailsSchema } from 'entities/Article';
 import { ArticleCommentListSchema } from 'features/ArticleCommentList';
 import { AddCommentFormSchema } from 'features/AddCommentForm';
+import { ArticleListSchema } from 'features/ArticleList';
 
 export interface StateSchema {
     counter: CounterSchema;
@@ -20,6 +21,7 @@ export interface StateSchema {
     articleDetails?: ArticleDetailsSchema;
     articleCommentList?: ArticleCommentListSchema;
     addCommentForm?: AddCommentFormSchema;
+    articleList?: ArticleListSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;

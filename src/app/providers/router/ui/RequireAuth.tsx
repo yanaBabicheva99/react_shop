@@ -12,5 +12,5 @@ export function RequireAuth({ children }: { children: ReactNode }) {
         return <Navigate to={routesPath.main} state={{ from: location }} replace />;
     }
 
-    return <div>{children}</div>;
+    return <>{children}</>;
 }

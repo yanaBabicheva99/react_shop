@@ -6,6 +6,7 @@ import { Text, TextTheme } from 'shared/ui/Text/Text';
 import {
     ArticleCommentList,
 } from 'features/ArticleCommentList';
+import { Page } from 'widgets/Page/Page';
 import cls from './ArticleDetailsPage.module.scss';
 
 interface ArticleDetailsPageProps {
@@ -24,10 +25,10 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
     }
 
     return (
-        <div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+        <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
             <ArticleDetails id={id} />
             <ArticleCommentList id={id} />
-        </div>
+        </Page>
     );
 };
 

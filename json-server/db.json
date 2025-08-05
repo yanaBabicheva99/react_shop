@@ -22,6 +22,7 @@
       "type": [
         "IT"
       ],
+      "userId": "1",
       "blocks": [
         {
           "id": "1",
@@ -79,6 +80,374 @@
           "title": "Заголовок этого блока",
           "paragraphs": [
             "JavaScript — это язык, программы на котором можно выполнять в разных средах. В нашем случае речь идёт о браузерах и о серверной платформе Node.js. Если до сих пор вы не написали ни строчки кода на JS и читаете этот текст в браузере, на настольном компьютере, это значит, что вы буквально в считанных секундах от своей первой JavaScript-программы."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "title": "Kotlin news",
+      "subtitle": "Что нового в Kotlin за 2022 год?",
+      "img": "https://coddyschool.com/upload/iblock/d37/pqx9i0f7voikaqldw3h39hetysljspfo/0aaK.png",
+      "views": 1022,
+      "createdAt": "26.02.2022",
+      "type": [
+        "IT"
+      ],
+      "userId": "2",
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Заголовок этого блока",
+          "paragraphs": [
+            "Kotlin - это современный, статически типизированный язык программирования, разработанный компанией JetBrains",
+            "Он широко используется для разработки приложений под Android, а также для серверных и кросс-платформенных решений. Kotlin совместим с Java, что позволяет использовать его в существующих Java-проектах и постепенно переходить на Kotlin. "
+          ]
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "title": "Kotlin news",
+      "subtitle": "Что нового в Kotlin за 2022 год?",
+      "img": "https://coddyschool.com/upload/iblock/d37/pqx9i0f7voikaqldw3h39hetysljspfo/0aaK.png",
+      "views": 1022,
+      "createdAt": "26.02.2022",
+      "type": [
+        "IT"
+      ],
+      "userId": "2",
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Заголовок этого блока",
+          "paragraphs": [
+            "Kotlin - это современный, статически типизированный язык программирования, разработанный компанией JetBrains",
+            "Он широко используется для разработки приложений под Android, а также для серверных и кросс-платформенных решений. Kotlin совместим с Java, что позволяет использовать его в существующих Java-проектах и постепенно переходить на Kotlin. "
+          ]
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "title": "Kotlin news",
+      "subtitle": "Что нового в Kotlin за 2022 год?",
+      "img": "https://coddyschool.com/upload/iblock/d37/pqx9i0f7voikaqldw3h39hetysljspfo/0aaK.png",
+      "views": 1022,
+      "createdAt": "26.02.2022",
+      "type": [
+        "IT"
+      ],
+      "userId": "2",
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Заголовок этого блока",
+          "paragraphs": [
+            "Kotlin - это современный, статически типизированный язык программирования, разработанный компанией JetBrains",
+            "Он широко используется для разработки приложений под Android, а также для серверных и кросс-платформенных решений. Kotlin совместим с Java, что позволяет использовать его в существующих Java-проектах и постепенно переходить на Kotlin. "
+          ]
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "title": "Kotlin news",
+      "subtitle": "Что нового в Kotlin за 2022 год?",
+      "img": "https://coddyschool.com/upload/iblock/d37/pqx9i0f7voikaqldw3h39hetysljspfo/0aaK.png",
+      "views": 1022,
+      "createdAt": "26.02.2022",
+      "type": [
+        "IT"
+      ],
+      "userId": "2",
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Заголовок этого блока",
+          "paragraphs": [
+            "Kotlin - это современный, статически типизированный язык программирования, разработанный компанией JetBrains",
+            "Он широко используется для разработки приложений под Android, а также для серверных и кросс-платформенных решений. Kotlin совместим с Java, что позволяет использовать его в существующих Java-проектах и постепенно переходить на Kotlin. "
+          ]
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "title": "Kotlin news",
+      "subtitle": "Что нового в Kotlin за 2022 год?",
+      "img": "https://coddyschool.com/upload/iblock/d37/pqx9i0f7voikaqldw3h39hetysljspfo/0aaK.png",
+      "views": 1022,
+      "createdAt": "26.02.2022",
+      "type": [
+        "IT"
+      ],
+      "userId": "2",
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Заголовок этого блока",
+          "paragraphs": [
+            "Kotlin - это современный, статически типизированный язык программирования, разработанный компанией JetBrains",
+            "Он широко используется для разработки приложений под Android, а также для серверных и кросс-платформенных решений. Kotlin совместим с Java, что позволяет использовать его в существующих Java-проектах и постепенно переходить на Kotlin. "
+          ]
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "title": "Kotlin news",
+      "subtitle": "Что нового в Kotlin за 2022 год?",
+      "img": "https://coddyschool.com/upload/iblock/d37/pqx9i0f7voikaqldw3h39hetysljspfo/0aaK.png",
+      "views": 1022,
+      "createdAt": "26.02.2022",
+      "type": [
+        "IT"
+      ],
+      "userId": "2",
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Заголовок этого блока",
+          "paragraphs": [
+            "Kotlin - это современный, статически типизированный язык программирования, разработанный компанией JetBrains",
+            "Он широко используется для разработки приложений под Android, а также для серверных и кросс-платформенных решений. Kotlin совместим с Java, что позволяет использовать его в существующих Java-проектах и постепенно переходить на Kotlin. "
+          ]
+        }
+      ]
+    },
+    {
+      "id": "8",
+      "title": "Kotlin news",
+      "subtitle": "Что нового в Kotlin за 2022 год?",
+      "img": "https://coddyschool.com/upload/iblock/d37/pqx9i0f7voikaqldw3h39hetysljspfo/0aaK.png",
+      "views": 1022,
+      "createdAt": "26.02.2022",
+      "type": [
+        "IT"
+      ],
+      "userId": "2",
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Заголовок этого блока",
+          "paragraphs": [
+            "Kotlin - это современный, статически типизированный язык программирования, разработанный компанией JetBrains",
+            "Он широко используется для разработки приложений под Android, а также для серверных и кросс-платформенных решений. Kotlin совместим с Java, что позволяет использовать его в существующих Java-проектах и постепенно переходить на Kotlin. "
+          ]
+        }
+      ]
+    },
+    {
+      "id": "9",
+      "title": "Kotlin news",
+      "subtitle": "Что нового в Kotlin за 2022 год?",
+      "img": "https://coddyschool.com/upload/iblock/d37/pqx9i0f7voikaqldw3h39hetysljspfo/0aaK.png",
+      "views": 1022,
+      "createdAt": "26.02.2022",
+      "type": [
+        "IT"
+      ],
+      "userId": "2",
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Заголовок этого блока",
+          "paragraphs": [
+            "Kotlin - это современный, статически типизированный язык программирования, разработанный компанией JetBrains",
+            "Он широко используется для разработки приложений под Android, а также для серверных и кросс-платформенных решений. Kotlin совместим с Java, что позволяет использовать его в существующих Java-проектах и постепенно переходить на Kotlin. "
+          ]
+        }
+      ]
+    },
+    {
+      "id": "10",
+      "title": "Kotlin news",
+      "subtitle": "Что нового в Kotlin за 2022 год?",
+      "img": "https://coddyschool.com/upload/iblock/d37/pqx9i0f7voikaqldw3h39hetysljspfo/0aaK.png",
+      "views": 1022,
+      "createdAt": "26.02.2022",
+      "type": [
+        "IT"
+      ],
+      "userId": "2",
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Заголовок этого блока",
+          "paragraphs": [
+            "Kotlin - это современный, статически типизированный язык программирования, разработанный компанией JetBrains",
+            "Он широко используется для разработки приложений под Android, а также для серверных и кросс-платформенных решений. Kotlin совместим с Java, что позволяет использовать его в существующих Java-проектах и постепенно переходить на Kotlin. "
+          ]
+        }
+      ]
+    },
+    {
+      "id": "11",
+      "title": "Kotlin news",
+      "subtitle": "Что нового в Kotlin за 2022 год?",
+      "img": "https://coddyschool.com/upload/iblock/d37/pqx9i0f7voikaqldw3h39hetysljspfo/0aaK.png",
+      "views": 1022,
+      "createdAt": "26.02.2022",
+      "type": [
+        "IT"
+      ],
+      "userId": "2",
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Заголовок этого блока",
+          "paragraphs": [
+            "Kotlin - это современный, статически типизированный язык программирования, разработанный компанией JetBrains",
+            "Он широко используется для разработки приложений под Android, а также для серверных и кросс-платформенных решений. Kotlin совместим с Java, что позволяет использовать его в существующих Java-проектах и постепенно переходить на Kotlin. "
+          ]
+        }
+      ]
+    },
+    {
+      "id": "12",
+      "title": "Kotlin news",
+      "subtitle": "Что нового в Kotlin за 2022 год?",
+      "img": "https://coddyschool.com/upload/iblock/d37/pqx9i0f7voikaqldw3h39hetysljspfo/0aaK.png",
+      "views": 1022,
+      "createdAt": "26.02.2022",
+      "type": [
+        "IT"
+      ],
+      "userId": "2",
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Заголовок этого блока",
+          "paragraphs": [
+            "Kotlin - это современный, статически типизированный язык программирования, разработанный компанией JetBrains",
+            "Он широко используется для разработки приложений под Android, а также для серверных и кросс-платформенных решений. Kotlin совместим с Java, что позволяет использовать его в существующих Java-проектах и постепенно переходить на Kotlin. "
+          ]
+        }
+      ]
+    },
+    {
+      "id": "13",
+      "title": "Kotlin news",
+      "subtitle": "Что нового в Kotlin за 2022 год?",
+      "img": "https://coddyschool.com/upload/iblock/d37/pqx9i0f7voikaqldw3h39hetysljspfo/0aaK.png",
+      "views": 1022,
+      "createdAt": "26.02.2022",
+      "type": [
+        "IT"
+      ],
+      "userId": "2",
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Заголовок этого блока",
+          "paragraphs": [
+            "Kotlin - это современный, статически типизированный язык программирования, разработанный компанией JetBrains",
+            "Он широко используется для разработки приложений под Android, а также для серверных и кросс-платформенных решений. Kotlin совместим с Java, что позволяет использовать его в существующих Java-проектах и постепенно переходить на Kotlin. "
+          ]
+        }
+      ]
+    },
+    {
+      "id": "14",
+      "title": "Kotlin news",
+      "subtitle": "Что нового в Kotlin за 2022 год?",
+      "img": "https://coddyschool.com/upload/iblock/d37/pqx9i0f7voikaqldw3h39hetysljspfo/0aaK.png",
+      "views": 1022,
+      "createdAt": "26.02.2022",
+      "type": [
+        "IT"
+      ],
+      "userId": "2",
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Заголовок этого блока",
+          "paragraphs": [
+            "Kotlin - это современный, статически типизированный язык программирования, разработанный компанией JetBrains",
+            "Он широко используется для разработки приложений под Android, а также для серверных и кросс-платформенных решений. Kotlin совместим с Java, что позволяет использовать его в существующих Java-проектах и постепенно переходить на Kotlin. "
+          ]
+        }
+      ]
+    },
+    {
+      "id": "15",
+      "title": "Kotlin news",
+      "subtitle": "Что нового в Kotlin за 2022 год?",
+      "img": "https://coddyschool.com/upload/iblock/d37/pqx9i0f7voikaqldw3h39hetysljspfo/0aaK.png",
+      "views": 1022,
+      "createdAt": "26.02.2022",
+      "type": [
+        "IT"
+      ],
+      "userId": "2",
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Заголовок этого блока",
+          "paragraphs": [
+            "Kotlin - это современный, статически типизированный язык программирования, разработанный компанией JetBrains",
+            "Он широко используется для разработки приложений под Android, а также для серверных и кросс-платформенных решений. Kotlin совместим с Java, что позволяет использовать его в существующих Java-проектах и постепенно переходить на Kotlin. "
+          ]
+        }
+      ]
+    },
+    {
+      "id": "16",
+      "title": "Kotlin news",
+      "subtitle": "Что нового в Kotlin за 2022 год?",
+      "img": "https://coddyschool.com/upload/iblock/d37/pqx9i0f7voikaqldw3h39hetysljspfo/0aaK.png",
+      "views": 1022,
+      "createdAt": "26.02.2022",
+      "type": [
+        "IT"
+      ],
+      "userId": "2",
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Заголовок этого блока",
+          "paragraphs": [
+            "Kotlin - это современный, статически типизированный язык программирования, разработанный компанией JetBrains",
+            "Он широко используется для разработки приложений под Android, а также для серверных и кросс-платформенных решений. Kotlin совместим с Java, что позволяет использовать его в существующих Java-проектах и постепенно переходить на Kotlin. "
+          ]
+        }
+      ]
+    },
+    {
+      "id": "17",
+      "title": "Kotlin news",
+      "subtitle": "Что нового в Kotlin за 2022 год?",
+      "img": "https://coddyschool.com/upload/iblock/d37/pqx9i0f7voikaqldw3h39hetysljspfo/0aaK.png",
+      "views": 1022,
+      "createdAt": "26.02.2022",
+      "type": [
+        "IT"
+      ],
+      "userId": "2",
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Заголовок этого блока",
+          "paragraphs": [
+            "Kotlin - это современный, статически типизированный язык программирования, разработанный компанией JetBrains",
+            "Он широко используется для разработки приложений под Android, а также для серверных и кросс-платформенных решений. Kotlin совместим с Java, что позволяет использовать его в существующих Java-проектах и постепенно переходить на Kotlin. "
           ]
         }
       ]
@@ -174,6 +543,18 @@
       "articleId": "1",
       "userId": "2",
       "id": "U9tavf4"
+    },
+    {
+      "text": "Kotlin vs react",
+      "articleId": "2",
+      "userId": "1",
+      "id": "HxjZsZY"
+    },
+    {
+      "text": "Kotlin like",
+      "articleId": "2",
+      "userId": "2",
+      "id": "Qyql1Rj"
     }
   ],
   "profile": [

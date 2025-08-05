@@ -22,13 +22,6 @@ body {
   min-height: 100vh;
 }
 
-.page-wrapper {
-  padding: 15px 20px 15px 40px;
-  width: 100%;
-  height: calc(100vh - var(--navbar-height));
-  overflow-y: auto;
-}
-
 .content-page {
   display: flex;
 }

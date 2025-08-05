@@ -11,6 +11,9 @@ import ViewIcon from 'shared/assets/eye.svg';
 import CalendarIcon from 'shared/assets/calendar.svg';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { useFetchData } from 'shared/lib/hooks/useFetchData/useFetchData';
+import { Button, ThemeButton } from 'shared/ui/Button/Button';
+import { useNavigate } from 'react-router-dom';
+import { routesPath } from 'shared/config/routerConfig/routerConfig';
 import { ArticleBlockText } from '../ArticleBlockComponent/ArticleBlockText/ArticleBlockText';
 import { ArticleBlockImage } from '../ArticleBlockComponent/ArticleBlockImage/ArticleBlockImage';
 import { ArticleBlockCode } from '../ArticleBlockComponent/ArticleBlockCode/ArticleBlockCode';
@@ -40,6 +43,7 @@ export const ArticleDetails = memo((props: ArticleDetailProps) => {
     const articleDetails = useSelector(getArticle);
     const isLoading = useSelector(getArticleIsLoading);
     const error = useSelector(getArticleError);
+    const navigate = useNavigate();
 
     const renderArticleBlock = useCallback((block: ArticleBlock) => {
         switch (block.type) {
@@ -55,6 +59,10 @@ export const ArticleDetails = memo((props: ArticleDetailProps) => {
         default: return null;
         }
     }, []);
+
+    const goBack = useCallback(() => {
+        navigate(routesPath.articles);
+    }, [navigate]);
 
     let content;
 
@@ -77,6 +85,13 @@ export const ArticleDetails = memo((props: ArticleDetailProps) => {
     } else {
         content = (
             <div>
+                <Button
+                    theme={ThemeButton.OUTLINE}
+                    onClick={goBack}
+                    className={cls.backButton}
+                >
+                    {t('Назад к списку')}
+                </Button>
                 {articleDetails?.img && (
                     <div className={cls.avatarWrapper}>
                         <Avatar url={articleDetails.img} alt="img" />

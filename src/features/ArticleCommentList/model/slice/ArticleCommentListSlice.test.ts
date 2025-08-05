@@ -1,7 +1,7 @@
 import { Comment } from 'entities/Comment';
 import { fetchCommentsByArticleId } from '../servicices/FetchCommentsByArticleId/FetchCommentsByArticleId';
 import { articleCommentListReducer } from './ArticleCommentListSlice';
-import { ArticleCommentListSchema } from '../types/ArticleCommentListSchema';
+import { ArticleCommentListSchema } from '../types/articleCommentListSchema';
 import {
     addNewCommentArticle,
 } from '../servicices/AddNewCommentArticle/AddNewCommentArticle';
