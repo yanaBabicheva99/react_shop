@@ -4,12 +4,12 @@ import { useFetchData } from 'shared/lib/hooks/useFetchData/useFetchData';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useSelector } from 'react-redux';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { initedArticleList } from '../../model/services/InitedArticleList/InitedArticleList';
 import { ArticleView } from '../../model/types/articleView';
 import { articleList, articleListAction, articleListReducer } from '../../model/slice/ArticleListSlice';
 import { ArticleListSkeleton } from '../ArticleListItem/ArticleListSkeleton';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
 import cls from './ArticleList.module.scss';
-import { fetchArticleList } from '../../model/services/FetchArticleList/FetchArticleList';
 import { getArticleListLoading, getArticleView } from '../../model/selectors/articleListSelector';
 import { ArticleViewSwitcher } from '../ArticleViewSwitcher/ArticleViewSwitcher';
 
@@ -40,8 +40,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
     // const { t } = useTranslation();
 
     useFetchData(() => {
-        dispatch(articleListAction.initState());
-        dispatch(fetchArticleList({ page: 1 }));
+        dispatch(initedArticleList());
     });
 
     const handleChangeArticleView = useCallback((newView: ArticleView) => {
@@ -49,7 +48,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
     }, [dispatch]);
 
     return (
-        <DynamicModuleLoader reducers={reducer}>
+        <DynamicModuleLoader reducers={reducer} removeAfterMount={false}>
             <div className={classNames(cls.ArticleList, {}, [className])}>
                 <ArticleViewSwitcher view={articleView} onChangeView={handleChangeArticleView} />
                 {articles.map((article) => (

@@ -24,12 +24,14 @@ const articleListSlice = createSlice({
         entities: {},
         hasMore: true,
         page: 1,
+        _inited: false,
     }),
     reducers: {
         initState: (state) => {
             const view = localStorage.getItem(ARTICLE_VIEW_LOCALSTORAGE_KEY) as ArticleView || ArticleView.SMALL;
             state.articleView = view;
             state.limit = view === ArticleView.SMALL ? 9 : 4;
+            state._inited = true;
         },
         setPage: (state, action: PayloadAction<number>) => {
             state.page = action.payload;
