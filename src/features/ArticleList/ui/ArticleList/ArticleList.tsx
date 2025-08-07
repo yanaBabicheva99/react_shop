@@ -1,6 +1,6 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { memo, useCallback } from 'react';
-import { useFetchData } from 'shared/lib/hooks/useFetchData/useFetchData';
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useSelector } from 'react-redux';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
@@ -39,7 +39,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
 
     // const { t } = useTranslation();
 
-    useFetchData(() => {
+    useInitialEffect(() => {
         dispatch(initedArticleList());
     });
 

@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { ThemeDecorator } from 'shared/config/storybook/decorators/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
+import { StoreDecorator } from 'shared/config/storybook/decorators/StoreDecorator';
 import { NotFound } from './NotFound';
 
 const meta: Meta<typeof NotFound> = {
@@ -20,10 +21,10 @@ export const NotFoundLite: Story = {
     args: {},
 };
 
-NotFoundLite.decorators = ThemeDecorator(Theme.LIGHT);
+NotFoundLite.decorators = [ThemeDecorator(Theme.LIGHT), StoreDecorator()];
 
 export const NotFoundDark: Story = {
     args: {},
 };
 
-NotFoundDark.decorators = ThemeDecorator(Theme.DARK);
+NotFoundDark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator()];

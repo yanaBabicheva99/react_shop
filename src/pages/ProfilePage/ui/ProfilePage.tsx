@@ -6,7 +6,7 @@ import { EditableProfileCard } from 'features/EditableProfileCard';
 import { useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
-import { useFetchData } from 'shared/lib/hooks/useFetchData/useFetchData';
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { Page } from 'widgets/Page/Page';
 
 const reducersList: ReducersList = {
@@ -19,7 +19,7 @@ const ProfilePage = () => {
 
     const { t } = useTranslation('profile');
 
-    useFetchData(() => {
+    useInitialEffect(() => {
         if (id) {
             dispatch(fetchProfileData(id));
         }

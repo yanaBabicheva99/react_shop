@@ -3,6 +3,7 @@ import { StateSchema, ThunkExtraConfig } from 'app/providers/StoreProvider/confi
 import { counterReducer } from 'entities/Counter';
 import { userReducer } from 'entities/User';
 import { $api } from 'shared/api/api';
+import { scrollTrackingReducer } from 'features/ScrollTracking';
 import { createReducerManager } from './reducerManager';
 
 export function createReduxStore(
@@ -13,6 +14,7 @@ export function createReduxStore(
         ...asyncReducers,
         counter: counterReducer,
         user: userReducer,
+        scroll: scrollTrackingReducer,
     };
 
     const extraArgs: ThunkExtraConfig = {

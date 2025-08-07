@@ -10,7 +10,7 @@ import { Icon } from 'shared/ui/Icon/Icon';
 import ViewIcon from 'shared/assets/eye.svg';
 import CalendarIcon from 'shared/assets/calendar.svg';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
-import { useFetchData } from 'shared/lib/hooks/useFetchData/useFetchData';
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { Button, ThemeButton } from 'shared/ui/Button/Button';
 import { useNavigate } from 'react-router-dom';
 import { routesPath } from 'shared/config/routerConfig/routerConfig';
@@ -66,7 +66,7 @@ export const ArticleDetails = memo((props: ArticleDetailProps) => {
 
     let content;
 
-    useFetchData(() => {
+    useInitialEffect(() => {
         dispatch(fetchArticleDetails(id));
     });
 

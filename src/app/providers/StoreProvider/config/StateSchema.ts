@@ -12,6 +12,7 @@ import { ArticleDetailsSchema } from 'entities/Article';
 import { ArticleCommentListSchema } from 'features/ArticleCommentList';
 import { AddCommentFormSchema } from 'features/AddCommentForm';
 import { ArticleListSchema } from 'features/ArticleList';
+import { ScrollTrackingSchema } from 'features/ScrollTracking';
 
 export interface StateSchema {
     counter: CounterSchema;
@@ -22,6 +23,7 @@ export interface StateSchema {
     articleCommentList?: ArticleCommentListSchema;
     addCommentForm?: AddCommentFormSchema;
     articleList?: ArticleListSchema;
+    scroll: ScrollTrackingSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;

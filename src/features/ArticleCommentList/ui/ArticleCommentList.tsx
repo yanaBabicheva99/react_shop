@@ -7,7 +7,7 @@ import { useSelector } from 'react-redux';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { memo, useCallback } from 'react';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { useFetchData } from 'shared/lib/hooks/useFetchData/useFetchData';
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { fetchCommentsByArticleId } from '../model/servicices/FetchCommentsByArticleId/FetchCommentsByArticleId';
 import {
     addNewCommentArticle,
@@ -36,7 +36,7 @@ export const ArticleCommentList = memo((props: ArticleCommentListProps) => {
     const dispatch = useAppDispatch();
     const { t } = useTranslation();
 
-    useFetchData(() => {
+    useInitialEffect(() => {
         dispatch(fetchCommentsByArticleId(id));
     });
 
