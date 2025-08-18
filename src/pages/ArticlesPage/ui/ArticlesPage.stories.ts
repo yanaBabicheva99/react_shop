@@ -4,6 +4,7 @@ import { Theme } from 'app/providers/ThemeProvider';
 import { StoreDecorator } from 'shared/config/storybook/decorators/StoreDecorator';
 import { Article } from 'entities/Article';
 import AvatarIcon from 'shared/assets/test/storybook/img.png';
+import Img from 'shared/assets/test/storybook/js.png';
 import ArticlesPage from './ArticlesPage';
 
 const meta: Meta<typeof ArticlesPage> = {
@@ -24,7 +25,7 @@ const articles = [
         id: '2',
         title: 'Kotlin news',
         subtitle: 'Что нового в Kotlin за 2022 год?',
-        img: 'https://coddyschool.com/upload/iblock/d37/pqx9i0f7voikaqldw3h39hetysljspfo/0aaK.png',
+        img: Img,
         views: 1022,
         createdAt: '26.02.2022',
         type: [
@@ -51,7 +52,7 @@ const articles = [
         id: '1',
         title: 'Javascript news',
         subtitle: 'Что нового в JS за 2022 год?',
-        img: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
+        img: Img,
         views: 1022,
         createdAt: '26.02.2022',
         type: [
@@ -90,7 +91,7 @@ export const NormalArticlesPage: Story = {
 };
 
 NormalArticlesPage.decorators = [ThemeDecorator(Theme.LIGHT), StoreDecorator({
-    articleList: {
+    articleInfinityList: {
         ids: [1, 2],
         entities: {
             1: articles[0],
@@ -104,7 +105,7 @@ export const DarkArticlesPage: Story = {
 };
 
 DarkArticlesPage.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({
-    articleList: {
+    articleInfinityList: {
         ids: [1, 2],
         entities: {
             1: articles[0],
@@ -118,7 +119,7 @@ export const OrangeArticlesPage: Story = {
 };
 
 OrangeArticlesPage.decorators = [ThemeDecorator(Theme.ORANGE), StoreDecorator({
-    articleList: {
+    articleInfinityList: {
         ids: [1, 2],
         entities: {
             1: articles[0],

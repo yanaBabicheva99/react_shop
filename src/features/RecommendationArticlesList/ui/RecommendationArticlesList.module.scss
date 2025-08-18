@@ -1,0 +1,11 @@
+.articlesList {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 6px;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.RecommendationArticlesList {
+  margin-top: 15px;
+}

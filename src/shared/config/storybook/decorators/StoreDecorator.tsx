@@ -6,14 +6,18 @@ import { loginReducer } from 'features/AuthByUserName';
 import { articleDetailsReducer } from 'entities/Article';
 import { articleCommentListReducer } from 'features/ArticleCommentList';
 import { addCommentFormReducer } from 'features/AddCommentForm';
-import { articleListReducer } from 'features/ArticleList';
+import { articleInfinityListReducer } from 'features/ArticleInfinityList';
+import { articlesSortReducer } from 'features/ArticlesSort';
+import { recommendationArticlesListReducer } from 'features/RecommendationArticlesList';
 
 const defaultAsyncReducers: DeepPartial<ReducersMapObject<StateSchema>> = {
     login: loginReducer,
     articleDetails: articleDetailsReducer,
     articleCommentList: articleCommentListReducer,
     addCommentForm: addCommentFormReducer,
-    articleList: articleListReducer,
+    articleInfinityList: articleInfinityListReducer,
+    articlesSort: articlesSortReducer,
+    recommendationArticlesList: recommendationArticlesListReducer,
 };
 
 export const StoreDecorator = (

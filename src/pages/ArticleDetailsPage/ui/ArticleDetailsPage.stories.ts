@@ -5,6 +5,7 @@ import { StoreDecorator } from 'shared/config/storybook/decorators/StoreDecorato
 import { Article } from 'entities/Article';
 import { ArticleBlockType, ArticleType } from 'entities/Article/model/types/article';
 import Image from 'shared/assets/test/storybook/js.png';
+import Img from 'shared/assets/test/storybook/img.png';
 import ArticleDetailsPage from './ArticleDetailsPage';
 
 const article: Article = {
@@ -18,7 +19,7 @@ const article: Article = {
     user: {
         id: '1',
         username: 'user',
-        avatar: 'https://pic.rutubelist.ru/user/3b/27/3b2758ad5492a76b578f7ee072e4e894.jpg',
+        avatar: Img,
     },
     blocks: [
         {

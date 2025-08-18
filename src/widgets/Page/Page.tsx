@@ -60,7 +60,7 @@ export const Page = (props: PageProps) => {
             onScroll={handleScroll}
         >
             {children}
-            <div ref={triggerRef} />
+            <div ref={triggerRef} className={cls.ref} />
         </section>
     );
 };

@@ -20,8 +20,8 @@ export function useInfinityScroll({ callback, triggerRef, wrapperRef }: UseInfin
             };
 
             observer = new IntersectionObserver(([entry]) => {
+                console.log('SCROLL', entry);
                 if (entry.isIntersecting) {
-                    console.log('SCROLL');
                     callback();
                 }
             }, options);

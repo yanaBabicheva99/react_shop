@@ -11,8 +11,10 @@ import { ProfileSchema } from 'features/EditableProfileCard';
 import { ArticleDetailsSchema } from 'entities/Article';
 import { ArticleCommentListSchema } from 'features/ArticleCommentList';
 import { AddCommentFormSchema } from 'features/AddCommentForm';
-import { ArticleListSchema } from 'features/ArticleList';
+import { ArticleInfinityListSchema } from 'features/ArticleInfinityList';
 import { ScrollTrackingSchema } from 'features/ScrollTracking';
+import { ArticlesSortSchema } from 'features/ArticlesSort';
+import { RecommendationArticlesListSchema } from 'features/RecommendationArticlesList';
 
 export interface StateSchema {
     counter: CounterSchema;
@@ -22,8 +24,10 @@ export interface StateSchema {
     articleDetails?: ArticleDetailsSchema;
     articleCommentList?: ArticleCommentListSchema;
     addCommentForm?: AddCommentFormSchema;
-    articleList?: ArticleListSchema;
+    articleInfinityList?: ArticleInfinityListSchema;
+    recommendationArticlesList?: RecommendationArticlesListSchema;
     scroll: ScrollTrackingSchema;
+    articlesSort?: ArticlesSortSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;

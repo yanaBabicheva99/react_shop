@@ -29,3 +29,19 @@ body {
 button {
   display: block;
 }
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 7px;
+}
+
+/* Scrollbar track */
+::-webkit-scrollbar-track {
+  border-radius: 5px;
+}
+
+/* Scrollbar thumb */
+::-webkit-scrollbar-thumb {
+  background: var(--secondary-color);
+  border-radius: 5px;
+}

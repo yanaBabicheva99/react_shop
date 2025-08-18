@@ -6,6 +6,9 @@ import { Portal } from 'shared/ui/Portal/Portal';
 import { loginActions, LoginModal } from 'features/AuthByUserName';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUserAuthData, userActions } from 'entities/User';
+import { routesPath } from 'shared/config/routerConfig/routerConfig';
+import { NavLink } from 'shared/ui/NavLink/NavLink';
+import { Text, TextTheme } from 'shared/ui/Text/Text';
 import cls from './Navbar.module.scss';
 
 export const NavBar = memo(() => {
@@ -31,6 +34,8 @@ export const NavBar = memo(() => {
     if (isAuth) {
         return (
             <header className={classNames(cls.Navbar, {})}>
+                <Text theme={TextTheme.INVERTED} title={t('Реакт приложение')} className={cls.appName} />
+                <NavLink to={routesPath.article_create}>{t('Создать статью')}</NavLink>
                 <Button onClick={handleClickLogout} className={cls.authBtn}>{t('Выйти')}</Button>
             </header>
         );

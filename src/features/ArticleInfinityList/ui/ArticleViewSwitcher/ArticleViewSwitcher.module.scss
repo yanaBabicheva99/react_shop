@@ -1,0 +1,10 @@
+.buttonWrapper {
+  display: flex;
+  margin-left: auto;
+}
+
+.selected {
+  svg path {
+    fill: var(--primary-color);
+  }
+}

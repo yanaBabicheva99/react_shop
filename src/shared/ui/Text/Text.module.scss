@@ -49,3 +49,13 @@
     font-size: var(--font-size-l);
   }
 }
+
+.inverted {
+  .title {
+    color: var(--inverted-primary-color);
+  }
+
+  .text {
+    color: var(--inverted-secondary-color);
+  }
+}
