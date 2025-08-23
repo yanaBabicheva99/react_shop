@@ -3,11 +3,12 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { ProfileCard } from 'entities/Profile';
 import { useDispatch, useSelector } from 'react-redux';
 import { useCallback } from 'react';
-import { profileActions } from 'features/EditableProfileCard';
 import { Currency } from 'entities/Currency/model/types/Currency';
 import { Loader } from 'shared/ui/Loader/Loader';
 import { Text, TextAlign, TextTheme } from 'shared/ui/Text/Text';
 import { Country } from 'entities/Country';
+import { VStack } from 'shared/ui/Stack';
+import { profileActions } from '../../model/slice/profileSlice';
 import { getProfileReadOnly } from '../../model/selectors/getProfileReadOnly/getProfileReadOnly';
 import { getProfileForm } from '../../model/selectors/getProfileForm/getProfileForm';
 import cls from './EditableProfileCard.module.scss';
@@ -95,7 +96,7 @@ export const EditableProfileCard = (props: EditableProfileCardProps) => {
     }
 
     return (
-        <div className={classNames('', {}, [className])}>
+        <VStack gap="16" className={classNames('', {}, [className])}>
             <ProfilePageHeader readOnly={readOnly} />
             {validationErrors?.map((error) => (
                 <Text key={error} theme={TextTheme.ERROR} text={validationErrorText[error]} />
@@ -117,6 +118,6 @@ export const EditableProfileCard = (props: EditableProfileCardProps) => {
                 onChangeCurrency={handleChangeCurrency}
                 onChangeCountry={handleChangeCountry}
             />
-        </div>
+        </VStack>
     );
 };

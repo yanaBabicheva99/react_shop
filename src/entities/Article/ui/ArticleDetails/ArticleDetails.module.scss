@@ -14,13 +14,8 @@
   margin-bottom: 7px;
 }
 
-.articleInfo {
-  display: flex;
-  margin-bottom: 5px;
-
-  div {
-    margin-left: 5px;
-  }
+.articleInfo div {
+  margin-left: 5px;
 }
 
 .block {
@@ -29,9 +24,6 @@
 
 .avatarWrapper {
   margin-bottom: 40px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
 }
 
 .blockItem {

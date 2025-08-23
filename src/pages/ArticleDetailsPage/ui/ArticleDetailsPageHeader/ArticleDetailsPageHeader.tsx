@@ -6,7 +6,7 @@ import { useCallback } from 'react';
 import { routesPath } from 'shared/config/routerConfig/routerConfig';
 import { useSelector } from 'react-redux';
 import { getArticle } from 'entities/Article';
-import cls from './ArticleDetailsPageHeader.module.scss';
+import { HStack } from 'shared/ui/Stack';
 import { canArticleEdit } from '../../model/selectors/article';
 
 interface ArticleDetailsPageHeaderProps {
@@ -33,11 +33,10 @@ export const ArticleDetailsPageHeader = (props: ArticleDetailsPageHeaderProps) =
     }, [article?.id, navigate]);
 
     return (
-        <div className={classNames(cls.ArticleDetailsPageHeader, {}, [className])}>
+        <HStack justify="between" max className={classNames('', {}, [className])}>
             <Button
                 theme={ThemeButton.OUTLINE}
                 onClick={goBack}
-                className={cls.backButton}
             >
                 {t('Назад к списку')}
             </Button>
@@ -45,11 +44,10 @@ export const ArticleDetailsPageHeader = (props: ArticleDetailsPageHeaderProps) =
                 <Button
                     theme={ThemeButton.OUTLINE}
                     onClick={goEdit}
-                    className={cls.backButton}
                 >
                     {t('Редактировать')}
                 </Button>
             )}
-        </div>
+        </HStack>
     );
 };

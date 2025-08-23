@@ -8,6 +8,7 @@ import {
 } from 'features/ArticleCommentList';
 import { Page } from 'widgets/Page/Page';
 import { RecommendationArticlesList } from 'features/RecommendationArticlesList';
+import { VStack } from 'shared/ui/Stack';
 import { ArticleDetailsPageHeader } from '../ui/ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 import cls from './ArticleDetailsPage.module.scss';
 
@@ -28,10 +29,12 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
 
     return (
         <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
-            <ArticleDetailsPageHeader />
-            <ArticleDetails id={id} />
-            <ArticleCommentList id={id} />
-            <RecommendationArticlesList />
+            <VStack max gap="16">
+                <ArticleDetailsPageHeader />
+                <ArticleDetails id={id} />
+                <ArticleCommentList id={id} />
+                <RecommendationArticlesList />
+            </VStack>
         </Page>
     );
 };

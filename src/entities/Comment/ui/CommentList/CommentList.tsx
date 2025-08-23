@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Text } from 'shared/ui/Text/Text';
+import { VStack } from 'shared/ui/Stack';
 import { Comment } from '../../model/types/comment';
 import { CommentCard } from '../CommentCard/CommentCard';
 
@@ -21,21 +22,21 @@ export const CommentList = (props: CommentListProps) => {
 
     if (isLoading) {
         return (
-            <div>
+            <VStack max gap="16">
                 <CommentCard isLoading />
                 <CommentCard isLoading />
                 <CommentCard isLoading />
-            </div>
+            </VStack>
         );
     }
 
     return (
-        <div className={classNames('', {}, [className])}>
+        <VStack gap="16" max className={classNames('', {}, [className])}>
             {comments.length
                 ? comments.map((comment) => (
                     <CommentCard key={comment.id} comment={comment} isLoading={isLoading} />
                 ))
                 : <Text text={t('Комментарии отсутствуют')} />}
-        </div>
+        </VStack>
     );
 };

@@ -5,6 +5,7 @@ import { memo } from 'react';
 import { Currency, SelectCurrency } from 'entities/Currency';
 import { Country, SelectCountry } from 'entities/Country';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
+import { VStack } from 'shared/ui/Stack';
 import cls from './ProfileCard.module.scss';
 
 export enum ProfileCardTheme {
@@ -61,59 +62,57 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
     };
 
     return (
-        <div className={classNames(cls.ProfileCard, mods, [className, theme])}>
+        <VStack max className={classNames(cls.ProfileCard, mods, [className, theme])}>
             {avatar && <Avatar url={avatar} alt="Аватар" className={cls.avatar} />}
-            <div className={cls.body}>
-                <Input
-                    placeholder={t('Ваше имя')}
-                    value={first}
-                    className={cls.field}
-                    readOnly={readonly}
-                    onChange={onChangeFirst}
-                    autoFocus
-                />
-                <Input
-                    placeholder={t('Ваша фамилия')}
-                    value={lastname}
-                    className={cls.field}
-                    readOnly={readonly}
-                    onChange={onChangeLast}
-                />
-                <Input
-                    placeholder={t('Ваш возраст')}
-                    value={age}
-                    className={cls.field}
-                    readOnly={readonly}
-                    onlyNumber
-                    onChange={onChangeAge}
-                />
-                <Input
-                    placeholder={t('Ваш город')}
-                    value={city}
-                    className={cls.field}
-                    readOnly={readonly}
-                    onChange={onChangeCity}
-                />
-                <SelectCurrency
-                    readOnly={readonly}
-                    value={currency}
-                    onChange={onChangeCurrency}
-                    className={cls.field}
-                />
-                <SelectCountry
-                    readOnly={readonly}
-                    value={country}
-                    onChange={onChangeCountry}
-                    className={cls.field}
-                />
-                <Input
-                    placeholder={t('Введите ссылку фотографии')}
-                    value={avatar}
-                    className={cls.field}
-                    readOnly={readonly}
-                    onChange={onChangeAvatar}
-                />
-            </div>
-        </div>
+            <Input
+                placeholder={t('Ваше имя')}
+                value={first}
+                className={cls.field}
+                readOnly={readonly}
+                onChange={onChangeFirst}
+                autoFocus
+            />
+            <Input
+                placeholder={t('Ваша фамилия')}
+                value={lastname}
+                className={cls.field}
+                readOnly={readonly}
+                onChange={onChangeLast}
+            />
+            <Input
+                placeholder={t('Ваш возраст')}
+                value={age}
+                className={cls.field}
+                readOnly={readonly}
+                onlyNumber
+                onChange={onChangeAge}
+            />
+            <Input
+                placeholder={t('Ваш город')}
+                value={city}
+                className={cls.field}
+                readOnly={readonly}
+                onChange={onChangeCity}
+            />
+            <SelectCurrency
+                readOnly={readonly}
+                value={currency}
+                onChange={onChangeCurrency}
+                className={cls.field}
+            />
+            <SelectCountry
+                readOnly={readonly}
+                value={country}
+                onChange={onChangeCountry}
+                className={cls.field}
+            />
+            <Input
+                placeholder={t('Введите ссылку фотографии')}
+                value={avatar}
+                className={cls.field}
+                readOnly={readonly}
+                onChange={onChangeAvatar}
+            />
+        </VStack>
     );
 });

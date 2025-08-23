@@ -4,9 +4,9 @@ import { Text } from 'shared/ui/Text/Text';
 import { Button, ThemeButton } from 'shared/ui/Button/Button';
 import { useDispatch, useSelector } from 'react-redux';
 import { useCallback } from 'react';
+import { HStack } from 'shared/ui/Stack';
 import { getVisibleEdit } from '../../model/selectors/getVisibleEdit/getVisibleEdit';
 import { profileActions } from '../../model/slice/profileSlice';
-import cls from './ProfilePageHeader.module.scss';
 import {
     updateProfileCardInfo,
 } from '../../model/services/UpdateProfileCardInfo/UpdateProfileCardInfo';
@@ -39,7 +39,7 @@ export const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
     }, [dispatch]);
 
     return (
-        <div className={classNames(cls.ProfilePageHeader, {}, [className])}>
+        <HStack justify="between" max className={classNames('', {}, [className])}>
             <Text title={t('Профиль')} />
             {isEdit && (
                 <div>
@@ -53,7 +53,7 @@ export const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
                             </Button>
                         )
                         : (
-                            <div className={cls.actionBtn}>
+                            <HStack gap="16">
                                 <Button
                                     theme={ThemeButton.OUTLINE_RED}
                                     onClick={handleCancel}
@@ -63,14 +63,13 @@ export const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
                                 <Button
                                     theme={ThemeButton.OUTLINE_INVERTED}
                                     onClick={handleSave}
-                                    className={cls.saveBtn}
                                 >
                                     {t('Сохранить')}
                                 </Button>
-                            </div>
+                            </HStack>
                         )}
                 </div>
             )}
-        </div>
+        </HStack>
     );
 };

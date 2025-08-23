@@ -8,11 +8,11 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { memo, useCallback } from 'react';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { VStack } from 'shared/ui/Stack';
 import { fetchCommentsByArticleId } from '../model/servicices/FetchCommentsByArticleId/FetchCommentsByArticleId';
 import {
     addNewCommentArticle,
 } from '../model/servicices/AddNewCommentArticle/AddNewCommentArticle';
-import cls from './ArticleCommentList.module.scss';
 import { articleCommentList, articleCommentListReducer } from '../model/slice/ArticleCommentListSlice';
 import { getIsLoadingCommentList } from '../model/selectors/ArticleCommentList';
 
@@ -46,14 +46,14 @@ export const ArticleCommentList = memo((props: ArticleCommentListProps) => {
 
     return (
         <DynamicModuleLoader reducers={reducerList} removeAfterMount>
-            <div className={classNames(cls.ArticleCommentList, {}, [className])}>
-                <Text title={t('Комментарии')} className={cls.comments} />
+            <VStack max gap="16" className={classNames('', {}, [className])}>
+                <Text title={t('Комментарии')} />
                 <AddCommentForm onSendComment={handleSendComment} />
                 <CommentList
                     comments={commentsList}
                     isLoading={isLoading}
                 />
-            </div>
+            </VStack>
         </DynamicModuleLoader>
     );
 });

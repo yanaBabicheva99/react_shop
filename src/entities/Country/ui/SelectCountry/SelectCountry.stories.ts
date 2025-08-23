@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { ThemeDecorator } from 'shared/config/storybook/decorators/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
-import { Country } from 'entities/Country';
+import { Country } from '../../model/types/Country';
 import { SelectCountry } from './SelectCountry';
 
 const meta: Meta<typeof SelectCountry> = {

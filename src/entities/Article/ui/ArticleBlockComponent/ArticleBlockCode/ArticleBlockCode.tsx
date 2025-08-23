@@ -1,9 +1,9 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import { ArticleBlockCode as ArticleBlockCodeType } from 'entities/Article/model/types/article';
 import { memo, useCallback } from 'react';
 import { Button } from 'shared/ui/Button/Button';
 import { Icon } from 'shared/ui/Icon/Icon';
 import CopyIcon from 'shared/assets/copy.svg';
+import { ArticleBlockCode as ArticleBlockCodeType } from '../../../model/types/article';
 import cls from './ArticleBlockCode.module.scss';
 
 interface ArticleBlockCodeProps {

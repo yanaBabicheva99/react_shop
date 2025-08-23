@@ -3,7 +3,7 @@ import { ThunkConfig } from 'app/providers/StoreProvider';
 import { Comment } from 'entities/Comment/model/types/comment';
 import { getUserAuthData } from 'entities/User';
 import { getArticle } from 'entities/Article/model/selectors/articleDetails';
-import { fetchCommentsByArticleId } from 'features/ArticleCommentList';
+import { fetchCommentsByArticleId } from '../FetchCommentsByArticleId/FetchCommentsByArticleId';
 
 interface AddNewCommentArticleArgs {
     id?: string;

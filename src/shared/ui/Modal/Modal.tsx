@@ -2,7 +2,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import React, {
     FC, useEffect, useRef, useState, useCallback, MutableRefObject,
 } from 'react';
-import { Text } from 'shared/ui/Text/Text';
+import { Text } from '../Text/Text';
 import cls from './Modal.module.scss';
 
 interface ModalProps {

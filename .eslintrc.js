@@ -22,6 +22,7 @@ module.exports = {
         'react',
         '@typescript-eslint',
         'i18next',
+        'fsd-react-plugin',
         // 'react-hooks',
     ],
     rules: {
@@ -61,9 +62,10 @@ module.exports = {
         'i18next/no-literal-string': ['error',
             {
                 markupOnly: true,
-                ignoreAttribute: ['alt', 'to', 'data-testid', 'path', 'target'],
+                ignoreAttribute: ['alt', 'to', 'data-testid', 'path', 'target', 'direction', 'justify', 'align'],
             },
         ],
+        'fsd-react-plugin/path-checker': 'error',
     },
     globals: {
         __IS_DEV__: true,
@@ -74,7 +76,7 @@ module.exports = {
         {
             files: ['**/src/**/*.{test,stories}.{ts,tsx}'],
             rules: {
-                // 'i18next/no-literal-string': 'off',
+                'i18next/no-literal-string': 'off',
                 'max-len': 'off',
             },
         },

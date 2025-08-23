@@ -1,7 +1,7 @@
 import { StateSchema } from 'app/providers/StoreProvider';
-import { Profile } from 'features/EditableProfileCard';
 import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country';
+import { Profile } from '../../types/profileSchema';
 import { getProfileData } from './getProfileData';
 
 const data: Profile = {

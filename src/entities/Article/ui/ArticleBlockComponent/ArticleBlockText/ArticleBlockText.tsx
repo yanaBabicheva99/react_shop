@@ -1,7 +1,7 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Text } from 'shared/ui/Text/Text';
 import { memo } from 'react';
-import cls from './ArticleBlockText.module.scss';
+import { VStack } from 'shared/ui/Stack';
 import { ArticleBlockText as ArticleBlockTextType } from '../../../model/types/article';
 
 interface ArticleBlockTextProps {
@@ -16,11 +16,9 @@ export const ArticleBlockText = memo((props: ArticleBlockTextProps) => {
     } = props;
 
     return (
-        <div className={classNames(cls.ArticleBlockText, {}, [className])}>
-            {block.title && (
-                <Text className={cls.title} title={block.title} />
-            )}
-            {block.paragraphs.map((text) => <Text key={text} text={text} className={cls.paragraph} />)}
-        </div>
+        <VStack max gap="16" className={classNames('', {}, [className])}>
+            {block.title && <Text title={block.title} />}
+            {block.paragraphs.map((text) => <Text key={text} text={text} />)}
+        </VStack>
     );
 });

@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { ThemeDecorator } from 'shared/config/storybook/decorators/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
-import { ArticleBlockType } from 'entities/Article/model/types/article';
+import { ArticleBlockType } from '../../../model/types/article';
 import { ArticleBlockText } from './ArticleBlockText';
 
 const meta: Meta<typeof ArticleBlockText> = {

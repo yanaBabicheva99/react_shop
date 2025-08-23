@@ -5,9 +5,10 @@
 }
 
 .link {
+  padding: 5px;
+  width: 100%;
   display: flex;
   align-items: center;
-  margin-bottom: 20px;
   color: var(--inverted-secondary-color);
 
   span {
@@ -18,13 +19,11 @@
 }
 
 .collapsed {
-  .link {
-    justify-content: center;
+  justify-content: center;
 
-    span {
-      opacity: 0;
-      width: 0;
-    }
+  span {
+    opacity: 0;
+    width: 0;
   }
 
   .icon {

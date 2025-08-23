@@ -25,6 +25,7 @@ export const profileSlice = createSlice({
         cancelEdit: (state) => {
             state.readonly = true;
             state.form = state.data;
+            state.validateProfileError = undefined;
         },
     },
     extraReducers: (builder) => {

@@ -1,15 +1,12 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
 import { Page } from 'widgets/Page/Page';
+import { VirtualizationList } from 'shared/ui/VirtualizationList/VirtualizationList';
 
-const MainPage = () => {
-    const { t } = useTranslation('main');
-
-    return (
-        <Page>
-            {t('Главная страница')}
-        </Page>
-    );
-};
+const MainPage = () => (
+    <Page>
+        {/* {t('Главная страница')} */}
+        <VirtualizationList />
+    </Page>
+);
 
 export default MainPage;

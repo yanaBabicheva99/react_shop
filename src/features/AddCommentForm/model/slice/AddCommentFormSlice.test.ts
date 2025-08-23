@@ -1,4 +1,4 @@
-import { AddCommentFormSchema } from 'features/AddCommentForm';
+import { AddCommentFormSchema } from '../types/addCommentFormSchema';
 import { addCommentFormReducer, addCommentFormActions } from './AddCommentFormSlice';
 
 describe('AddCommentFormSlice.test', () => {
