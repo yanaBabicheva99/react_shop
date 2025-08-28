@@ -9,6 +9,8 @@ import { getUserAuthData, userActions } from 'entities/User';
 import { routesPath } from 'shared/config/routerConfig/routerConfig';
 import { NavLink } from 'shared/ui/NavLink/NavLink';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
+import { Dropdown } from 'shared/ui/Dropdownd/Dropdown';
+import { Avatar } from 'shared/ui/Avatar/Avatar';
 import cls from './Navbar.module.scss';
 
 export const NavBar = memo(() => {
@@ -36,7 +38,15 @@ export const NavBar = memo(() => {
             <header className={classNames(cls.Navbar, {})}>
                 <Text theme={TextTheme.INVERTED} title={t('Реакт приложение')} className={cls.appName} />
                 <NavLink to={routesPath.article_create}>{t('Создать статью')}</NavLink>
-                <Button onClick={handleClickLogout} className={cls.authBtn}>{t('Выйти')}</Button>
+                <Dropdown
+                    className={cls.authBtn}
+                    direction="bottom left"
+                    trigger={<Avatar url={isAuth.avatar!} size={30} alt="avatar" />}
+                    options={[
+                        { content: t('Профиль'), href: `${routesPath.profile}/${isAuth.id}` },
+                        { content: t('Выйти'), onClick: handleClickLogout },
+                    ]}
+                />
             </header>
         );
     }

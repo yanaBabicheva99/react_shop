@@ -25,11 +25,11 @@ export const SideBar = memo((props: SideBarProps) => {
     };
 
     return (
-        <menu
+        <aside
             data-testid="sidebar"
             className={classNames(cls.SideBar, { [cls.collapsed]: collapsed }, [className])}
         >
-            <VStack className={cls.links} gap="16">
+            <VStack role="navigation" className={cls.links} gap="16">
                 {sideBarItems.map((item) => (
                     <SideBarItem key={item.to} item={item} collapsed={collapsed} />
                 ))}
@@ -51,6 +51,6 @@ export const SideBar = memo((props: SideBarProps) => {
                     className={cls.langBtn}
                 />
             </HStack>
-        </menu>
+        </aside>
     );
 });

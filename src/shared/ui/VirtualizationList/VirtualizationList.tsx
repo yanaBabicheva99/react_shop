@@ -13,13 +13,14 @@ export const VirtualizationList = () => {
     const [listItems] = useState(items);
     const refElement = useRef<null | HTMLDivElement>(null);
 
-    const itemHeight = 40;
     const containerHeight = 600;
 
-    const { isScrolling, virtualItems, totalHeight } = useFixedSizeList({
-        itemHeight,
+    const {
+        isScrolling, virtualItems, totalHeight, measureElement,
+    } = useFixedSizeList({
+        getItemKey: useCallback((index) => listItems[index].id, [listItems]),
+        estimateItemHeight: useCallback(() => 40, []),
         itemsCount: listItems.length,
-        listHeight: containerHeight,
         getScrollElement: useCallback(() => refElement.current, []),
     });
 
@@ -37,13 +38,14 @@ export const VirtualizationList = () => {
                     const item = listItems[vertial.index];
                     return (
                         <div
+                            ref={measureElement}
                             style={{
-                                height: itemHeight,
                                 position: 'absolute',
                                 top: 0,
                                 transform: `translateY(${vertial.offsetTop}px)`,
                             }}
                             key={item.id}
+                            data-index={vertial.index}
                         >
                             {isScrolling ? 'scrolling' : item.text}
                         </div>

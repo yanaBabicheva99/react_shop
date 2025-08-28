@@ -62,12 +62,11 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
     };
 
     return (
-        <VStack max className={classNames(cls.ProfileCard, mods, [className, theme])}>
+        <VStack max gap="16" className={classNames(cls.ProfileCard, mods, [className, theme])}>
             {avatar && <Avatar url={avatar} alt="Аватар" className={cls.avatar} />}
             <Input
                 placeholder={t('Ваше имя')}
                 value={first}
-                className={cls.field}
                 readOnly={readonly}
                 onChange={onChangeFirst}
                 autoFocus
@@ -75,14 +74,12 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
             <Input
                 placeholder={t('Ваша фамилия')}
                 value={lastname}
-                className={cls.field}
                 readOnly={readonly}
                 onChange={onChangeLast}
             />
             <Input
                 placeholder={t('Ваш возраст')}
                 value={age}
-                className={cls.field}
                 readOnly={readonly}
                 onlyNumber
                 onChange={onChangeAge}
@@ -90,7 +87,6 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
             <Input
                 placeholder={t('Ваш город')}
                 value={city}
-                className={cls.field}
                 readOnly={readonly}
                 onChange={onChangeCity}
             />
@@ -98,18 +94,15 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
                 readOnly={readonly}
                 value={currency}
                 onChange={onChangeCurrency}
-                className={cls.field}
             />
             <SelectCountry
                 readOnly={readonly}
                 value={country}
                 onChange={onChangeCountry}
-                className={cls.field}
             />
             <Input
                 placeholder={t('Введите ссылку фотографии')}
                 value={avatar}
-                className={cls.field}
                 readOnly={readonly}
                 onChange={onChangeAvatar}
             />
