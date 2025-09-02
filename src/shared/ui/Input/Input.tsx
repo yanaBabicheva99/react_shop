@@ -10,6 +10,7 @@ interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'value'
     onChange?: (v: string) => void;
     autoFocus?: boolean;
     onlyNumber?: boolean;
+    'data-testid'?: string;
 }
 
 export const Input = memo((props: InputProps) => {
@@ -21,6 +22,7 @@ export const Input = memo((props: InputProps) => {
         className,
         autoFocus,
         onlyNumber,
+        'data-testid': dataTestId = '',
         ...otherProps
     } = props;
 
@@ -57,6 +59,7 @@ export const Input = memo((props: InputProps) => {
                 onChange={handleChange}
                 className={cls.input}
                 ref={ref}
+                data-testid={`Input.${dataTestId}`}
                 {...otherProps}
             />
         </div>

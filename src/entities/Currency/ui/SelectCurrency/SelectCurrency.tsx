@@ -1,6 +1,7 @@
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ListBox } from 'shared/ui/ListBox/ListBox';
+import { DropdownDirection } from 'shared/types/ui';
 import { Currency } from '../../model/types/Currency';
 
 interface SelectCurrencyProps {
@@ -8,6 +9,7 @@ interface SelectCurrencyProps {
     value?: Currency;
     onChange?: (value: Currency) => void;
     readOnly?: boolean;
+    direction?: DropdownDirection;
 }
 
 const options = Object.keys(Currency).map((item) => ({
@@ -21,11 +23,12 @@ export const SelectCurrency = memo((props: SelectCurrencyProps) => {
         value,
         onChange,
         readOnly,
+        direction = 'top left',
     } = props;
 
     const { t } = useTranslation();
 
-    const handleChange = useCallback((value) => {
+    const handleChange = useCallback((value: Currency) => {
         onChange?.(value);
     }, [onChange]);
 
@@ -37,7 +40,7 @@ export const SelectCurrency = memo((props: SelectCurrencyProps) => {
             onChange={handleChange}
             options={options}
             className={className}
-            direction="top left"
+            direction={direction}
         />
     );
 });

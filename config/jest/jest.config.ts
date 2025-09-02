@@ -63,6 +63,16 @@ export default {
 
     setupFilesAfterEnv: ['<rootDir>config/jest/setupTests.ts'],
 
+    reporters: [
+        'default',
+        ['jest-html-reporters', {
+            publicPath: '<rootDir>reports/unit',
+            filename: 'report.html',
+            openReport: true,
+            inlineSource: true,
+        }],
+    ],
+
     // An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
     // testPathIgnorePatterns: [
     //   "/node_modules/"

@@ -23,8 +23,6 @@ export const ArticleInfinityList = () => {
         dispatch(initedArticleList({ searchParams }));
     });
 
-    console.log(articles);
-
     return (
         <DynamicModuleLoader reducers={reducer} removeAfterMount={false}>
             <ArticleList

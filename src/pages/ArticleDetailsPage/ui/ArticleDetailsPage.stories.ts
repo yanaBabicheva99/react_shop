@@ -73,6 +73,18 @@ NormalArticleDetailsPage.decorators = [ThemeDecorator(Theme.LIGHT), StoreDecorat
     },
 })];
 
+NormalArticleDetailsPage.parameters = {
+    fetchMock: {
+        mocks: [
+            {
+                matcher: `${__API__}/articles?_expand=user&_limit=4`, // URL to match
+                response: [article], // Mocked response
+                delay: 500, // Optional delay
+            },
+        ],
+    },
+};
+
 export const DarkArticleDetailsPage: Story = {
     args: {},
 };
@@ -82,3 +94,15 @@ DarkArticleDetailsPage.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator(
         data: article,
     },
 })];
+
+DarkArticleDetailsPage.parameters = {
+    fetchMock: {
+        mocks: [
+            {
+                matcher: `${__API__}/articles?_expand=user&_limit=4`, // URL to match
+                response: [article], // Mocked response
+                delay: 500, // Optional delay
+            },
+        ],
+    },
+};

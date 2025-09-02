@@ -1,6 +1,6 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import React, {
-    FC, useEffect, useRef, useState, useCallback, MutableRefObject,
+    useEffect, useRef, useState, useCallback, MutableRefObject, ReactNode,
 } from 'react';
 import { Text } from '../Text/Text';
 import cls from './Modal.module.scss';
@@ -11,12 +11,13 @@ interface ModalProps {
     className?: string;
     onClose: () => void;
     lazy?: boolean;
+    children: ReactNode;
 }
 
 const ANIMATION_DELAY_OPENED = 100;
 const ANIMATION_DELAY = 300;
 
-export const Modal: FC<ModalProps> = (props) => {
+export const Modal = (props: ModalProps) => {
     const {
         title,
         isOpen,

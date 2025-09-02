@@ -18,7 +18,7 @@ describe('Counter', () => {
             counter: { value: 10 },
         };
         ComponentRender(<Counter />, { initialState: state });
-        await userEvent.click(screen.getByTestId('increment-button'));
+        await userEvent.click(screen.getByTestId('Button.increment-button'));
         expect(screen.getByTestId('value-title')).toHaveTextContent('11');
     });
     it('Test decrement', async () => {
@@ -26,7 +26,7 @@ describe('Counter', () => {
             counter: { value: 10 },
         };
         ComponentRender(<Counter />, { initialState: state });
-        await userEvent.click(screen.getByTestId('decrement-button'));
+        await userEvent.click(screen.getByTestId('Button.decrement-button'));
         expect(screen.getByTestId('value-title')).toHaveTextContent('9');
     });
 });

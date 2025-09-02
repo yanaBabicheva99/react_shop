@@ -1,14 +1,15 @@
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Text } from 'shared/ui/Text/Text';
-import { AddCommentForm } from 'features/AddCommentForm';
+import { AddCommentForm } from 'entities/AddCommentForm';
 import { CommentList } from 'entities/Comment';
 import { useSelector } from 'react-redux';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { memo, useCallback } from 'react';
+import { memo, Suspense, useCallback } from 'react';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { VStack } from 'shared/ui/Stack';
+import { Loader } from 'shared/ui/Loader/Loader';
 import { fetchCommentsByArticleId } from '../model/servicices/FetchCommentsByArticleId/FetchCommentsByArticleId';
 import {
     addNewCommentArticle,
@@ -48,7 +49,9 @@ export const ArticleCommentList = memo((props: ArticleCommentListProps) => {
         <DynamicModuleLoader reducers={reducerList} removeAfterMount>
             <VStack max gap="16" className={classNames('', {}, [className])}>
                 <Text title={t('Комментарии')} />
-                <AddCommentForm onSendComment={handleSendComment} />
+                <Suspense fallback={<Loader />}>
+                    <AddCommentForm onSendComment={handleSendComment} />
+                </Suspense>
                 <CommentList
                     comments={commentsList}
                     isLoading={isLoading}

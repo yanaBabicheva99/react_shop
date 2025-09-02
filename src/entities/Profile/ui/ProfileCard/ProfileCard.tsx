@@ -69,6 +69,7 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
                 value={first}
                 readOnly={readonly}
                 onChange={onChangeFirst}
+                data-testid="firstName"
                 autoFocus
             />
             <Input
@@ -76,6 +77,7 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
                 value={lastname}
                 readOnly={readonly}
                 onChange={onChangeLast}
+                data-testid="lastName"
             />
             <Input
                 placeholder={t('Ваш возраст')}
@@ -83,12 +85,14 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
                 readOnly={readonly}
                 onlyNumber
                 onChange={onChangeAge}
+                data-testid="age"
             />
             <Input
                 placeholder={t('Ваш город')}
                 value={city}
                 readOnly={readonly}
                 onChange={onChangeCity}
+                data-testid="city"
             />
             <SelectCurrency
                 readOnly={readonly}

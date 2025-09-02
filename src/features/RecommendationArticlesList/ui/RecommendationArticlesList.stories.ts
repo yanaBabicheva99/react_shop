@@ -127,6 +127,17 @@ NormalRecommendationArticlesList.decorators = [ThemeDecorator(Theme.LIGHT), Stor
         },
     },
 })];
+NormalRecommendationArticlesList.parameters = {
+    fetchMock: {
+        mocks: [
+            {
+                matcher: `${__API__}/articles?_expand=user&_limit=4`, // URL to match
+                response: articles, // Mocked response
+                delay: 500, // Optional delay
+            },
+        ],
+    },
+};
 
 export const DarkRecommendationArticlesList: Story = {
     args: {},
@@ -143,6 +154,18 @@ DarkRecommendationArticlesList.decorators = [ThemeDecorator(Theme.DARK), StoreDe
     },
 })];
 
+DarkRecommendationArticlesList.parameters = {
+    fetchMock: {
+        mocks: [
+            {
+                matcher: `${__API__}/articles?_expand=user&_limit=4`, // URL to match
+                response: articles, // Mocked response
+                delay: 500, // Optional delay
+            },
+        ],
+    },
+};
+
 export const OrangeRecommendationArticlesList: Story = {
     args: {},
 };
@@ -157,3 +180,15 @@ OrangeRecommendationArticlesList.decorators = [ThemeDecorator(Theme.ORANGE), Sto
         },
     },
 })];
+
+OrangeRecommendationArticlesList.parameters = {
+    fetchMock: {
+        mocks: [
+            {
+                matcher: `${__API__}/articles?_expand=user&_limit=4`, // URL to match
+                response: articles, // Mocked response
+                delay: 500, // Optional delay
+            },
+        ],
+    },
+};

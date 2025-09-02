@@ -8,7 +8,10 @@ import { Loader } from 'shared/ui/Loader/Loader';
 import { Text, TextAlign, TextTheme } from 'shared/ui/Text/Text';
 import { Country } from 'entities/Country';
 import { VStack } from 'shared/ui/Stack';
-import { profileActions } from '../../model/slice/profileSlice';
+import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { fetchProfileData } from '../../model/services/FetchProfileData/FetchProfileData';
+import { profileActions, profileReducer } from '../../model/slice/profileSlice';
 import { getProfileReadOnly } from '../../model/selectors/getProfileReadOnly/getProfileReadOnly';
 import { getProfileForm } from '../../model/selectors/getProfileForm/getProfileForm';
 import cls from './EditableProfileCard.module.scss';
@@ -22,15 +25,27 @@ import { ValidateProfileError } from '../../model/types/profileSchema';
 
 interface EditableProfileCardProps {
     className?: string;
+    id: string;
 }
+
+const reducersList: ReducersList = {
+    profile: profileReducer,
+};
 
 export const EditableProfileCard = (props: EditableProfileCardProps) => {
     const {
         className,
+        id,
     } = props;
 
     const { t } = useTranslation('profile');
     const dispatch = useDispatch();
+
+    useInitialEffect(() => {
+        if (id) {
+            dispatch(fetchProfileData(id));
+        }
+    });
 
     const validationErrorText = {
         [ValidateProfileError.SERVER_ERROR]: t('Ошибка сервера'),
@@ -76,48 +91,54 @@ export const EditableProfileCard = (props: EditableProfileCardProps) => {
 
     if (isLoading) {
         return (
-            <div className={classNames(cls.EditableProfileCard, {}, [className])}>
-                <Loader />
-            </div>
+            <DynamicModuleLoader reducers={reducersList} removeAfterMount>
+                <div className={classNames(cls.EditableProfileCard, {}, [className])}>
+                    <Loader />
+                </div>
+            </DynamicModuleLoader>
         );
     }
 
     if (error) {
         return (
-            <div className={classNames(cls.EditableProfileCard, {}, [className])}>
-                <Text
-                    theme={TextTheme.ERROR}
-                    textAlign={TextAlign.center}
-                    title={t('Ошибка при загрузке страницы')}
-                    text={t('Попробуйте обновить страницу')}
-                />
-            </div>
+            <DynamicModuleLoader reducers={reducersList} removeAfterMount>
+                <div className={classNames(cls.EditableProfileCard, {}, [className])}>
+                    <Text
+                        theme={TextTheme.ERROR}
+                        textAlign={TextAlign.center}
+                        title={t('Ошибка при загрузке страницы')}
+                        text={t('Попробуйте обновить страницу')}
+                    />
+                </div>
+            </DynamicModuleLoader>
         );
     }
 
     return (
-        <VStack gap="16" className={classNames('', {}, [className])}>
-            <ProfilePageHeader readOnly={readOnly} />
-            {validationErrors?.map((error) => (
-                <Text key={error} theme={TextTheme.ERROR} text={validationErrorText[error]} />
-            ))}
-            <ProfileCard
-                readonly={readOnly}
-                first={profileForm?.first}
-                lastname={profileForm?.lastname}
-                city={profileForm?.city}
-                age={profileForm?.age}
-                currency={profileForm?.currency}
-                country={profileForm?.country}
-                avatar={profileForm?.avatar}
-                onChangeFirst={handleChangeFirstname}
-                onChangeLast={handleChangeLastname}
-                onChangeAge={handleChangeAge}
-                onChangeCity={handleChangeCity}
-                onChangeAvatar={handleChangeAvatar}
-                onChangeCurrency={handleChangeCurrency}
-                onChangeCountry={handleChangeCountry}
-            />
-        </VStack>
+        <DynamicModuleLoader reducers={reducersList} removeAfterMount>
+            <VStack gap="16" className={classNames('', {}, [className])}>
+                <ProfilePageHeader readOnly={readOnly} />
+                {validationErrors?.map((error) => (
+                    <Text data-testid="Error" key={error} theme={TextTheme.ERROR} text={validationErrorText[error]} />
+                ))}
+                <ProfileCard
+                    readonly={readOnly}
+                    first={profileForm?.first}
+                    lastname={profileForm?.lastname}
+                    city={profileForm?.city}
+                    age={profileForm?.age}
+                    currency={profileForm?.currency}
+                    country={profileForm?.country}
+                    avatar={profileForm?.avatar}
+                    onChangeFirst={handleChangeFirstname}
+                    onChangeLast={handleChangeLastname}
+                    onChangeAge={handleChangeAge}
+                    onChangeCity={handleChangeCity}
+                    onChangeAvatar={handleChangeAvatar}
+                    onChangeCurrency={handleChangeCurrency}
+                    onChangeCountry={handleChangeCountry}
+                />
+            </VStack>
+        </DynamicModuleLoader>
     );
 };

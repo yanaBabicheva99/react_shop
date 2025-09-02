@@ -5,7 +5,9 @@ import { useTranslation } from 'react-i18next';
 import { Portal } from 'shared/ui/Portal/Portal';
 import { loginActions, LoginModal } from 'features/AuthByUserName';
 import { useDispatch, useSelector } from 'react-redux';
-import { getUserAuthData, userActions } from 'entities/User';
+import {
+    getUserAuthData, isAdmin, isManager, userActions,
+} from 'entities/User';
 import { routesPath } from 'shared/config/routerConfig/routerConfig';
 import { NavLink } from 'shared/ui/NavLink/NavLink';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
@@ -16,6 +18,8 @@ import cls from './Navbar.module.scss';
 export const NavBar = memo(() => {
     const [isOpenModal, setIsOpenModal] = useState(false);
     const isAuth = useSelector(getUserAuthData);
+    const isAdminRole = useSelector(isAdmin);
+    const isManagerRole = useSelector(isManager);
     const dispatch = useDispatch();
 
     const { t } = useTranslation();
@@ -33,6 +37,8 @@ export const NavBar = memo(() => {
         dispatch(userActions.logout());
     }, [dispatch]);
 
+    const isVisibleAdminPanel = isAdminRole || isManagerRole;
+
     if (isAuth) {
         return (
             <header className={classNames(cls.Navbar, {})}>
@@ -43,6 +49,9 @@ export const NavBar = memo(() => {
                     direction="bottom left"
                     trigger={<Avatar url={isAuth.avatar!} size={30} alt="avatar" />}
                     options={[
+                        ...(isVisibleAdminPanel ? [{
+                            content: t('Админка'), href: routesPath.admin_panel,
+                        }] : []),
                         { content: t('Профиль'), href: `${routesPath.profile}/${isAuth.id}` },
                         { content: t('Выйти'), onClick: handleClickLogout },
                     ]}

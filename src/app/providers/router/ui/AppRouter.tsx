@@ -10,7 +10,7 @@ const AppRouter = memo(() => {
             key={item.path}
             path={item.path}
             element={item.authOnly
-                ? <RequireAuth>{item.element}</RequireAuth>
+                ? <RequireAuth roles={item.roles}>{item.element}</RequireAuth>
                 : item.element}
 
         />

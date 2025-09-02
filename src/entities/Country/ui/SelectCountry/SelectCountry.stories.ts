@@ -20,6 +20,7 @@ type Story = StoryObj<typeof SelectCountry>;
 export const SelectCountryLite: Story = {
     args: {
         value: Country.Russia,
+        direction: 'bottom right',
     },
 };
 
@@ -28,6 +29,7 @@ SelectCountryLite.decorators = ThemeDecorator(Theme.LIGHT);
 export const SelectCountryDark: Story = {
     args: {
         value: Country.Russia,
+        direction: 'bottom right',
     },
 };
 

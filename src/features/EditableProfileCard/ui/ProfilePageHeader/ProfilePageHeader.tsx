@@ -48,6 +48,7 @@ export const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
                             <Button
                                 theme={ThemeButton.OUTLINE}
                                 onClick={handleChangeReadOnly}
+                                data-testid="Edit"
                             >
                                 {t('Редактировать')}
                             </Button>
@@ -57,12 +58,14 @@ export const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
                                 <Button
                                     theme={ThemeButton.OUTLINE_RED}
                                     onClick={handleCancel}
+                                    data-testid="Cancel"
                                 >
                                     {t('Отменить')}
                                 </Button>
                                 <Button
                                     theme={ThemeButton.OUTLINE_INVERTED}
                                     onClick={handleSave}
+                                    data-testid="Save"
                                 >
                                     {t('Сохранить')}
                                 </Button>

@@ -5,7 +5,7 @@ import { ReducersMapObject } from '@reduxjs/toolkit';
 import { loginReducer } from 'features/AuthByUserName';
 import { articleDetailsReducer } from 'entities/Article';
 import { articleCommentListReducer } from 'features/ArticleCommentList';
-import { addCommentFormReducer } from 'features/AddCommentForm';
+import { addCommentFormReducer } from 'entities/AddCommentForm';
 import { articleInfinityListReducer } from 'features/ArticleInfinityList';
 import { articlesSortReducer } from 'features/ArticlesSort';
 import { recommendationArticlesListReducer } from 'features/RecommendationArticlesList';

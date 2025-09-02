@@ -10,15 +10,17 @@ import { NavigateOptions } from 'react-router';
 import { ProfileSchema } from 'features/EditableProfileCard';
 import { ArticleDetailsSchema } from 'entities/Article';
 import { ArticleCommentListSchema } from 'features/ArticleCommentList';
-import { AddCommentFormSchema } from 'features/AddCommentForm';
+import { AddCommentFormSchema } from 'entities/AddCommentForm';
 import { ArticleInfinityListSchema } from 'features/ArticleInfinityList';
 import { ScrollTrackingSchema } from 'features/ScrollTracking';
 import { ArticlesSortSchema } from 'features/ArticlesSort';
 import { RecommendationArticlesListSchema } from 'features/RecommendationArticlesList';
+import { rtkApi } from 'shared/api/rtkApi';
 
 export interface StateSchema {
     counter: CounterSchema;
     user: UserSchema;
+    [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>
     login?: LoginSchema;
     profile?: ProfileSchema;
     articleDetails?: ArticleDetailsSchema;

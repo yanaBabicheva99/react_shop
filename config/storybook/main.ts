@@ -13,6 +13,7 @@ const config: StorybookConfig = {
         '@storybook/addon-essentials',
         '@storybook/addon-onboarding',
         '@storybook/addon-interactions',
+        'storybook-addon-fetch-mock',
     ],
     webpackFinal: async (config) => {
         config?.module?.rules?.push(buildCSSLoader(true));
@@ -35,7 +36,7 @@ const config: StorybookConfig = {
         config?.module?.rules?.push(buildSVGLoader());
         config?.plugins?.push(new webpack.DefinePlugin({
             __IS_DEV__: JSON.stringify(true),
-            __API__: JSON.stringify(''),
+            __API__: JSON.stringify('https://testmock.ru'),
             __Project__: JSON.stringify('storybook'),
         }));
 

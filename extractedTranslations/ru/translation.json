@@ -1,7 +1,10 @@
 {
   "${field}": "${field}",
+  "ADMIN PANEL": "ADMIN PANEL",
   "ARTICLES PAGE": "ARTICLES PAGE",
+  "Forbidden Page": "Forbidden Page",
   "IT": "IT",
+  "Админка": "Админка",
   "Валюта": "Валюта",
   "Ваш возраст": "Ваш возраст",
   "Ваш город": "Ваш город",

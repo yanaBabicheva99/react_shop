@@ -5,12 +5,12 @@ import { SideBar } from './SideBar';
 describe('', () => {
     it('Test render', () => {
         ComponentRender(<SideBar />);
-        expect(screen.getByTestId('toggle-btn')).toBeInTheDocument();
+        expect(screen.getByTestId('Button.toggle-btn')).toBeInTheDocument();
     });
 
     it('Test toggle Sidebar', () => {
         ComponentRender(<SideBar />);
-        const toggleBtn = screen.getByTestId('toggle-btn');
+        const toggleBtn = screen.getByTestId('Button.toggle-btn');
         fireEvent.click(toggleBtn);
         expect(screen.getByTestId('sidebar')).toHaveClass('collapsed');
         fireEvent.click(toggleBtn);

@@ -20,6 +20,7 @@ type Story = StoryObj<typeof SelectCurrency>;
 export const SelectCurrencyLite: Story = {
     args: {
         value: Currency.RUB,
+        direction: 'bottom right',
     },
 };
 
@@ -28,6 +29,7 @@ SelectCurrencyLite.decorators = ThemeDecorator(Theme.LIGHT);
 export const SelectCurrencyDark: Story = {
     args: {
         value: Currency.RUB,
+        direction: 'bottom right',
     },
 };
 

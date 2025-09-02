@@ -1,11 +1,9 @@
-.articlesList {
+.RecommendationArticlesList {
+  width: 100%;
   display: flex;
   flex-wrap: nowrap;
-  gap: 6px;
+  gap: 8px;
   overflow-x: auto;
   overflow-y: hidden;
-}
-
-.RecommendationArticlesList {
   margin-top: 15px;
 }

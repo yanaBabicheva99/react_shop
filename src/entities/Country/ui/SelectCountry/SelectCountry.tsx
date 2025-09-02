@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
 import { ListBox } from 'shared/ui/ListBox/ListBox';
+import { DropdownDirection } from 'shared/types/ui';
 import { Country } from '../../model/types/Country';
 
 interface SelectCurrencyProps {
@@ -8,6 +9,7 @@ interface SelectCurrencyProps {
     value?: Country;
     onChange?: (value: Country) => void;
     readOnly?: boolean;
+    direction?: DropdownDirection;
 }
 
 const options = Object.keys(Country).map((item) => ({
@@ -21,11 +23,12 @@ export const SelectCountry = memo((props: SelectCurrencyProps) => {
         value,
         onChange,
         readOnly,
+        direction = 'top left',
     } = props;
 
     const { t } = useTranslation();
 
-    const handleChange = useCallback((value) => {
+    const handleChange = useCallback((value: Country) => {
         onChange?.(value);
     }, [onChange]);
 
@@ -36,7 +39,7 @@ export const SelectCountry = memo((props: SelectCurrencyProps) => {
             value={value}
             onChange={handleChange}
             readonly={readOnly}
-            direction="top left"
+            direction={direction}
             className={className}
         />
     );

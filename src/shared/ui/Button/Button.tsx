@@ -23,6 +23,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     square?: boolean;
     size?: SizeButton;
     disabled?: boolean;
+    'data-testid'?: string;
 }
 
 export const Button = memo((props: ButtonProps) => {
@@ -33,6 +34,7 @@ export const Button = memo((props: ButtonProps) => {
         square = false,
         size = SizeButton.M,
         disabled,
+        'data-testid': dataTestId = '',
         ...otherProps
     } = props;
 
@@ -47,6 +49,7 @@ export const Button = memo((props: ButtonProps) => {
                 [className, cls[theme], cls[size]],
             )}
             disabled={disabled}
+            data-testid={`Button.${dataTestId}`}
             {...otherProps}
         >
             {children}
