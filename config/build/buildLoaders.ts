@@ -16,21 +16,23 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
         ],
     };
 
-    const babelLoader = buildBabelLoader(isDev);
+    const babelLoaderCode = buildBabelLoader({ isDev, isTsx: false });
+    const babelLoaderTsxCode = buildBabelLoader({ isDev, isTsx: true });
 
-    const typescriptLoader = {
-        test: /\.tsx?$/,
-        use: 'ts-loader',
-        exclude: /node_modules/,
-    };
+    // const typescriptLoader = {
+    //     test: /\.tsx?$/,
+    //     use: 'ts-loader',
+    //     exclude: /node_modules/,
+    // };
 
     const cssLoader = buildCSSLoader(isDev);
 
     return [
         svgLoader,
         fileLoader,
-        babelLoader,
-        typescriptLoader,
+        babelLoaderCode,
+        babelLoaderTsxCode,
+        // typescriptLoader,
         cssLoader,
     ];
 }
