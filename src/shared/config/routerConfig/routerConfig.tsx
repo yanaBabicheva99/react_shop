@@ -6,9 +6,9 @@ import { ProfilePage } from 'pages/ProfilePage';
 import { ArticlesPage } from 'pages/ArticlesPage';
 import { ArticleDetailsPage } from 'pages/ArticleDetailsPage';
 import { ArticleEditPage } from 'pages/ArticleEditPage';
-import { UserRole } from 'entities/User/model/types/User';
 import { AdminPanelPage } from 'pages/AdminPanelPage';
 import { ForbiddenPage } from 'pages/ForbiddenPage';
+import { UserRole } from 'entities/User/model/consts/UserConsts';
 
 enum AppRoutes {
     MAIN = 'main',

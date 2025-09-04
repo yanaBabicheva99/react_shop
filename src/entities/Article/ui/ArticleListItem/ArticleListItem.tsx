@@ -9,9 +9,9 @@ import { Button, ThemeButton } from 'shared/ui/Button/Button';
 import { useTranslation } from 'react-i18next';
 import { routesPath } from 'shared/config/routerConfig/routerConfig';
 import { NavLink } from 'shared/ui/NavLink/NavLink';
+import { ArticleBlockType, ArticleView } from '../../model/consts/articleConsts';
 import {
-    Article, ArticleBlockType, ArticleView,
-    ArticleBlockText as ArticleBlockTextType,
+    Article, ArticleBlockText as ArticleBlockTextType,
 } from '../../model/types/article';
 import cls from './ArticleListItem.module.scss';
 import { ArticleBlockText } from '../ArticleBlockComponent/ArticleBlockText/ArticleBlockText';

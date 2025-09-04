@@ -11,7 +11,7 @@ import { Input } from 'shared/ui/Input/Input';
 import { useDebounce } from 'shared/lib/hooks/useDebounce/useDebounce';
 import { Tabs } from 'shared/ui/Tabs/Tabs';
 import { ArticleType } from 'entities/Article';
-import { ArticleSortField } from '../../model/types/articlesSortSchema';
+import { ArticleSortField } from '../../model/consts/ArticlesSortConsts';
 import { ArticleSortSelector } from '../ArticleSortSelector/ArticleSortSelector';
 import { articlesSortAction, articlesSortReducer } from '../../model/slice/ArticlesSortSlice';
 import {

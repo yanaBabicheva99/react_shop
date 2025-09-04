@@ -1,4 +1,5 @@
-import { ValidateProfileError, Profile } from '../../types/profileSchema';
+import { ValidateProfileError } from '../../consts/editableProfileConsts';
+import { Profile } from '../../types/profileSchema';
 
 export const validateProfileData = (profile?: Omit<Profile, 'id'>) => {
     const validateErrors: ValidateProfileError[] = [];

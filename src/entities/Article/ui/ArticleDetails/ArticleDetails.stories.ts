@@ -3,7 +3,7 @@ import { ThemeDecorator } from 'shared/config/storybook/decorators/ThemeDecorato
 import { Theme } from 'app/providers/ThemeProvider';
 import { StoreDecorator } from 'shared/config/storybook/decorators/StoreDecorator';
 import Img from 'shared/assets/test/storybook/img.png';
-import { ArticleBlockType, ArticleType } from '../../model/types/article';
+import { ArticleBlockType, ArticleType } from '../../model/consts/articleConsts';
 import { ArticleDetails } from './ArticleDetails';
 
 const articleInfo = {

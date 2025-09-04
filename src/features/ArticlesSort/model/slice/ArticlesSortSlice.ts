@@ -1,7 +1,8 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { SortOrder } from 'shared/types/sort';
 import { ArticleType } from 'entities/Article';
-import { ArticleSortField, ArticlesSortSchema } from '../types/articlesSortSchema';
+import { ArticleSortField } from '../consts/ArticlesSortConsts';
+import { ArticlesSortSchema } from '../types/articlesSortSchema';
 
 const initialState: ArticlesSortSchema = {
     order: 'desc',

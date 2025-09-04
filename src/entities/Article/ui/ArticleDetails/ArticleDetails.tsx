@@ -11,6 +11,7 @@ import CalendarIcon from 'shared/assets/calendar.svg';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { HStack, VStack } from 'shared/ui/Stack';
+import { ArticleBlockType } from '../../model/consts/articleConsts';
 import { ArticleBlockText } from '../ArticleBlockComponent/ArticleBlockText/ArticleBlockText';
 import { ArticleBlockImage } from '../ArticleBlockComponent/ArticleBlockImage/ArticleBlockImage';
 import { ArticleBlockCode } from '../ArticleBlockComponent/ArticleBlockCode/ArticleBlockCode';
@@ -18,7 +19,7 @@ import { getArticle, getArticleError, getArticleIsLoading } from '../../model/se
 import { fetchArticleDetails } from '../../model/services/FetchArticleDetails/FetchArticleDetails';
 import cls from './ArticleDetails.module.scss';
 import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
-import { ArticleBlock, ArticleBlockType } from '../../model/types/article';
+import { ArticleBlock } from '../../model/types/article';
 
 interface ArticleDetailProps {
     className?: string;

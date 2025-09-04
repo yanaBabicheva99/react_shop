@@ -3,7 +3,8 @@ import { ThemeDecorator } from 'shared/config/storybook/decorators/ThemeDecorato
 import { Theme } from 'app/providers/ThemeProvider';
 import AvatarIcon from 'shared/assets/test/storybook/img.png';
 import Img from 'shared/assets/test/storybook/js.png';
-import { Article, ArticleView } from '../../model/types/article';
+import { ArticleView } from '../../model/consts/articleConsts';
+import { Article } from '../../model/types/article';
 import { ArticleList } from './ArticleList';
 
 const meta: Meta<typeof ArticleList> = {

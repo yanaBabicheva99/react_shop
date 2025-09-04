@@ -2,8 +2,8 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { ThemeDecorator } from 'shared/config/storybook/decorators/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
 import { StoreDecorator } from 'shared/config/storybook/decorators/StoreDecorator';
+import { ValidateProfileError } from '../../model/consts/editableProfileConsts';
 import { profileReducer } from '../../model/slice/profileSlice';
-import { ValidateProfileError } from '../../model/types/profileSchema';
 import { EditableProfileCard } from './EditableProfileCard';
 
 const meta: Meta<typeof EditableProfileCard> = {

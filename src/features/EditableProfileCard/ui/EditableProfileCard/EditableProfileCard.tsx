@@ -3,13 +3,14 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { ProfileCard } from 'entities/Profile';
 import { useDispatch, useSelector } from 'react-redux';
 import { useCallback } from 'react';
-import { Currency } from 'entities/Currency/model/types/Currency';
 import { Loader } from 'shared/ui/Loader/Loader';
 import { Text, TextAlign, TextTheme } from 'shared/ui/Text/Text';
 import { Country } from 'entities/Country';
 import { VStack } from 'shared/ui/Stack';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { Currency } from 'entities/Currency';
+import { ValidateProfileError } from '../../model/consts/editableProfileConsts';
 import { fetchProfileData } from '../../model/services/FetchProfileData/FetchProfileData';
 import { profileActions, profileReducer } from '../../model/slice/profileSlice';
 import { getProfileReadOnly } from '../../model/selectors/getProfileReadOnly/getProfileReadOnly';
@@ -21,7 +22,6 @@ import { getProfileError } from '../../model/selectors/getProfileError/getProfil
 import {
     getProfileValidationErrors,
 } from '../../model/selectors/getProfileValidationErrors/getProfileValidationErrors';
-import { ValidateProfileError } from '../../model/types/profileSchema';
 
 interface EditableProfileCardProps {
     className?: string;

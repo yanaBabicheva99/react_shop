@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { ThemeDecorator } from 'shared/config/storybook/decorators/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
 import Img from 'shared/assets/test/storybook/js.png';
-import { ArticleBlockType } from '../../../model/types/article';
+import { ArticleBlockType } from '../../../model/consts/articleConsts';
 import { ArticleBlockImage } from './ArticleBlockImage';
 
 const meta: Meta<typeof ArticleBlockImage> = {

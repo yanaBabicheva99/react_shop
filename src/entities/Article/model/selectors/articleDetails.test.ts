@@ -1,6 +1,6 @@
 import { StateSchema } from 'app/providers/StoreProvider';
+import { ArticleType } from '../consts/articleConsts';
 import { getArticle, getArticleError, getArticleIsLoading } from './articleDetails';
-import { ArticleType } from '../types/article';
 
 const data = {
     id: '1',
