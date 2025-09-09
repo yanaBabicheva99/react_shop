@@ -6,6 +6,7 @@ interface IconProps {
     className?: string;
     Icon: React.FunctionComponent<React.SVGAttributes<SVGAElement>>;
     fill?: boolean;
+    inverted?: boolean;
 }
 
 export const Icon = (props: IconProps) => {
@@ -13,10 +14,16 @@ export const Icon = (props: IconProps) => {
         className,
         Icon,
         fill = true,
+        inverted,
     } = props;
 
+    const mods = {
+        [cls.fill]: fill,
+        [cls.inverted]: inverted,
+    };
+
     return (
-        <div className={classNames('', { [cls.fill]: fill }, [className])}>
+        <div className={classNames('', mods, [className])}>
             <Icon />
         </div>
     );

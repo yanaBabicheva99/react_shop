@@ -3,3 +3,9 @@
     fill: var(--secondary-color);
   }
 }
+
+.inverted {
+  path {
+    fill: var(--inverted-secondary-color);
+  }
+}

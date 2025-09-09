@@ -4,10 +4,12 @@ import { Fragment } from 'react';
 import { Listbox } from '@headlessui/react';
 import { useTranslation } from 'react-i18next';
 import { DropdownDirection } from 'shared/types/ui';
-import { HStack } from '../Stack';
-import { Text } from '../Text/Text';
-import { Button, ThemeButton } from '../Button/Button';
+import { HStack } from '../../../Stack';
+import { Text } from '../../../Text/Text';
+import { Button, ThemeButton } from '../../../Button/Button';
 import cls from './ListBox.module.scss';
+import popupCls from '../../styles/popup.module.scss';
+import { dropdownDirectionClasses } from '../../styles/popupClasses';
 
 interface ListBoxOption {
     value: string;
@@ -26,12 +28,6 @@ interface ListBoxProps<T> {
     label?: string;
 }
 
-const dropdownDirectionClasses: Record<DropdownDirection, string> = {
-    'top left': cls.directionTopLeft,
-    'top right': cls.directionTopRight,
-    'bottom left': cls.directionBottomLeft,
-    'bottom right': cls.directionBottomRight,
-};
 export const ListBox = <T extends string>(props: ListBoxProps<T>) => {
     const {
         className, onChange, value, defaultValue,
@@ -47,8 +43,8 @@ export const ListBox = <T extends string>(props: ListBoxProps<T>) => {
     return (
         <HStack gap="8" align="center">
             {label && <Text text={`${label} >`} />}
-            <Listbox as="div" value={value} onChange={onChange} className={classNames(cls.ListBox, {}, [className])}>
-                <Listbox.Button className={cls.trigger} as="div">
+            <Listbox as="div" value={value} onChange={onChange} className={classNames(popupCls.Popup, {}, [className])}>
+                <Listbox.Button className={popupCls.trigger} as="div">
                     <Button theme={ThemeButton.OUTLINE} disabled={readonly}>
                         { value ?? defaultValue ?? t('Выберите значение')}
                     </Button>
@@ -64,8 +60,8 @@ export const ListBox = <T extends string>(props: ListBoxProps<T>) => {
                             {({ active, selected }) => {
                                 const mods = {
                                     [cls.selected]: selected,
-                                    [cls.disabled]: item.disabled,
-                                    [cls.active]: active,
+                                    [popupCls.disabled]: item.disabled,
+                                    [popupCls.active]: active,
                                 };
                                 return (
                                     <li className={classNames(cls.item, mods)}>

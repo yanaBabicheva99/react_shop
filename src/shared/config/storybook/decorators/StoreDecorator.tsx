@@ -9,6 +9,7 @@ import { addCommentFormReducer } from 'entities/AddCommentForm';
 import { articleInfinityListReducer } from 'features/ArticleInfinityList';
 import { articlesSortReducer } from 'features/ArticlesSort';
 import { recommendationArticlesListReducer } from 'features/RecommendationArticlesList';
+import { userReducer } from 'entities/User';
 
 const defaultAsyncReducers: DeepPartial<ReducersMapObject<StateSchema>> = {
     login: loginReducer,
@@ -18,6 +19,7 @@ const defaultAsyncReducers: DeepPartial<ReducersMapObject<StateSchema>> = {
     articleInfinityList: articleInfinityListReducer,
     articlesSort: articlesSortReducer,
     recommendationArticlesList: recommendationArticlesListReducer,
+    user: userReducer,
 };
 
 export const StoreDecorator = (

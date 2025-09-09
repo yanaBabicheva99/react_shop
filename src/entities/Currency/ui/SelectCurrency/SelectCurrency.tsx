@@ -1,6 +1,6 @@
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
-import { ListBox } from 'shared/ui/ListBox/ListBox';
+import { ListBox } from 'shared/ui/Popups';
 import { DropdownDirection } from 'shared/types/ui';
 
 import { Currency } from '../../model/consts/currencyConsts';

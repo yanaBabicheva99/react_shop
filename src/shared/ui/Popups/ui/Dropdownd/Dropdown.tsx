@@ -2,8 +2,10 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { Menu } from '@headlessui/react';
 import { Fragment, ReactNode } from 'react';
 import { DropdownDirection } from 'shared/types/ui';
-import { NavLink } from '../NavLink/NavLink';
+import { NavLink } from '../../../NavLink/NavLink';
 import cls from './Dropdown.module.scss';
+import popupCls from '../../styles/popup.module.scss';
+import { dropdownDirectionClasses } from '../../styles/popupClasses';
 
 interface DropDownItem {
     content?: ReactNode;
@@ -19,13 +21,6 @@ interface DropdownProps {
     direction?: DropdownDirection;
 }
 
-const dropdownDirectionClasses: Record<DropdownDirection, string> = {
-    'top left': cls.directionTopLeft,
-    'top right': cls.directionTopRight,
-    'bottom left': cls.directionBottomLeft,
-    'bottom right': cls.directionBottomRight,
-};
-
 export const Dropdown = (props: DropdownProps) => {
     const {
         className,
@@ -37,15 +32,18 @@ export const Dropdown = (props: DropdownProps) => {
     const additionalMenuClasses = [dropdownDirectionClasses[direction]];
 
     return (
-        <Menu as="div" className={classNames(cls.Dropdown, {}, [className])}>
-            <Menu.Button className={cls.trigger}>
+        <Menu as="div" className={classNames(popupCls.Popup, {}, [className])}>
+            <Menu.Button className={popupCls.trigger}>
                 {trigger}
             </Menu.Button>
             <Menu.Items className={classNames(cls.menu, {}, additionalMenuClasses)}>
                 {options.map((option, index) => {
                     const content = (active: boolean) => (
                         <button
-                            className={classNames(cls.item, { [cls.active]: active })}
+                            className={classNames(cls.item, {
+                                [popupCls.active]: active,
+                                [popupCls.disabled]: option.disabled,
+                            })}
                             onClick={option.onClick}
                             disabled={option.disabled}
                         >
