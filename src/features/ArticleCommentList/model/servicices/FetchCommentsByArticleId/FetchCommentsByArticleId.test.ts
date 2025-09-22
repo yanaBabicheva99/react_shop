@@ -1,4 +1,4 @@
-import { TestAsyncThunk } from 'shared/lib/test/TestAsyncThunk/TestAsyncThunk';
+import { TestAsyncThunk } from '@/shared/lib/test/TestAsyncThunk/TestAsyncThunk';
 import clearAllMocks = jest.clearAllMocks;
 import { fetchCommentsByArticleId } from '../FetchCommentsByArticleId/FetchCommentsByArticleId';
 

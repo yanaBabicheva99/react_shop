@@ -1,6 +1,6 @@
-import { TestAsyncThunk } from 'shared/lib/test/TestAsyncThunk/TestAsyncThunk';
-import { Article, ArticleType } from 'entities/Article';
-import { StateSchema } from 'app/providers/StoreProvider';
+import { TestAsyncThunk } from '@/shared/lib/test/TestAsyncThunk/TestAsyncThunk';
+import { Article, ArticleType } from '@/entities/Article';
+import { StateSchema } from '@/app/providers/StoreProvider';
 import { fetchArticleList } from '../FetchArticleList/FetchArticleList';
 import clearAllMocks = jest.clearAllMocks;
 

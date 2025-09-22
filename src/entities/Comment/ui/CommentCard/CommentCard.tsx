@@ -1,9 +1,9 @@
-import { classNames } from 'shared/lib/classNames/classNames';
-import { Avatar } from 'shared/ui/Avatar/Avatar';
-import { Text } from 'shared/ui/Text/Text';
-import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
-import { NavLink } from 'shared/ui/NavLink/NavLink';
-import { HStack, VStack } from 'shared/ui/Stack';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Avatar } from '@/shared/ui/Avatar/Avatar';
+import { Text } from '@/shared/ui/Text/Text';
+import { Skeleton } from '@/shared/ui/Skeleton/Skeleton';
+import { NavLink } from '@/shared/ui/NavLink/NavLink';
+import { HStack, VStack } from '@/shared/ui/Stack';
 import { Comment } from '../../model/types/comment';
 
 import cls from './CommentCard.module.scss';

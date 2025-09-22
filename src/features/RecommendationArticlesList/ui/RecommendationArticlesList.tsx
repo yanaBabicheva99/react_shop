@@ -1,5 +1,5 @@
-import { classNames } from 'shared/lib/classNames/classNames';
-import { ArticleList, ArticleView } from 'entities/Article';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { ArticleList, ArticleView } from '@/entities/Article';
 import {
     useArticleRecommendationList,
 } from '../api/recommendationArticleListInject';

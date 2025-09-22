@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ThemeDecorator } from 'shared/config/storybook/decorators/ThemeDecorator';
-import { Theme } from 'app/providers/ThemeProvider';
-import Img from 'shared/assets/test/storybook/js.png';
-import AvatarIcon from 'shared/assets/test/storybook/img.png';
-import { Article } from 'entities/Article';
-import { StoreDecorator } from 'shared/config/storybook/decorators/StoreDecorator';
+import { ThemeDecorator } from '@/shared/config/storybook/decorators/ThemeDecorator';
+import { Theme } from '@/app/providers/ThemeProvider';
+import Img from '@/shared/assets/test/storybook/js.png';
+import AvatarIcon from '@/shared/assets/test/storybook/img.png';
+import { Article } from '@/entities/Article';
+import { StoreDecorator } from '@/shared/config/storybook/decorators/StoreDecorator';
 import { RecommendationArticlesList } from './RecommendationArticlesList';
 
 const articles = [

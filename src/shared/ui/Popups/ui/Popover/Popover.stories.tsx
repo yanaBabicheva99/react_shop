@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ThemeDecorator } from 'shared/config/storybook/decorators/ThemeDecorator';
-import { Theme } from 'app/providers/ThemeProvider';
+import { ThemeDecorator } from '@/shared/config/storybook/decorators/ThemeDecorator';
+import { Theme } from '@/app/providers/ThemeProvider';
 import { Button, ThemeButton } from '../../../Button/Button';
 import { VStack } from '../../../Stack/VStack/VStack';
 import { Text } from '../../../Text/Text';

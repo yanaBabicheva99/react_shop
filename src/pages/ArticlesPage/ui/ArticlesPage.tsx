@@ -1,17 +1,17 @@
-import { classNames } from 'shared/lib/classNames/classNames';
+import { memo, useCallback } from 'react';
+import { useSelector } from 'react-redux';
+import { classNames } from '@/shared/lib/classNames/classNames';
 // import { useTranslation } from 'react-i18next';
 import {
     fetchArticleList,
     fetchArticleNextPage,
     getArticleView,
     ArticleViewSwitcher, ArticleInfinityList, getArticleInfinityListLoading, articleInfinityListAction,
-} from 'features/ArticleInfinityList';
-import { Page } from 'widgets/Page/Page';
-import { memo, useCallback } from 'react';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { useSelector } from 'react-redux';
-import { ArticlesSort } from 'features/ArticlesSort';
-import { ArticleView } from 'entities/Article';
+} from '@/features/ArticleInfinityList';
+import { Page } from '@/widgets/Page/Page';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { ArticlesSort } from '@/features/ArticlesSort';
+import { ArticleView } from '@/entities/Article';
 import cls from './ArticlesPage.module.scss';
 
 interface ArticlesPageProps {

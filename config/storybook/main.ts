@@ -21,9 +21,10 @@ const config: StorybookConfig = {
         config?.resolve?.modules?.push(path.resolve(__dirname, '../', '../', 'src'));
 
         if (config?.resolve?.alias) {
-            config.resolve.alias = {
-                entities: path.resolve(__dirname, '../', '../', 'src', 'entities'),
-            };
+            // config.resolve.alias = {
+            //     entities: path.resolve(__dirname, '../', '../', 'src', 'entities'),
+            // };
+            config.resolve!.alias = { '@': path.resolve(__dirname, '..', '..', 'src') };
         }
         // @ts-ignore
         config?.module?.rules?.map?.((rule: webpack.RuleSetRule) => {

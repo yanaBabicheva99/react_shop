@@ -1,14 +1,14 @@
-import { classNames } from 'shared/lib/classNames/classNames';
-import { Text } from 'shared/ui/Text/Text';
-import EyeIcon from 'shared/assets/eye.svg';
-import { Icon } from 'shared/ui/Icon/Icon';
-import { Card } from 'shared/ui/Card/Card';
-import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { memo, useMemo } from 'react';
-import { Button, ThemeButton } from 'shared/ui/Button/Button';
 import { useTranslation } from 'react-i18next';
-import { routesPath } from 'shared/config/routerConfig/routerConfig';
-import { NavLink } from 'shared/ui/NavLink/NavLink';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Text } from '@/shared/ui/Text/Text';
+import EyeIcon from '@/shared/assets/eye.svg';
+import { Icon } from '@/shared/ui/Icon/Icon';
+import { Card } from '@/shared/ui/Card/Card';
+import { Avatar } from '@/shared/ui/Avatar/Avatar';
+import { Button, ThemeButton } from '@/shared/ui/Button/Button';
+import { routesPath } from '@/shared/config/routerConfig/routerConfig';
+import { NavLink } from '@/shared/ui/NavLink/NavLink';
 import { ArticleBlockType, ArticleView } from '../../model/consts/articleConsts';
 import {
     Article, ArticleBlockText as ArticleBlockTextType,

@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { ThunkConfig } from 'app/providers/StoreProvider';
-import { articlesSortAction } from 'features/ArticlesSort';
+import { ThunkConfig } from '@/app/providers/StoreProvider';
+import { articlesSortAction } from '@/features/ArticlesSort';
 import { articleInfinityListAction } from '../../slice/ArticleInfinityListSlice';
 import { fetchArticleList } from '../FetchArticleList/FetchArticleList';
 import { articleInfiniteListInited } from '../../selectors/articleListSelector';

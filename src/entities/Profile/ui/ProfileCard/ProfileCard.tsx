@@ -1,11 +1,11 @@
 import { useTranslation } from 'react-i18next';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { Input } from 'shared/ui/Input/Input';
 import { memo } from 'react';
-import { Currency, SelectCurrency } from 'entities/Currency';
-import { Country, SelectCountry } from 'entities/Country';
-import { Avatar } from 'shared/ui/Avatar/Avatar';
-import { VStack } from 'shared/ui/Stack';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Input } from '@/shared/ui/Input/Input';
+import { Currency, SelectCurrency } from '@/entities/Currency';
+import { Country, SelectCountry } from '@/entities/Country';
+import { Avatar } from '@/shared/ui/Avatar/Avatar';
+import { VStack } from '@/shared/ui/Stack';
 import cls from './ProfileCard.module.scss';
 
 export enum ProfileCardTheme {

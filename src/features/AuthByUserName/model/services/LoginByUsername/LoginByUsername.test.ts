@@ -1,5 +1,5 @@
-import { TestAsyncThunk } from 'shared/lib/test/TestAsyncThunk/TestAsyncThunk';
-import { userActions } from 'entities/User';
+import { TestAsyncThunk } from '@/shared/lib/test/TestAsyncThunk/TestAsyncThunk';
+import { userActions } from '@/entities/User';
 import { loginByUsername } from './LoginByUsername';
 import clearAllMocks = jest.clearAllMocks;
 

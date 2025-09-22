@@ -1,4 +1,4 @@
-import { Comment } from 'entities/Comment';
+import { Comment } from '@/entities/Comment';
 import { fetchCommentsByArticleId } from '../servicices/FetchCommentsByArticleId/FetchCommentsByArticleId';
 import { articleCommentListReducer } from './ArticleCommentListSlice';
 import { ArticleCommentListSchema } from '../types/articleCommentListSchema';

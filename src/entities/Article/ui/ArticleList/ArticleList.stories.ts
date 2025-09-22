@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ThemeDecorator } from 'shared/config/storybook/decorators/ThemeDecorator';
-import { Theme } from 'app/providers/ThemeProvider';
-import AvatarIcon from 'shared/assets/test/storybook/img.png';
-import Img from 'shared/assets/test/storybook/js.png';
+import { ThemeDecorator } from '@/shared/config/storybook/decorators/ThemeDecorator';
+import { Theme } from '@/app/providers/ThemeProvider';
+import AvatarIcon from '@/shared/assets/test/storybook/img.png';
+import Img from '@/shared/assets/test/storybook/js.png';
 import { ArticleView } from '../../model/consts/articleConsts';
 import { Article } from '../../model/types/article';
 import { ArticleList } from './ArticleList';

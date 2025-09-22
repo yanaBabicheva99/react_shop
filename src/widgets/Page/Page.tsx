@@ -1,16 +1,16 @@
-import { classNames } from 'shared/lib/classNames/classNames';
 import {
     MutableRefObject, ReactNode, UIEvent, useRef,
 } from 'react';
-import { useInfinityScroll } from 'shared/lib/hooks/useInfinityScroll/useInfinityScroll';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { scrollTrackingActions } from 'features/ScrollTracking/model/slice/ScrollTrackingSlice';
 import { useLocation } from 'react-router-dom';
-import { useThrottle } from 'shared/lib/hooks/useTrottling/useThrottle';
-import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useSelector } from 'react-redux';
-import { getScrollPosition } from 'features/ScrollTracking/model/selectors/getScrollPosition';
-import { StateSchema } from 'app/providers/StoreProvider';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { useInfinityScroll } from '@/shared/lib/hooks/useInfinityScroll/useInfinityScroll';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { scrollTrackingActions } from '@/features/ScrollTracking/model/slice/ScrollTrackingSlice';
+import { useThrottle } from '@/shared/lib/hooks/useTrottling/useThrottle';
+import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { getScrollPosition } from '@/features/ScrollTracking/model/selectors/getScrollPosition';
+import { StateSchema } from '@/app/providers/StoreProvider';
 import cls from './Page.module.scss';
 
 interface PageProps {

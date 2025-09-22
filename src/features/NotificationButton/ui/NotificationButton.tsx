@@ -1,11 +1,12 @@
-import { Popover } from 'shared/ui/Popups';
-import { Icon } from 'shared/ui/Icon/Icon';
-import NotificationIcon from 'shared/assets/notification.svg';
-import { NotificationList } from 'entities/Notification';
 import React, { memo, useCallback, useState } from 'react';
 import { BrowserView, MobileView } from 'react-device-detect';
-import { Button, ThemeButton } from 'shared/ui/Button/Button';
-import { Drawer } from 'shared/ui/Drawer/Drawer';
+import { Popover } from '@/shared/ui/Popups';
+import { Icon } from '@/shared/ui/Icon/Icon';
+import NotificationIcon from '@/shared/assets/notification.svg';
+import { NotificationList } from '@/entities/Notification';
+import { Button, ThemeButton } from '@/shared/ui/Button/Button';
+import { Drawer } from '@/shared/ui/Drawer/Drawer';
+import AnimationProviders from '@/shared/lib/components/AnimationProviders/AnimationProviders';
 import cls from './NotificationButton.module.scss';
 
 interface NotificationButtonProps {
@@ -47,9 +48,11 @@ export const NotificationButton = memo((props: NotificationButtonProps) => {
             </BrowserView>
             <MobileView>
                 {trigger}
-                <Drawer isOpen={isOpenDrawer} onClose={onCloseDrawer}>
-                    <NotificationList className={cls.notificationListMobile} />
-                </Drawer>
+                <AnimationProviders>
+                    <Drawer isOpen={isOpenDrawer} onClose={onCloseDrawer}>
+                        <NotificationList className={cls.notificationListMobile} />
+                    </Drawer>
+                </AnimationProviders>
             </MobileView>
         </>
     );

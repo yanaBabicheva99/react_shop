@@ -59,6 +59,7 @@ export default {
         '\\.(s?css)$': 'identity-obj-proxy',
         '\\.svg$': '<rootDir>config/jest/svgTransformer.tsx',
         '^axios$': require.resolve('axios'),
+        '^@/(.*)$': '<rootDir>src/$1',
     },
 
     setupFilesAfterEnv: ['<rootDir>config/jest/setupTests.ts'],

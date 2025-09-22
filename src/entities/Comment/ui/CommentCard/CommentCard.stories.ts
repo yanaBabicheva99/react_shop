@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ThemeDecorator } from 'shared/config/storybook/decorators/ThemeDecorator';
-import { Theme } from 'app/providers/ThemeProvider';
-import Img from 'shared/assets/test/storybook/img.png';
+import { ThemeDecorator } from '@/shared/config/storybook/decorators/ThemeDecorator';
+import { Theme } from '@/app/providers/ThemeProvider';
+import Img from '@/shared/assets/test/storybook/img.png';
 import { CommentCard } from './CommentCard';
 
 const meta: Meta<typeof CommentCard> = {

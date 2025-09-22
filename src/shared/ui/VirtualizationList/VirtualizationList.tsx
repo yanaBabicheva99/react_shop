@@ -2,7 +2,7 @@ import React, {
     useCallback,
     useRef, useState,
 } from 'react';
-import { useFixedSizeList } from 'shared/lib/hooks/useFixedSizeList/useFixedSizeList';
+import { useFixedSizeList } from '@/shared/lib/hooks/useFixedSizeList/useFixedSizeList';
 
 const items = Array.from({ length: 10000 }, (_, index) => ({
     id: Math.random().toString(36).slice(2),

@@ -1,10 +1,10 @@
 import { useTranslation } from 'react-i18next';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { Text } from 'shared/ui/Text/Text';
-import { Button, ThemeButton } from 'shared/ui/Button/Button';
 import { useDispatch, useSelector } from 'react-redux';
 import { useCallback } from 'react';
-import { HStack } from 'shared/ui/Stack';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Text } from '@/shared/ui/Text/Text';
+import { Button, ThemeButton } from '@/shared/ui/Button/Button';
+import { HStack } from '@/shared/ui/Stack';
 import { getVisibleEdit } from '../../model/selectors/getVisibleEdit/getVisibleEdit';
 import { profileActions } from '../../model/slice/profileSlice';
 import {

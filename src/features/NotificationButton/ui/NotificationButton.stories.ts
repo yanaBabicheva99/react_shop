@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ThemeDecorator } from 'shared/config/storybook/decorators/ThemeDecorator';
-import { Theme } from 'app/providers/ThemeProvider';
-import { Notification } from 'entities/Notification/model/types/notification';
-import { StoreDecorator } from 'shared/config/storybook/decorators/StoreDecorator';
+import { ThemeDecorator } from '@/shared/config/storybook/decorators/ThemeDecorator';
+import { Theme } from '@/app/providers/ThemeProvider';
+import { Notification } from '@/entities/Notification/model/types/notification';
+import { StoreDecorator } from '@/shared/config/storybook/decorators/StoreDecorator';
 import { NotificationButton } from './NotificationButton';
 
 const notification: Notification[] = [

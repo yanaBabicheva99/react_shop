@@ -1,5 +1,5 @@
-import { StateSchema } from 'app/providers/StoreProvider';
-import { ArticleView } from 'entities/Article';
+import { StateSchema } from '@/app/providers/StoreProvider';
+import { ArticleView } from '@/entities/Article';
 
 export const getArticleInfinityListLoading = (state: StateSchema) => state?.articleInfinityList?.isLoading;
 export const getArticleView = (state: StateSchema) => state.articleInfinityList?.articleView || ArticleView.SMALL;

@@ -1,17 +1,17 @@
 import React, { memo, useCallback, useState } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { Button } from 'shared/ui/Button/Button';
 import { useTranslation } from 'react-i18next';
-import { Portal } from 'shared/ui/Portal/Portal';
-import { loginActions, LoginModal } from 'features/AuthByUserName';
 import { useDispatch, useSelector } from 'react-redux';
-import { getUserAuthData } from 'entities/User';
-import { routesPath } from 'shared/config/routerConfig/routerConfig';
-import { NavLink } from 'shared/ui/NavLink/NavLink';
-import { Text, TextTheme } from 'shared/ui/Text/Text';
-import { HStack } from 'shared/ui/Stack';
-import { NotificationButton } from 'features/NotificationButton';
-import { AvatarButton } from 'features/AvatarButton';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Button } from '@/shared/ui/Button/Button';
+import { Portal } from '@/shared/ui/Portal/Portal';
+import { loginActions, LoginModal } from '@/features/AuthByUserName';
+import { getUserAuthData } from '@/entities/User';
+import { routesPath } from '@/shared/config/routerConfig/routerConfig';
+import { NavLink } from '@/shared/ui/NavLink/NavLink';
+import { Text, TextTheme } from '@/shared/ui/Text/Text';
+import { HStack } from '@/shared/ui/Stack';
+import { NotificationButton } from '@/features/NotificationButton';
+import { AvatarButton } from '@/features/AvatarButton';
 import cls from './Navbar.module.scss';
 
 export const NavBar = memo(() => {

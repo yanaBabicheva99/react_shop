@@ -1,11 +1,11 @@
 import './styles/index.scss';
-import { AppRouter } from 'app/providers/router';
-import { NavBar } from 'widgets/Navbar';
 import React, { Suspense, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { userActions } from 'entities/User';
-import { getUserInited } from 'entities/User/model/selectors/getUserInited/getUserInited';
-import { SideBar } from 'widgets/SideBar';
+import { AppRouter } from '@/app/providers/router';
+import { NavBar } from '@/widgets/Navbar';
+import { userActions } from '@/entities/User';
+import { getUserInited } from '@/entities/User/model/selectors/getUserInited/getUserInited';
+import { SideBar } from '@/widgets/SideBar';
 
 const App = () => {
     const dispatch = useDispatch();

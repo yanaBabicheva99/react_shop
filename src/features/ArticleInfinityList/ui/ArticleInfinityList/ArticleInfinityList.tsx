@@ -1,9 +1,9 @@
-import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { ArticleList } from 'entities/Article';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useSelector } from 'react-redux';
 import { useSearchParams } from 'react-router-dom';
-import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { ArticleList } from '@/entities/Article';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { articleInfinityListReducer, articleInfinityList } from '../../model/slice/ArticleInfinityListSlice';
 import { getArticleView, getArticleInfinityListLoading } from '../../model/selectors/articleListSelector';
 import { initedArticleList } from '../../model/services/InitedArticleList/InitedArticleList';

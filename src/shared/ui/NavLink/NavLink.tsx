@@ -1,6 +1,6 @@
-import { classNames } from 'shared/lib/classNames/classNames';
 import { FC } from 'react';
 import { NavLink as Link, NavLinkProps as NavLinkRouter } from 'react-router-dom';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './NavLink.module.scss';
 
 export enum LinkTheme {

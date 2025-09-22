@@ -9,7 +9,7 @@
     "baseUrl": ".",
     "isolatedModules": true,
     "paths": {
-      "*": ["./src/*"]
+      "@/*": ["./src/*"]
     },
     "moduleResolution": "node",
     "allowSyntheticDefaultImports" : true,

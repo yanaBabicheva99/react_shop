@@ -1,6 +1,6 @@
-import { TestAsyncThunk } from 'shared/lib/test/TestAsyncThunk/TestAsyncThunk';
-import { Currency } from 'entities/Currency';
-import { Country } from 'entities/Country';
+import { TestAsyncThunk } from '@/shared/lib/test/TestAsyncThunk/TestAsyncThunk';
+import { Currency } from '@/entities/Currency';
+import { Country } from '@/entities/Country';
 import { updateProfileCardInfo } from './UpdateProfileCardInfo';
 import { Profile } from '../../types/profileSchema';
 import clearAllMocks = jest.clearAllMocks;

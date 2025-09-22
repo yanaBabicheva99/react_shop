@@ -1,10 +1,10 @@
-import { classNames } from 'shared/lib/classNames/classNames';
 import React, { memo, useCallback } from 'react';
-import ViewListIcon from 'shared/assets/list.svg';
-import ViewTiledIcon from 'shared/assets/tiled.svg';
-import { Icon } from 'shared/ui/Icon/Icon';
-import { Button, ThemeButton } from 'shared/ui/Button/Button';
-import { ArticleView } from 'entities/Article';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import ViewListIcon from '@/shared/assets/list.svg';
+import ViewTiledIcon from '@/shared/assets/tiled.svg';
+import { Icon } from '@/shared/ui/Icon/Icon';
+import { Button, ThemeButton } from '@/shared/ui/Button/Button';
+import { ArticleView } from '@/entities/Article';
 import cls from './ArticleViewSwitcher.module.scss';
 
 interface ArticleViewSwitcherProps {

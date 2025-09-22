@@ -1,9 +1,8 @@
-import { classNames } from 'shared/lib/classNames/classNames';
-
 import { Fragment } from 'react';
 import { Listbox } from '@headlessui/react';
 import { useTranslation } from 'react-i18next';
-import { DropdownDirection } from 'shared/types/ui';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { DropdownDirection } from '@/shared/types/ui';
 import { HStack } from '../../../Stack';
 import { Text } from '../../../Text/Text';
 import { Button, ThemeButton } from '../../../Button/Button';
