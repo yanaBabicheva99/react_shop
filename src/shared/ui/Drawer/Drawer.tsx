@@ -54,7 +54,7 @@ export const DrawerContent = memo((props: DrawerProps) => {
             y: height,
             immediate: false,
             config: { ...Spring.config.stiff, velocity },
-            onResolve: closeHandler,
+            onResolve: () => closeHandler(true),
         });
     };
 

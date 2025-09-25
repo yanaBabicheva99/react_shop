@@ -22,7 +22,7 @@ export const StarRating = memo((props: StarRatingProps) => {
         onSelect,
     } = props;
 
-    const [currentStarsCount, setCurrentStarsCount] = useState(0);
+    const [currentStarsCount, setCurrentStarsCount] = useState(selectedStars);
     const [isSelected, setIsSelected] = useState(Boolean(selectedStars));
 
     const onClick = (starsCount: number) => () => {
@@ -54,7 +54,7 @@ export const StarRating = memo((props: StarRatingProps) => {
                         Icon={StartIcon}
                         width={size}
                         height={size}
-                        fill={starNumber <= (currentStarsCount || selectedStars)}
+                        fill={starNumber <= currentStarsCount}
                         className={classNames(cls.starIcon, {
                             [cls.hovered]: starNumber <= currentStarsCount,
                             [cls.isSelected]: isSelected,

@@ -7,6 +7,7 @@ import Image from '@/shared/assets/test/storybook/js.png';
 import Img from '@/shared/assets/test/storybook/img.png';
 import { ArticleType } from '@/entities/Article/model/consts/articleConsts';
 import ArticleDetailsPage from './ArticleDetailsPage';
+import { Rating } from '@/entities/Rating';
 
 const article: Article = {
     id: '1',
@@ -49,6 +50,11 @@ const article: Article = {
     ],
 };
 
+const rating: Rating = {
+    rate: 5,
+    feedback: 'Хорошая статья',
+};
+
 const meta: Meta<typeof ArticleDetailsPage> = {
     title: 'pages/ArticleDetailsPage',
     component: ArticleDetailsPage,
@@ -68,6 +74,7 @@ export const NormalArticleDetailsPage: Story = {
 };
 
 NormalArticleDetailsPage.decorators = [ThemeDecorator(Theme.LIGHT), StoreDecorator({
+    user: { authData: { id: '1' } },
     articleDetails: {
         data: article,
     },
@@ -81,6 +88,11 @@ NormalArticleDetailsPage.parameters = {
                 response: [article], // Mocked response
                 delay: 500, // Optional delay
             },
+            {
+                matcher: `${__API__}/article-ratings?articleId=1&userId=1`, // URL to match
+                response: [rating], // Mocked response
+                delay: 500, // Optional delay
+            },
         ],
     },
 };
@@ -90,6 +102,7 @@ export const DarkArticleDetailsPage: Story = {
 };
 
 DarkArticleDetailsPage.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({
+    user: { authData: { id: '1' } },
     articleDetails: {
         data: article,
     },
@@ -101,6 +114,11 @@ DarkArticleDetailsPage.parameters = {
             {
                 matcher: `${__API__}/articles?_expand=user&_limit=4`, // URL to match
                 response: [article], // Mocked response
+                delay: 500, // Optional delay
+            },
+            {
+                matcher: `${__API__}/article-ratings?articleId=1&userId=1`, // URL to match
+                response: [rating], // Mocked response
                 delay: 500, // Optional delay
             },
         ],

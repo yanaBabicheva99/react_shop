@@ -11,6 +11,7 @@ import { RecommendationArticlesList } from '@/features/RecommendationArticlesLis
 import { VStack } from '@/shared/ui/Stack';
 import { ArticleDetailsPageHeader } from '../ui/ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 import cls from './ArticleDetailsPage.module.scss';
+import { ArticleRatingCard } from '@/features/ArticleRating';
 
 interface ArticleDetailsPageProps {
     className?: string;
@@ -33,6 +34,7 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
                 <ArticleDetailsPageHeader />
                 <ArticleDetails id={id} />
                 <ArticleCommentList id={id} />
+                <ArticleRatingCard id={id} />
                 <RecommendationArticlesList />
             </VStack>
         </Page>

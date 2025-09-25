@@ -728,6 +728,60 @@
       "roles": [
         "USER"
       ]
+    },
+    {
+      "id": "3",
+      "username": "user3",
+      "password": "123",
+      "avatar": "https://pm1.aminoapps.com/6870/e0633307a54c701ec48514039e3fd09d1b050ff4r1-540-960v2_hq.jpg",
+      "roles": [
+        "USER"
+      ]
+    }
+  ],
+  "article-ratings": [
+    {
+      "id": "1",
+      "rate": 4,
+      "feedback": "Хорошая статья",
+      "userId": "1",
+      "articleId": "2"
+    },
+    {
+      "id": "2",
+      "rate": 5,
+      "feedback": "Полезная статья",
+      "userId": "2",
+      "articleId": "2"
+    },
+    {
+      "userId": "1",
+      "articleId": "6",
+      "rate": 5,
+      "feedback": "Супер статья",
+      "id": "geqADY1"
+    },
+    {
+      "userId": "1",
+      "articleId": "14",
+      "rate": 4,
+      "id": "Gqt_lES"
+    },
+    {
+      "userId": "1",
+      "articleId": "15",
+      "rate": 3,
+      "feedback": "Скучная статья",
+      "id": "JsyQVrp"
+    }
+  ],
+  "profile-ratings": [
+    {
+      "id": "1",
+      "rate": 5,
+      "feedback": "Хороший профиль",
+      "userId": "1",
+      "profileId": "2"
     }
   ]
 }

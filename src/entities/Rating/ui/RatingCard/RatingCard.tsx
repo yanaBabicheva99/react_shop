@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { useCallback, useState } from 'react';
+import { memo, useCallback, useState } from 'react';
 import { BrowserView, MobileView } from 'react-device-detect';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Card } from '@/shared/ui/Card/Card';
@@ -18,9 +18,10 @@ interface RatingCardProps {
     hasFeedBack?: boolean;
     onCancel?: (startsCount: number) => void;
     onAccept?: (startsCount: number, feedback?: string) => void;
+    rating?: number;
 }
 
-export const RatingCard = (props: RatingCardProps) => {
+export const RatingCard = memo((props: RatingCardProps) => {
     const {
         className,
         title,
@@ -28,11 +29,12 @@ export const RatingCard = (props: RatingCardProps) => {
         hasFeedBack,
         onAccept,
         onCancel,
+        rating = 0,
     } = props;
 
     const { t } = useTranslation();
     const [isOpenModal, setIsOpenModal] = useState(false);
-    const [startsCount, setStarsCount] = useState(0);
+    const [startsCount, setStarsCount] = useState(rating);
     const [feedback, setFeedback] = useState('');
 
     const onSelectStars = useCallback((starsNumber: number) => {
@@ -40,9 +42,9 @@ export const RatingCard = (props: RatingCardProps) => {
         if (hasFeedBack) {
             setIsOpenModal(true);
         } else {
-            onAccept?.(startsCount);
+            onCancel?.(startsCount);
         }
-    }, [hasFeedBack, onAccept, startsCount]);
+    }, [hasFeedBack, onCancel, startsCount]);
 
     const cancelHandle = () => {
         setIsOpenModal(false);
@@ -62,7 +64,7 @@ export const RatingCard = (props: RatingCardProps) => {
     );
 
     return (
-        <Card className={classNames('', {}, [className])}>
+        <Card fullWidth className={classNames('', {}, [className])}>
             <VStack align="center" gap="8">
                 <Text title={title} />
                 <StarRating size={40} onSelect={onSelectStars} selectedStars={startsCount} />
@@ -103,4 +105,4 @@ export const RatingCard = (props: RatingCardProps) => {
             </MobileView>
         </Card>
     );
-};
+});
