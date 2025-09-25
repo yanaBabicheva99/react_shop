@@ -1,0 +1,13 @@
+.starIcon {
+  svg {
+    stroke: var(--primary-color);
+  }
+}
+
+.hovered {
+  cursor: pointer;
+}
+
+.isSelected {
+  cursor: auto;
+}

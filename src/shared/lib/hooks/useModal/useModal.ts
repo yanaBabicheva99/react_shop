@@ -16,24 +16,25 @@ export function useModal({ animationDelay, isOpen, onClose }: UseModalProps) {
     const timerRefOpened = useRef() as MutableRefObject<ReturnType<typeof setTimeout> | undefined>;
     const timerRefClosed = useRef() as MutableRefObject<ReturnType<typeof setTimeout> | undefined>;
 
+    const closeHandler = useCallback(() => {
+        setIsClosed(true);
+        timerRefClosed.current = setTimeout(() => {
+            setIsClosed(false);
+            setIsOpened(false);
+            onClose?.();
+        }, animationDelay);
+    }, [onClose]);
+
     useEffect(() => {
         if (isOpen) {
             setIsMounted(true);
             timerRefOpened.current = setTimeout(() => {
                 setIsOpened(true);
             }, animationDelay);
+        } else if (isMounted) {
+            closeHandler();
         }
     }, [isOpen]);
-
-    const closeHandler = useCallback(() => {
-        setIsClosed(true);
-        timerRefClosed.current = setTimeout(() => {
-            setIsClosed(false);
-            setIsOpened(false);
-            setIsMounted(false);
-            onClose?.();
-        }, animationDelay);
-    }, [onClose]);
 
     const onKeyDown = useCallback((e: KeyboardEvent) => {
         if (e.key === 'Escape') {

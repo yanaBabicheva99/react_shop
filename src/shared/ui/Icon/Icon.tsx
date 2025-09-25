@@ -2,9 +2,9 @@ import React from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './Icon.module.scss';
 
-interface IconProps {
+interface IconProps extends Omit<React.SVGProps<SVGSVGElement>, 'fill'>{
     className?: string;
-    Icon: React.FunctionComponent<React.SVGAttributes<SVGAElement>>;
+    Icon: React.VFC<React.SVGProps<SVGSVGElement>>;
     fill?: boolean;
     inverted?: boolean;
 }
@@ -15,6 +15,7 @@ export const Icon = (props: IconProps) => {
         Icon,
         fill = true,
         inverted,
+        ...otherProps
     } = props;
 
     const mods = {
@@ -24,7 +25,7 @@ export const Icon = (props: IconProps) => {
 
     return (
         <div className={classNames('', mods, [className])}>
-            <Icon />
+            <Icon {...otherProps} />
         </div>
     );
 };

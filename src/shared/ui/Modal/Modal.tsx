@@ -27,7 +27,7 @@ export const Modal = (props: ModalProps) => {
     } = props;
 
     const {
-        isOpened, isClosed, isMounted, closeHandler,
+        isOpened, isClosed, isMounted,
     } = useModal({
         animationDelay,
         isOpen,
@@ -45,7 +45,7 @@ export const Modal = (props: ModalProps) => {
 
     return (
         <div className={classNames(cls.Modal, mods, [className])}>
-            <Overlay onClickHandler={closeHandler} />
+            <Overlay onClickHandler={onClose} />
             <div className={classNames(cls.content)}>
                 {title && <Text title={title} className={cls.title} /> }
                 {children}

@@ -1,4 +1,4 @@
-import React, { memo, useCallback } from 'react';
+import React, { memo, SVGProps, useCallback } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import ViewListIcon from '@/shared/assets/list.svg';
 import ViewTiledIcon from '@/shared/assets/tiled.svg';
@@ -14,7 +14,7 @@ interface ArticleViewSwitcherProps {
 }
 
 interface ArticleViewItem {
-    Icon: React.FunctionComponent<React.SVGAttributes<SVGAElement>>;
+    Icon: React.VFC<SVGProps<SVGSVGElement>>;
     view: ArticleView;
 }
 

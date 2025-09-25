@@ -4,9 +4,10 @@ import React, {
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { useTheme } from '@/app/providers/ThemeProvider';
 import { useModal } from '@/shared/lib/hooks/useModal/useModal';
-// import { useSpring, config, a } from '@react-spring/web';
-// import { useDrag } from '@use-gesture/react';
-import { AnimationContext, useAnimationLib } from '@/shared/lib/components/AnimationProviders/AnimationProviders';
+import AnimationProviders, {
+    AnimationContext,
+    useAnimationLib,
+} from '@/shared/lib/components/AnimationProviders/AnimationProviders';
 import { Overlay } from '../Overlay/Overlay';
 import cls from './Drawer.module.scss';
 import { Portal } from '../Portal/Portal';
@@ -105,10 +106,14 @@ export const DrawerContent = memo((props: DrawerProps) => {
     );
 });
 
-export const Drawer = (props: DrawerProps) => {
+export const DrawerAsync = (props: DrawerProps) => {
     const { isLoaded } = useContext(AnimationContext);
 
     if (!isLoaded) return null;
 
     return <DrawerContent {...props} />;
 };
+
+export const Drawer = (props: DrawerProps) => (
+    <AnimationProviders><DrawerAsync {...props} /></AnimationProviders>
+);
