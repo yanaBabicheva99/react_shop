@@ -19,13 +19,10 @@ const config: StorybookConfig = {
         config?.module?.rules?.push(buildCSSLoader(true));
         config?.resolve?.extensions?.push('.tsx', '.ts');
         config?.resolve?.modules?.push(path.resolve(__dirname, '../', '../', 'src'));
-
-        if (config?.resolve?.alias) {
-            // config.resolve.alias = {
-            //     entities: path.resolve(__dirname, '../', '../', 'src', 'entities'),
-            // };
-            config.resolve!.alias = { '@': path.resolve(__dirname, '..', '..', 'src') };
-        }
+        config.resolve!.alias = {
+            ...config.resolve!.alias,
+            '@': path.resolve(__dirname, '..', '..', 'src'),
+        };
         // @ts-ignore
         config?.module?.rules?.map?.((rule: webpack.RuleSetRule) => {
             if (/svg/.test(rule.test as string) || /file-loader/.test(rule.loader as string)) {

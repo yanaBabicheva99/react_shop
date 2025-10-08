@@ -728,15 +728,6 @@
       "roles": [
         "USER"
       ]
-    },
-    {
-      "id": "3",
-      "username": "user3",
-      "password": "123",
-      "avatar": "https://pm1.aminoapps.com/6870/e0633307a54c701ec48514039e3fd09d1b050ff4r1-540-960v2_hq.jpg",
-      "roles": [
-        "USER"
-      ]
     }
   ],
   "article-ratings": [
@@ -773,15 +764,73 @@
       "rate": 3,
       "feedback": "Скучная статья",
       "id": "JsyQVrp"
-    }
-  ],
-  "profile-ratings": [
+    },
     {
-      "id": "1",
-      "rate": 5,
-      "feedback": "Хороший профиль",
       "userId": "1",
-      "profileId": "2"
+      "articleId": "1",
+      "rate": 5,
+      "id": "zlI_bYH"
+    },
+    {
+      "userId": "2",
+      "articleId": "12",
+      "rate": 4,
+      "id": "3R1UJPf"
+    },
+    {
+      "userId": "2",
+      "articleId": "18",
+      "rate": 5,
+      "feedback": "Очень полезная статья",
+      "id": "53n2J8s"
+    },
+    {
+      "userId": "2",
+      "articleId": "1",
+      "rate": 4,
+      "id": "ZdUc4iN"
+    },
+    {
+      "userId": "2",
+      "articleId": "11",
+      "rate": 5,
+      "id": "6AH6u93"
+    },
+    {
+      "userId": "2",
+      "articleId": "16",
+      "rate": 5,
+      "id": "LXfnV6U"
+    },
+    {
+      "userId": "2",
+      "articleId": "5",
+      "rate": 4,
+      "id": "w_zkG01"
+    },
+    {
+      "userId": "2",
+      "articleId": "4",
+      "rate": 5,
+      "id": "-eOKBmP"
+    },
+    {
+      "userId": "2",
+      "articleId": "7",
+      "rate": 2,
+      "id": "D7TIHe0"
+    },
+    {
+      "userId": "2",
+      "articleId": "3",
+      "rate": 5,
+      "id": "ieABc_1"
+    },
+    {
+      "userId": "2",
+      "articleId": "15",
+      "rate": 5,
+      "id": "8GEFWo-"
     }
   ]
 }

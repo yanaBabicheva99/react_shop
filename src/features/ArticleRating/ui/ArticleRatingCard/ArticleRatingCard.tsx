@@ -21,7 +21,9 @@ export const ArticleRatingCard = (props: ArticleRatingCardProps) => {
 
     const authData = useSelector(getUserAuthData);
 
-    const { isLoading, data } = useArticleRecommendationList({ articleId, userId: authData!.id });
+    const { isLoading, isFetching, data } = useArticleRecommendationList({ articleId, userId: authData!.id }, {
+        refetchOnMountOrArgChange: true,
+    });
     const [rateArticleMutation] = usePostArticleRating();
 
     const handlePostRating = useCallback((startsCount: number, feedback?: string) => {
@@ -41,7 +43,7 @@ export const ArticleRatingCard = (props: ArticleRatingCardProps) => {
         handlePostRating(startsCount);
     }, [handlePostRating]);
 
-    if (isLoading) return <Skeleton width="100%" height={120} />;
+    if (isLoading || isFetching) return <Skeleton width="100%" height={120} />;
 
     const rating = data?.[0]?.rate;
 
