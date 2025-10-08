@@ -8,7 +8,7 @@ import {
     getArticleView,
     ArticleViewSwitcher, ArticleInfinityList, getArticleInfinityListLoading, articleInfinityListAction,
 } from '@/features/ArticleInfinityList';
-import { Page } from '@/widgets/Page/Page';
+import { Page } from '@/widgets/Page';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { ArticlesSort } from '@/features/ArticlesSort';
 import { ArticleView } from '@/entities/Article';

@@ -3,8 +3,7 @@ import React, { Suspense, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppRouter } from '@/app/providers/router';
 import { NavBar } from '@/widgets/Navbar';
-import { userActions } from '@/entities/User';
-import { getUserInited } from '@/entities/User/model/selectors/getUserInited/getUserInited';
+import { userActions, getUserInited } from '@/entities/User';
 import { SideBar } from '@/widgets/SideBar';
 
 const App = () => {

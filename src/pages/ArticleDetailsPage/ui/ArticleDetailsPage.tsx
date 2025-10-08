@@ -3,10 +3,8 @@ import { useParams } from 'react-router-dom';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { ArticleDetails } from '@/entities/Article';
 import { Text, TextTheme } from '@/shared/ui/Text/Text';
-import {
-    ArticleCommentList,
-} from '@/features/ArticleCommentList';
-import { Page } from '@/widgets/Page/Page';
+import { ArticleCommentList } from '@/features/ArticleCommentList';
+import { Page } from '@/widgets/Page';
 import { RecommendationArticlesList } from '@/features/RecommendationArticlesList';
 import { VStack } from '@/shared/ui/Stack';
 import { ArticleDetailsPageHeader } from '../ui/ArticleDetailsPageHeader/ArticleDetailsPageHeader';

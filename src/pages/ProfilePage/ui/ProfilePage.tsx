@@ -2,7 +2,7 @@ import { useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { EditableProfileCard } from '@/features/EditableProfileCard';
 import { Text, TextTheme } from '@/shared/ui/Text/Text';
-import { Page } from '@/widgets/Page/Page';
+import { Page } from '@/widgets/Page';
 
 const ProfilePage = () => {
     const { id } = useParams<{id: string}>();

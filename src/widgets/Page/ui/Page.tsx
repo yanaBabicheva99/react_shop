@@ -6,10 +6,9 @@ import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { useInfinityScroll } from '@/shared/lib/hooks/useInfinityScroll/useInfinityScroll';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { scrollTrackingActions } from '@/features/ScrollTracking/model/slice/ScrollTrackingSlice';
+import { scrollTrackingActions, getScrollPosition } from '@/features/ScrollTracking';
 import { useThrottle } from '@/shared/lib/hooks/useTrottling/useThrottle';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
-import { getScrollPosition } from '@/features/ScrollTracking/model/selectors/getScrollPosition';
 import { StateSchema } from '@/app/providers/StoreProvider';
 import cls from './Page.module.scss';
 

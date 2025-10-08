@@ -78,7 +78,12 @@ module.exports = {
                 ],
             },
         ],
-        'fsd-react-plugin/path-checker': 'error',
+        'fsd-react-plugin/path-checker': ['error', {
+            alias: '@',
+        }],
+        'fsd-react-plugin/public-api-imports': ['error', {
+            alias: '@',
+        }],
     },
     globals: {
         __IS_DEV__: true,
