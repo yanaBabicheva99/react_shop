@@ -2,13 +2,13 @@ import { StoryFn } from '@storybook/react';
 import { ReducersMapObject } from '@reduxjs/toolkit';
 import { StoreProvider } from '@/app/providers/StoreProvider';
 import { StateSchema } from '@/app/providers/StoreProvider/config/StateSchema';
-import { loginReducer } from '@/features/AuthByUserName';
-import { articleDetailsReducer } from '@/entities/Article';
-import { articleCommentListReducer } from '@/features/ArticleCommentList';
-import { addCommentFormReducer } from '@/entities/AddCommentForm';
-import { articleInfinityListReducer } from '@/features/ArticleInfinityList';
-import { articlesSortReducer } from '@/features/ArticlesSort';
-import { recommendationArticlesListReducer } from '@/features/RecommendationArticlesList';
+import { loginReducer } from '@/features/AuthByUserName/testing';
+import { articleDetailsReducer } from '@/entities/Article/testing';
+import { articleCommentListReducer } from '@/features/ArticleCommentList/testing';
+import { addCommentFormReducer } from '@/entities/AddCommentForm/testing';
+import { articleInfinityListReducer } from '@/features/ArticleInfinityList/testing';
+import { articlesSortReducer } from '@/features/ArticlesSort/testing';
+import { recommendationArticlesListReducer } from '@/features/RecommendationArticlesList/testing';
 import { userReducer } from '@/entities/User';
 
 const defaultAsyncReducers: DeepPartial<ReducersMapObject<StateSchema>> = {

@@ -1,5 +1,5 @@
 export type { ArticleInfinityListSchema } from './model/types/articleListSchema';
-export { articleInfinityListAction, articleInfinityListReducer } from './model/slice/ArticleInfinityListSlice';
+export { articleInfinityListAction } from './model/slice/ArticleInfinityListSlice';
 export { fetchArticleNextPage } from './model/services/FetchArticleNextPage/FetchArticleNextPage';
 export { fetchArticleList } from './model/services/FetchArticleList/FetchArticleList';
 export { getArticleInfinityListLoading } from './model/selectors/articleListSelector';

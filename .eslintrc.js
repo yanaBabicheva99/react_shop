@@ -83,6 +83,7 @@ module.exports = {
         }],
         'fsd-react-plugin/public-api-imports': ['error', {
             alias: '@',
+            testFilesPatterns: ['**/*.test.*', '**/*.story.*', '**/StoreDecorator.tsx'],
         }],
     },
     globals: {
