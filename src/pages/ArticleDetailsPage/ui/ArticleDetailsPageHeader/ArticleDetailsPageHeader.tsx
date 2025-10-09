@@ -4,10 +4,10 @@ import { useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Button, ThemeButton } from '@/shared/ui/Button/Button';
-import { routesPath } from '@/shared/config/routerConfig/routerConfig';
 import { getArticle } from '@/entities/Article';
 import { HStack } from '@/shared/ui/Stack';
 import { canArticleEdit } from '../../model/selectors/article';
+import { routesPath } from '@/shared/const/router';
 
 interface ArticleDetailsPageHeaderProps {
     className?: string;
