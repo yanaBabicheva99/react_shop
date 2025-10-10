@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { ArticleDetails } from '@/entities/Article';
-import { Text, TextTheme } from '@/shared/ui/Text/Text';
+import { Text, TextTheme } from '@/shared/ui/Text';
 import { ArticleCommentList } from '@/features/ArticleCommentList';
 import { Page } from '@/widgets/Page';
 import { RecommendationArticlesList } from '@/features/RecommendationArticlesList';

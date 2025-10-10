@@ -1,7 +1,7 @@
 import { memo, useCallback } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Button } from '@/shared/ui/Button/Button';
-import { Icon } from '@/shared/ui/Icon/Icon';
+import { Button } from '@/shared/ui/Button';
+import { Icon } from '@/shared/ui/Icon';
 import CopyIcon from '@/shared/assets/copy.svg';
 import { ArticleBlockCode as ArticleBlockCodeType } from '../../../model/types/article';
 import cls from './ArticleBlockCode.module.scss';

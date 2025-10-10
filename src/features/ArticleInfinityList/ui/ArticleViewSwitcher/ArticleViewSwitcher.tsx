@@ -2,8 +2,8 @@ import React, { memo, SVGProps, useCallback } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import ViewListIcon from '@/shared/assets/list.svg';
 import ViewTiledIcon from '@/shared/assets/tiled.svg';
-import { Icon } from '@/shared/ui/Icon/Icon';
-import { Button, ThemeButton } from '@/shared/ui/Button/Button';
+import { Icon } from '@/shared/ui/Icon';
+import { Button, ThemeButton } from '@/shared/ui/Button';
 import { ArticleView } from '@/entities/Article';
 import cls from './ArticleViewSwitcher.module.scss';
 

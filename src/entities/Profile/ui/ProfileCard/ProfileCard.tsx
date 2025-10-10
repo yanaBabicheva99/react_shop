@@ -1,10 +1,10 @@
 import { useTranslation } from 'react-i18next';
 import { memo } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Input } from '@/shared/ui/Input/Input';
+import { Input } from '@/shared/ui/Input';
 import { Currency, SelectCurrency } from '@/entities/Currency';
 import { Country, SelectCountry } from '@/entities/Country';
-import { Avatar } from '@/shared/ui/Avatar/Avatar';
+import { Avatar } from '@/shared/ui/Avatar';
 import { VStack } from '@/shared/ui/Stack';
 import cls from './ProfileCard.module.scss';
 

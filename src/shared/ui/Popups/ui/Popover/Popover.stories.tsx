@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { ThemeDecorator } from '@/shared/config/storybook/decorators/ThemeDecorator';
 import { Button, ThemeButton } from '../../../Button/Button';
-import { VStack } from '../../../Stack/VStack/VStack';
+import { VStack } from '../../../Stack';
 import { Text } from '../../../Text/Text';
 import { Popover } from './Popover';
 import { Theme } from '@/shared/const/theme';
