@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { ThemeDecorator } from '@/shared/config/storybook/decorators/ThemeDecorator';
-import { Theme } from '@/app/providers/ThemeProvider';
 import Image from '@/shared/assets/test/storybook/img.png';
 import { ArticleBlockType, ArticleType, ArticleView } from '../../model/consts/articleConsts';
 import {
     Article,
 } from '../../model/types/article';
 import { ArticleListItem } from './ArticleListItem';
+import { Theme } from '@/shared/const/theme';
 
 const article = {
     id: '1',

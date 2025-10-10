@@ -85,6 +85,11 @@ module.exports = {
             alias: '@',
             testFilesPatterns: ['**/*.test.*', '**/*.story.*', '**/StoreDecorator.tsx'],
         }],
+        'fsd-react-plugin/layer-imports': ['error', {
+            alias: '@',
+            ignoreImportPatterns: ['**/StoreProvider', '**/testing'],
+            testFilesPatterns: ['**/*.test.*', '**/*.stories.*', '**/storybook/decorators/**'],
+        }],
     },
     globals: {
         __IS_DEV__: true,

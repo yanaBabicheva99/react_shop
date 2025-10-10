@@ -3,4 +3,4 @@ export { userReducer, userActions } from './model/slice/UserSlice';
 export { getUserAuthData } from './model/selectors/getUserAuthData';
 export { getUserRoles, isAdmin, isManager } from './model/selectors/getUserRoles';
 export { getUserInited } from './model/selectors/getUserInited/getUserInited';
-export { UserRole } from './model/consts/UserConsts';
+export { UserRole } from '../../shared/const/userConsts';

@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { ThemeDecorator } from '@/shared/config/storybook/decorators/ThemeDecorator';
-import { Theme } from '@/app/providers/ThemeProvider';
 import Img from '@/shared/assets/test/storybook/img.png';
 import JsImg from '@/shared/assets/test/storybook/js.png';
 import { StoreDecorator } from '@/shared/config/storybook/decorators/StoreDecorator';
 import { ArticleCommentList } from './ArticleCommentList';
+import { Theme } from '@/shared/const/theme';
 
 const entities = {
     1: {

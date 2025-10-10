@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { ThemeDecorator } from '@/shared/config/storybook/decorators/ThemeDecorator';
-import { Theme } from '@/app/providers/ThemeProvider';
 import { ArticleRatingCard } from './ArticleRatingCard';
 import { StoreDecorator } from '@/shared/config/storybook/decorators/StoreDecorator';
 import { Rating } from '@/entities/Rating';
+import { Theme } from '@/shared/const/theme';
 
 const meta: Meta<typeof ArticleRatingCard> = {
     title: 'features/ArticleRatingCard',

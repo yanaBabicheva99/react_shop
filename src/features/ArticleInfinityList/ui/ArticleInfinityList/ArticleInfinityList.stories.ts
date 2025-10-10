@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { ThemeDecorator } from '@/shared/config/storybook/decorators/ThemeDecorator';
-import { Theme } from '@/app/providers/ThemeProvider';
 import AvatarIcon from '@/shared/assets/test/storybook/img.png';
 import { Article } from '@/entities/Article';
 import { StoreDecorator } from '@/shared/config/storybook/decorators/StoreDecorator';
 import Img from '@/shared/assets/test/storybook/js.png';
 import { ArticleInfinityList } from './ArticleInfinityList';
+import { Theme } from '@/shared/const/theme';
 
 const meta: Meta<typeof ArticleInfinityList> = {
     title: 'features/ArticleInfinityList',

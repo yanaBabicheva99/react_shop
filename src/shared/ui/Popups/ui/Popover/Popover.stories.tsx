@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { ThemeDecorator } from '@/shared/config/storybook/decorators/ThemeDecorator';
-import { Theme } from '@/app/providers/ThemeProvider';
 import { Button, ThemeButton } from '../../../Button/Button';
 import { VStack } from '../../../Stack/VStack/VStack';
 import { Text } from '../../../Text/Text';
 import { Popover } from './Popover';
+import { Theme } from '@/shared/const/theme';
 
 const meta: Meta<typeof Popover> = {
     title: 'shared/Popover',

@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { ThemeDecorator } from '@/shared/config/storybook/decorators/ThemeDecorator';
-import { Theme } from '@/app/providers/ThemeProvider';
 import { StoreDecorator } from '@/shared/config/storybook/decorators/StoreDecorator';
 import { UserRole } from '@/entities/User';
 import AvatarIcon from '@/shared/assets/test/storybook/img.png';
 import { AvatarButton } from './AvatarButton';
+import { Theme } from '@/shared/const/theme';
 
 const meta: Meta<typeof AvatarButton> = {
     title: 'features/AvatarButton',

@@ -2,8 +2,7 @@ import React, {
     memo, ReactNode, useCallback, useContext, useEffect,
 } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { useTheme } from '@/app/providers/ThemeProvider';
-import { useModal } from '@/shared/lib/hooks/useModal/useModal';
+import { useModal } from '../../lib/hooks/useModal/useModal';
 import AnimationProviders, {
     AnimationContext,
     useAnimationLib,
@@ -28,7 +27,6 @@ export const DrawerContent = memo((props: DrawerProps) => {
         onClose,
         isOpen,
     } = props;
-    const { theme } = useTheme();
     const { Spring, Gesture } = useAnimationLib();
 
     const [{ y }, api] = Spring.useSpring(() => ({ y: height }));
@@ -92,7 +90,7 @@ export const DrawerContent = memo((props: DrawerProps) => {
 
     return (
         <Portal>
-            <div className={classNames(cls.Drawer, mods, [className, theme, 'app_drawer'])}>
+            <div className={classNames(cls.Drawer, mods, [className, 'app_drawer'])}>
                 <Overlay onClickHandler={close} />
                 <Spring.a.div
                     className={cls.sheet}

@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { ThemeDecorator } from '@/shared/config/storybook/decorators/ThemeDecorator';
-import { Theme } from '@/app/providers/ThemeProvider';
 import Img from '@/shared/assets/test/storybook/js.png';
 import { ArticleBlockType } from '../../../model/consts/articleConsts';
 import { ArticleBlockImage } from './ArticleBlockImage';
+import { Theme } from '@/shared/const/theme';
 
 const meta: Meta<typeof ArticleBlockImage> = {
     title: 'entities/ArticleBlockImage',
