@@ -23,6 +23,7 @@ module.exports = {
         '@typescript-eslint',
         'i18next',
         'fsd-react-plugin',
+        'unused-imports',
         // 'react-hooks',
     ],
     rules: {
@@ -90,6 +91,7 @@ module.exports = {
             ignoreImportPatterns: ['**/StoreProvider', '**/testing'],
             testFilesPatterns: ['**/*.test.*', '**/*.stories.*', '**/storybook/decorators/**'],
         }],
+        "unused-imports/no-unused-imports": "error",
     },
     globals: {
         __IS_DEV__: true,
