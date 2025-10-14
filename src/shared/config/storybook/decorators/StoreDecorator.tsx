@@ -9,8 +9,9 @@ import { articleInfinityListReducer } from '@/features/ArticleInfinityList/testi
 import { articlesSortReducer } from '@/features/ArticlesSort/testing';
 import { recommendationArticlesListReducer } from '@/features/RecommendationArticlesList/testing';
 import { userReducer } from '@/entities/User';
+import { ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 
-const defaultAsyncReducers: DeepPartial<ReducersMapObject<StateSchema>> = {
+const defaultAsyncReducers: ReducersList = {
     login: loginReducer,
     articleDetails: articleDetailsReducer,
     articleCommentList: articleCommentListReducer,

@@ -12,7 +12,7 @@ import { HStack } from '@/shared/ui/Stack';
 import { NotificationButton } from '@/features/NotificationButton';
 import { AvatarButton } from '@/features/AvatarButton';
 import cls from './Navbar.module.scss';
-import { routesPath } from '@/shared/const/router';
+import { getRouteArticleCreate } from '@/shared/const/router';
 
 export const NavBar = memo(() => {
     const [isOpenModal, setIsOpenModal] = useState(false);
@@ -34,7 +34,7 @@ export const NavBar = memo(() => {
         return (
             <header className={classNames(cls.Navbar, {})}>
                 <Text theme={TextTheme.INVERTED} title={t('Реакт приложение')} className={cls.appName} />
-                <NavLink to={routesPath.article_create}>{t('Создать статью')}</NavLink>
+                <NavLink to={getRouteArticleCreate()}>{t('Создать статью')}</NavLink>
                 <HStack gap="16" className={cls.authBtn}>
                     <NotificationButton />
                     <AvatarButton />

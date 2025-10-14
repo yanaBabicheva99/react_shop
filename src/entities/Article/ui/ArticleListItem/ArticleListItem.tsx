@@ -14,7 +14,7 @@ import {
 } from '../../model/types/article';
 import cls from './ArticleListItem.module.scss';
 import { ArticleBlockText } from '../ArticleBlockComponent/ArticleBlockText/ArticleBlockText';
-import { routesPath } from '@/shared/const/router';
+import { getRouteArticleDetails } from '@/shared/const/router';
 
 interface ArticleListItemProps {
     className?: string;
@@ -46,7 +46,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
 
     if (view === ArticleView.SMALL) {
         return (
-            <NavLink to={`${routesPath.article_details}/${article.id}`} target={target}>
+            <NavLink to={getRouteArticleDetails(article.id)} target={target}>
                 <Card
                     className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
                 >
@@ -89,7 +89,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
                 />
             )}
             <div className={cls.footer}>
-                <NavLink to={`${routesPath.article_details}/${article.id}`} target={target}>
+                <NavLink to={getRouteArticleDetails(article.id)} target={target}>
                     <Button theme={ThemeButton.OUTLINE}>
                         {t('Читать далее...')}
                     </Button>

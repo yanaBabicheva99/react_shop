@@ -7,7 +7,7 @@ import {
     getUserAuthData, isAdmin, isManager, userActions,
 } from '@/entities/User';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { routesPath } from '@/shared/const/router';
+import { getRouteAdmin, getRouteProfile } from '@/shared/const/router';
 
 interface AvatarButtonProps {
     className?: string;
@@ -37,9 +37,9 @@ export const AvatarButton = (props: AvatarButtonProps) => {
             trigger={<Avatar url={isAuth.avatar!} size={30} alt="avatar" />}
             options={[
                 ...(isVisibleAdminPanel ? [{
-                    content: t('Админка'), href: routesPath.admin_panel,
+                    content: t('Админка'), href: getRouteAdmin(),
                 }] : []),
-                { content: t('Профиль'), href: `${routesPath.profile}/${isAuth.id}` },
+                { content: t('Профиль'), href: getRouteProfile(isAuth.id) },
                 { content: t('Выйти'), onClick: handleClickLogout },
             ]}
             className={className}

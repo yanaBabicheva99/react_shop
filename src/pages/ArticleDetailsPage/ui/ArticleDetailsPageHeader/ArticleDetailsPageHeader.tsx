@@ -7,7 +7,7 @@ import { Button, ThemeButton } from '@/shared/ui/Button';
 import { getArticle } from '@/entities/Article';
 import { HStack } from '@/shared/ui/Stack';
 import { canArticleEdit } from '../../model/selectors/article';
-import { routesPath } from '@/shared/const/router';
+import { getRouteArticles } from '@/shared/const/router';
 
 interface ArticleDetailsPageHeaderProps {
     className?: string;
@@ -25,7 +25,7 @@ export const ArticleDetailsPageHeader = (props: ArticleDetailsPageHeaderProps) =
     const navigate = useNavigate();
 
     const goBack = useCallback(() => {
-        navigate(routesPath.articles);
+        navigate(getRouteArticles());
     }, [navigate]);
 
     const goEdit = useCallback(() => {
