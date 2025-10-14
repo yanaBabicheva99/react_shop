@@ -1,7 +1,6 @@
 import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
-// import { useTranslation } from 'react-i18next';
 import {
     fetchArticleList,
     fetchArticleNextPage,
@@ -23,7 +22,6 @@ const ArticlesPage = memo((props: ArticlesPageProps) => {
         className,
     } = props;
 
-    // const { t } = useTranslation();
     const dispatch = useAppDispatch();
     const isLoading = useSelector(getArticleInfinityListLoading);
     const articleView = useSelector(getArticleView);
