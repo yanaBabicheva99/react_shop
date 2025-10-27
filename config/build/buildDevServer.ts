@@ -9,5 +9,6 @@ export function buildDevServer(port: number): DevServerConfiguration {
         client: {
             overlay: false,
         },
+        allowedHosts: 'all',
     };
 }

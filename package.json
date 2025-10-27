@@ -110,6 +110,7 @@
     "@reduxjs/toolkit": "^1.8.0",
     "@use-gesture/react": "^10.2.19",
     "axios": "^0.26.1",
+    "copy-to-clipboard": "^3.3.3",
     "eslint-plugin-i18next": "^5.1.2",
     "i18next": "^21.6.11",
     "i18next-browser-languagedetector": "^6.1.3",

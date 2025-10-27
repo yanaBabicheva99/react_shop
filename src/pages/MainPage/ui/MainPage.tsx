@@ -3,7 +3,7 @@ import { Page } from '@/widgets/Page';
 import { VirtualizationList } from '@/shared/ui/VirtualizationList';
 
 const MainPage = () => (
-    <Page>
+    <Page data-testid="MainPage">
         {/* {t('Главная страница')} */}
         <VirtualizationList />
     </Page>

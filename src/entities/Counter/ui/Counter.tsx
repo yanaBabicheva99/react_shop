@@ -1,20 +1,19 @@
-import { useDispatch, useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { Button, ThemeButton } from '@/shared/ui/Button';
-import { counterActions } from '../model/slice/counterSlice';
-import { getCounterValue } from '../model/selectors/getCounterValue/getCounterValue';
+import { useCounterActions } from '../model/slice/counterSlice';
+import { useCounterValue } from '../model/selectors/getCounterValue/getCounterValue';
 import cls from './Counter.module.scss';
 
 export const Counter = () => {
-    const dispatch = useDispatch();
-    const counterValue = useSelector(getCounterValue);
+    const counterValue = useCounterValue();
     const { t } = useTranslation();
-    const increment = () => {
-        dispatch(counterActions.increment());
+    const { decrement, increment } = useCounterActions();
+    const handleIncrement = () => {
+        increment();
     };
 
-    const decrement = () => {
-        dispatch(counterActions.decrement());
+    const handleDecrement = () => {
+        decrement();
     };
 
     return (
@@ -23,14 +22,14 @@ export const Counter = () => {
             <div className={cls.btnActions}>
                 <Button
                     data-testid="increment-button"
-                    onClick={increment}
+                    onClick={handleIncrement}
                     theme={ThemeButton.OUTLINE}
                 >
                     {t('Инкремент')}
                 </Button>
                 <Button
                     data-testid="decrement-button"
-                    onClick={decrement}
+                    onClick={handleDecrement}
                     theme={ThemeButton.OUTLINE}
                 >
                     {t('Декремент')}

@@ -15,6 +15,8 @@ import {
 import cls from './ArticleListItem.module.scss';
 import { ArticleBlockText } from '../ArticleBlockComponent/ArticleBlockText/ArticleBlockText';
 import { getRouteArticleDetails } from '@/shared/const/router';
+import { AppImage } from '@/shared/ui/AppImage';
+import { Skeleton } from '@/shared/ui/Skeleton';
 
 interface ArticleListItemProps {
     className?: string;
@@ -52,7 +54,11 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
                 >
                     <div className={cls.header}>
                         <Text text={article.createdAt} className={cls.created} />
-                        <img src={article.img} alt={article.title} />
+                        <AppImage
+                            src={article.img}
+                            alt={article.title}
+                            fallback={<Skeleton height={150} width={168} />}
+                        />
                     </div>
                     <div className={cls.footer}>
                         <div className={cls.textHeader}>
@@ -79,7 +85,11 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
                 <Text title={article.title} className={cls.title} />
                 <Text text={article.type.join(', ')} className={cls.text} />
                 <div className={cls.imageWrapper}>
-                    <img src={article.img} alt={article.title} />
+                    <AppImage
+                        src={article.img}
+                        alt={article.title}
+                        fallback={<Skeleton height={178} width="100%" />}
+                    />
                 </div>
             </div>
             {blockText && (

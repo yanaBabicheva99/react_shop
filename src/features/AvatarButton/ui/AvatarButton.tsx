@@ -34,7 +34,7 @@ export const AvatarButton = (props: AvatarButtonProps) => {
     return (
         <Dropdown
             direction="bottom left"
-            trigger={<Avatar url={isAuth.avatar!} size={30} alt="avatar" />}
+            trigger={<Avatar url={isAuth.avatar!} size={30} alt="avatar" fallbackInverted />}
             options={[
                 ...(isVisibleAdminPanel ? [{
                     content: t('Админка'), href: getRouteAdmin(),
