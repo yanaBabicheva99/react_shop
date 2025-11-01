@@ -549,6 +549,40 @@
           ]
         }
       ]
+    },
+    {
+      "id": "20",
+      "title": "Javascript news СВЕЖАЯ",
+      "subtitle": "Что нового в JS за 2022 год?",
+      "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
+      "views": 1022,
+      "createdAt": "26.04.2022",
+      "userId": "3",
+      "user": {
+        "id": "3",
+        "username": ""
+      },
+      "type": [
+        "IT"
+      ],
+      "blocks": []
+    },
+    {
+      "id": "21",
+      "title": "Javascript news СВЕЖАЯ",
+      "subtitle": "Что нового в JS за 2022 год?",
+      "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
+      "views": 1022,
+      "createdAt": "26.04.2022",
+      "userId": "3",
+      "user": {
+        "id": "3",
+        "username": ""
+      },
+      "type": [
+        "IT"
+      ],
+      "blocks": []
     }
   ],
   "comments": [
@@ -707,6 +741,17 @@
       "city": "Москва",
       "username": "user",
       "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUvS5qslYqAhTDaANDQVqw6L-j2YVrp5ZlKQ&s"
+    },
+    {
+      "id": "3",
+      "first": "TestFirst",
+      "lastname": "TestLast",
+      "age": 35,
+      "currency": "EUR",
+      "country": "RUSSIAN",
+      "city": "Москва",
+      "username": "user",
+      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUvS5qslYqAhTDaANDQVqw6L-j2YVrp5ZlKQ&s"
     }
   ],
   "users": [
@@ -727,6 +772,16 @@
       "avatar": "https://pm1.aminoapps.com/6870/e0633307a54c701ec48514039e3fd09d1b050ff4r1-540-960v2_hq.jpg",
       "roles": [
         "USER"
+      ]
+    },
+    {
+      "id": "3",
+      "username": "test",
+      "password": "123",
+      "avatar": "https://pic.rutubelist.ru/user/3b/27/3b2758ad5492a76b578f7ee072e4e894.jpg",
+      "roles": [
+        "ADMIN",
+        "MANAGER"
       ]
     }
   ],
@@ -831,6 +886,12 @@
       "articleId": "15",
       "rate": 5,
       "id": "8GEFWo-"
+    },
+    {
+      "userId": "1",
+      "articleId": "3",
+      "rate": 4,
+      "id": "_-hfGeL"
     }
   ]
 }

@@ -50,6 +50,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
         return (
             <NavLink to={getRouteArticleDetails(article.id)} target={target}>
                 <Card
+                    data-testid="ArticleListItem"
                     className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
                 >
                     <div className={cls.header}>
@@ -73,7 +74,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
     }
 
     return (
-        <Card className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}>
+        <Card data-testid="ArticleListItem" className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}>
             <div className={cls.header}>
                 <Text text={article.createdAt} className={cls.created} />
                 <div className={cls.avatar}>

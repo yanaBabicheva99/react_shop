@@ -46,7 +46,7 @@ export const StarRating = memo((props: StarRatingProps) => {
     };
 
     return (
-        <div className={classNames('', {}, [className])}>
+        <div data-testid="Star.Rating" className={classNames('', {}, [className])}>
             <HStack gap="8">
                 {starts.map((starNumber) => (
                     <Icon
@@ -62,6 +62,8 @@ export const StarRating = memo((props: StarRatingProps) => {
                         onMouseLeave={onLeave}
                         onMouseEnter={onHover(starNumber)}
                         onClick={onClick(starNumber)}
+                        data-testid={`StarRating.${starNumber}`}
+                        data-selected={starNumber <= currentStarsCount}
                     />
                 ))}
             </HStack>

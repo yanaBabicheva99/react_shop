@@ -47,7 +47,7 @@ export const ArticleCommentList = memo((props: ArticleCommentListProps) => {
 
     return (
         <DynamicModuleLoader reducers={reducerList} removeAfterMount>
-            <VStack max gap="16" className={classNames('', {}, [className])}>
+            <VStack data-testid="ArticleComment" max gap="16" className={classNames('', {}, [className])}>
                 <Text title={t('Комментарии')} />
                 <Suspense fallback={<Loader />}>
                     <AddCommentForm onSendComment={handleSendComment} />

@@ -50,7 +50,7 @@ export const CommentCard = (props: CommentCardProps) => {
                     <Text text={comment.user.username} />
                 </HStack>
             </NavLink>
-            <Text text={comment.text} />
+            <Text data-testid="Comment" text={comment.text} />
         </VStack>
     );
 };

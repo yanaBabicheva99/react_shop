@@ -31,7 +31,7 @@ export const CommentList = (props: CommentListProps) => {
     }
 
     return (
-        <VStack gap="16" max className={classNames('', {}, [className])}>
+        <VStack data-testid="CommentList" gap="16" max className={classNames('', {}, [className])}>
             {comments.length
                 ? comments.map((comment) => (
                     <CommentCard key={comment.id} comment={comment} isLoading={isLoading} />

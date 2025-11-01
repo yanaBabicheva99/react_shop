@@ -16,6 +16,7 @@
     "test:ui": "npx loki test",
     "test:ui:ok": "loki approve",
     "test:ui:ci": "loki --requireReference --reactUri file:$PWD/storybook-static",
+    "test:e2e": "npx cypress open ./config/cypress/cypress.config.ts",
     "storybook": "storybook dev -c ./config/storybook -p 6006",
     "storybook:build": "storybook build -c ./config/storybook",
     "test:ui:report": "npm run test:ui:json && npm run test:ui:html",
@@ -67,9 +68,10 @@
     "concurrently": "^9.2.0",
     "copy-webpack-plugin": "^10.2.4",
     "css-loader": "^6.6.0",
+    "cypress": "^13.15.0",
     "eslint": "^8.10.0",
     "eslint-config-airbnb": "^19.0.4",
-    "eslint-plugin-fsd-react-plugin": "^0.0.9",
+    "eslint-plugin-fsd-react-plugin": "^0.0.10",
     "eslint-plugin-import": "^2.25.4",
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-react": "^7.29.2",
@@ -111,7 +113,7 @@
   "dependencies": {
     "@headlessui/react": "^1.7.19",
     "@react-spring/web": "^9.5.2",
-    "@reduxjs/toolkit": "^1.8.0",
+    "@reduxjs/toolkit": "^1.9.7",
     "@use-gesture/react": "^10.2.19",
     "axios": "^0.26.1",
     "copy-to-clipboard": "^3.3.3",
@@ -123,7 +125,7 @@
     "react-device-detect": "^2.2.3",
     "react-dom": "^18.2.0",
     "react-i18next": "^11.15.5",
-    "react-redux": "^7.2.6",
+    "react-redux": "^7.2.9",
     "react-router-dom": "^6.2.1"
   },
   "loki": {
