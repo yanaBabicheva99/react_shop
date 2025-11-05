@@ -2,18 +2,18 @@ import { Comment } from '@/entities/Comment';
 import { fetchCommentsByArticleId } from '../servicices/FetchCommentsByArticleId/FetchCommentsByArticleId';
 import { articleCommentListReducer } from './ArticleCommentListSlice';
 import { ArticleCommentListSchema } from '../types/articleCommentListSchema';
-import {
-    addNewCommentArticle,
-} from '../servicices/AddNewCommentArticle/AddNewCommentArticle';
+import { addNewCommentArticle } from '../servicices/AddNewCommentArticle/AddNewCommentArticle';
 
-const comments: Comment[] = [{
-    id: '1',
-    text: 'Some text',
-    user: {
+const comments: Comment[] = [
+    {
         id: '1',
-        username: 'user',
+        text: 'Some text',
+        user: {
+            id: '1',
+            username: 'user',
+        },
     },
-}];
+];
 
 describe('ArticleCommentListSlice.test', () => {
     test('test pending fetchCommentsByArticleId', () => {
@@ -32,7 +32,12 @@ describe('ArticleCommentListSlice.test', () => {
             ids: [],
             entities: {},
         };
-        expect(articleCommentListReducer(state as ArticleCommentListSchema, fetchCommentsByArticleId.fulfilled(comments, '', ''))).toEqual({
+        expect(
+            articleCommentListReducer(
+                state as ArticleCommentListSchema,
+                fetchCommentsByArticleId.fulfilled(comments, '', ''),
+            ),
+        ).toEqual({
             isLoading: false,
             ids: ['1'],
             entities: { 1: comments[0] },

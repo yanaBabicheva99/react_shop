@@ -5,9 +5,7 @@ import AboutPageIcon from '@/shared/assets/about-20-20.svg';
 import ProfilePageIcon from '@/shared/assets/profile.svg';
 import ArticlesPageIcon from '@/shared/assets/articles.svg';
 import { SideBarItemType } from '../types/sidebarItem';
-import {
-    getRouteAbout, getRouteArticles, getRouteMain, getRouteProfile,
-} from '@/shared/const/router';
+import { getRouteAbout, getRouteArticles, getRouteMain, getRouteProfile } from '@/shared/const/router';
 
 export const getSidebarItem = createSelector(getUserAuthData, (authData) => {
     const sideBarItems: SideBarItemType[] = [

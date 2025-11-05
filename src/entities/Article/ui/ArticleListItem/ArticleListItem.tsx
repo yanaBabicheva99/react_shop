@@ -9,9 +9,7 @@ import { Avatar } from '@/shared/ui/Avatar';
 import { Button, ThemeButton } from '@/shared/ui/Button';
 import { NavLink } from '@/shared/ui/NavLink';
 import { ArticleBlockType, ArticleView } from '../../model/consts/articleConsts';
-import {
-    Article, ArticleBlockText as ArticleBlockTextType,
-} from '../../model/types/article';
+import { Article, ArticleBlockText as ArticleBlockTextType } from '../../model/types/article';
 import cls from './ArticleListItem.module.scss';
 import { ArticleBlockText } from '../ArticleBlockComponent/ArticleBlockText/ArticleBlockText';
 import { getRouteArticleDetails } from '@/shared/const/router';
@@ -26,18 +24,14 @@ interface ArticleListItemProps {
 }
 
 export const ArticleListItem = memo((props: ArticleListItemProps) => {
-    const {
-        className,
-        article,
-        view = ArticleView.SMALL,
-        target,
-    } = props;
+    const { className, article, view = ArticleView.SMALL, target } = props;
 
     const { t } = useTranslation();
 
-    const blockText = useMemo(() => article.blocks?.find(
-        (block) => block.type === ArticleBlockType.TEXT,
-    ), [article.blocks]) as ArticleBlockTextType;
+    const blockText = useMemo(
+        () => article.blocks?.find((block) => block.type === ArticleBlockType.TEXT),
+        [article.blocks],
+    ) as ArticleBlockTextType;
 
     const views = (
         <div className={cls.view}>
@@ -78,32 +72,21 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
             <div className={cls.header}>
                 <Text text={article.createdAt} className={cls.created} />
                 <div className={cls.avatar}>
-                    {article.user.avatar && (
-                        <Avatar size={30} url={article.user.avatar} alt={article.user.username} />
-                    )}
+                    {article.user.avatar && <Avatar size={30} url={article.user.avatar} alt={article.user.username} />}
                     <Text text={article.user.username} className={cls.avatarText} />
                 </div>
                 <Text title={article.title} className={cls.title} />
                 <Text text={article.type.join(', ')} className={cls.text} />
                 <div className={cls.imageWrapper}>
-                    <AppImage
-                        src={article.img}
-                        alt={article.title}
-                        fallback={<Skeleton height={178} width="100%" />}
-                    />
+                    <AppImage src={article.img} alt={article.title} fallback={<Skeleton height={178} width="100%" />} />
                 </div>
             </div>
             {blockText && (
-                <ArticleBlockText
-                    block={blockText}
-                    className={classNames(cls.blockText, {}, [cls.ellipse])}
-                />
+                <ArticleBlockText block={blockText} className={classNames(cls.blockText, {}, [cls.ellipse])} />
             )}
             <div className={cls.footer}>
                 <NavLink to={getRouteArticleDetails(article.id)} target={target}>
-                    <Button theme={ThemeButton.OUTLINE}>
-                        {t('Читать далее...')}
-                    </Button>
+                    <Button theme={ThemeButton.OUTLINE}>{t('Читать далее...')}</Button>
                 </NavLink>
                 {views}
             </div>

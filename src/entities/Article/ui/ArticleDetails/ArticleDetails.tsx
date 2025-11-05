@@ -31,10 +31,7 @@ const reducer: ReducersList = {
 };
 
 export const ArticleDetails = memo((props: ArticleDetailProps) => {
-    const {
-        id,
-        className,
-    } = props;
+    const { id, className } = props;
 
     const { t } = useTranslation();
     const dispatch = useAppDispatch();
@@ -44,16 +41,17 @@ export const ArticleDetails = memo((props: ArticleDetailProps) => {
 
     const renderArticleBlock = useCallback((block: ArticleBlock) => {
         switch (block.type) {
-        case ArticleBlockType.TEXT:
-            return <ArticleBlockText key={block.id} block={block} className={cls.blockItem} />;
+            case ArticleBlockType.TEXT:
+                return <ArticleBlockText key={block.id} block={block} className={cls.blockItem} />;
 
-        case ArticleBlockType.IMAGE:
-            return <ArticleBlockImage key={block.id} block={block} className={cls.blockItem} />;
+            case ArticleBlockType.IMAGE:
+                return <ArticleBlockImage key={block.id} block={block} className={cls.blockItem} />;
 
-        case ArticleBlockType.CODE:
-            return <ArticleBlockCode key={block.id} block={block} className={cls.blockItem} />;
+            case ArticleBlockType.CODE:
+                return <ArticleBlockCode key={block.id} block={block} className={cls.blockItem} />;
 
-        default: return null;
+            default:
+                return null;
         }
     }, []);
 
@@ -95,9 +93,7 @@ export const ArticleDetails = memo((props: ArticleDetailProps) => {
                         <Text text={String(articleDetails?.createdAt)} />
                     </HStack>
                 </VStack>
-                <div className={cls.block}>
-                    {articleDetails?.blocks?.map(renderArticleBlock)}
-                </div>
+                <div className={cls.block}>{articleDetails?.blocks?.map(renderArticleBlock)}</div>
             </div>
         );
     }

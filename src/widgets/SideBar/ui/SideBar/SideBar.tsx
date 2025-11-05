@@ -14,9 +14,7 @@ interface SideBarProps {
 }
 
 export const SideBar = memo((props: SideBarProps) => {
-    const {
-        className,
-    } = props;
+    const { className } = props;
 
     const [collapsed, setCollapsed] = useState(false);
     const sideBarItems = useSelector(getSidebarItem);
@@ -25,10 +23,7 @@ export const SideBar = memo((props: SideBarProps) => {
     };
 
     return (
-        <aside
-            data-testid="sidebar"
-            className={classNames(cls.SideBar, { [cls.collapsed]: collapsed }, [className])}
-        >
+        <aside data-testid="sidebar" className={classNames(cls.SideBar, { [cls.collapsed]: collapsed }, [className])}>
             <VStack role="navigation" className={cls.links} gap="16">
                 {sideBarItems.map((item) => (
                     <SideBarItem key={item.to} item={item} collapsed={collapsed} />
@@ -46,10 +41,7 @@ export const SideBar = memo((props: SideBarProps) => {
             </Button>
             <HStack className={cls.switchers}>
                 <ThemeSwitcher />
-                <LangSwitcher
-                    collapsed={collapsed}
-                    className={cls.langBtn}
-                />
+                <LangSwitcher collapsed={collapsed} className={cls.langBtn} />
             </HStack>
         </aside>
     );

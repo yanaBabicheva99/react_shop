@@ -1,6 +1,4 @@
-import {
-    AnyAction, CombinedState, EnhancedStore, Reducer, ReducersMapObject,
-} from '@reduxjs/toolkit';
+import { AnyAction, CombinedState, EnhancedStore, Reducer, ReducersMapObject } from '@reduxjs/toolkit';
 import { AxiosInstance } from 'axios';
 import type { To } from 'history';
 import { NavigateOptions } from 'react-router';
@@ -20,7 +18,7 @@ import { rtkApi } from '@/shared/api/rtkApi';
 export interface StateSchema {
     counter: CounterSchema;
     user: UserSchema;
-    [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>
+    [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>;
     login?: LoginSchema;
     profile?: ProfileSchema;
     articleDetails?: ArticleDetailsSchema;
@@ -47,7 +45,7 @@ export interface StoreWithReducerManager extends EnhancedStore {
 
 export interface ThunkExtraConfig {
     api: AxiosInstance;
-    navigate?: (to: To, options?: NavigateOptions) => void,
+    navigate?: (to: To, options?: NavigateOptions) => void;
 }
 
 export interface ThunkConfig<T> {

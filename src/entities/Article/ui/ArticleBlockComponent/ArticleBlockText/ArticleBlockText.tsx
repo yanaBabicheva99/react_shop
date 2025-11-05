@@ -10,15 +10,14 @@ interface ArticleBlockTextProps {
 }
 
 export const ArticleBlockText = memo((props: ArticleBlockTextProps) => {
-    const {
-        className,
-        block,
-    } = props;
+    const { className, block } = props;
 
     return (
         <VStack max gap="16" className={classNames('', {}, [className])}>
             {block.title && <Text title={block.title} />}
-            {block.paragraphs.map((text) => <Text key={text} text={text} />)}
+            {block.paragraphs.map((text) => (
+                <Text key={text} text={text} />
+            ))}
         </VStack>
     );
 });

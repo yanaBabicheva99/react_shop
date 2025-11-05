@@ -15,9 +15,7 @@ const articles = [
         img: Img,
         views: 1022,
         createdAt: '26.02.2022',
-        type: [
-            'IT',
-        ],
+        type: ['IT'],
         userId: '1',
         user: {
             username: 'user',
@@ -42,9 +40,7 @@ const articles = [
         img: Img,
         views: 1022,
         createdAt: '26.02.2022',
-        type: [
-            'IT',
-        ],
+        type: ['IT'],
         userId: '1',
         user: {
             username: 'user',
@@ -78,9 +74,7 @@ const articles = [
         img: Img,
         views: 1022,
         createdAt: '26.02.2022',
-        type: [
-            'IT',
-        ],
+        type: ['IT'],
         userId: '1',
         user: {
             username: 'user',
@@ -117,16 +111,19 @@ export const NormalRecommendationArticlesList: Story = {
     args: {},
 };
 
-NormalRecommendationArticlesList.decorators = [ThemeDecorator(Theme.LIGHT), StoreDecorator({
-    recommendationArticlesList: {
-        ids: [1, 2, 3],
-        entities: {
-            1: articles[1],
-            2: articles[0],
-            3: articles[2],
+NormalRecommendationArticlesList.decorators = [
+    ThemeDecorator(Theme.LIGHT),
+    StoreDecorator({
+        recommendationArticlesList: {
+            ids: [1, 2, 3],
+            entities: {
+                1: articles[1],
+                2: articles[0],
+                3: articles[2],
+            },
         },
-    },
-})];
+    }),
+];
 NormalRecommendationArticlesList.parameters = {
     fetchMock: {
         mocks: [
@@ -143,16 +140,19 @@ export const DarkRecommendationArticlesList: Story = {
     args: {},
 };
 
-DarkRecommendationArticlesList.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({
-    recommendationArticlesList: {
-        ids: [1, 2, 3],
-        entities: {
-            1: articles[1],
-            2: articles[0],
-            3: articles[2],
+DarkRecommendationArticlesList.decorators = [
+    ThemeDecorator(Theme.DARK),
+    StoreDecorator({
+        recommendationArticlesList: {
+            ids: [1, 2, 3],
+            entities: {
+                1: articles[1],
+                2: articles[0],
+                3: articles[2],
+            },
         },
-    },
-})];
+    }),
+];
 
 DarkRecommendationArticlesList.parameters = {
     fetchMock: {
@@ -170,16 +170,19 @@ export const OrangeRecommendationArticlesList: Story = {
     args: {},
 };
 
-OrangeRecommendationArticlesList.decorators = [ThemeDecorator(Theme.ORANGE), StoreDecorator({
-    recommendationArticlesList: {
-        ids: [1, 2],
-        entities: {
-            1: articles[1],
-            2: articles[0],
-            3: articles[2],
+OrangeRecommendationArticlesList.decorators = [
+    ThemeDecorator(Theme.ORANGE),
+    StoreDecorator({
+        recommendationArticlesList: {
+            ids: [1, 2],
+            entities: {
+                1: articles[1],
+                2: articles[0],
+                3: articles[2],
+            },
         },
-    },
-})];
+    }),
+];
 
 OrangeRecommendationArticlesList.parameters = {
     fetchMock: {

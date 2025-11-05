@@ -1,8 +1,6 @@
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { ArticleList, ArticleView } from '@/entities/Article';
-import {
-    useArticleRecommendationList,
-} from '../api/recommendationArticleListInject';
+import { useArticleRecommendationList } from '../api/recommendationArticleListInject';
 import cls from './RecommendationArticlesList.module.scss';
 
 interface RecommendationArticlesListProps {
@@ -10,9 +8,7 @@ interface RecommendationArticlesListProps {
 }
 
 export const RecommendationArticlesList = (props: RecommendationArticlesListProps) => {
-    const {
-        className,
-    } = props;
+    const { className } = props;
 
     const { isLoading, data: articles } = useArticleRecommendationList(4);
 

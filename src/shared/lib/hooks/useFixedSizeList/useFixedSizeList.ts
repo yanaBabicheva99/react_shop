@@ -1,7 +1,4 @@
-import {
-    useCallback,
-    useEffect, useLayoutEffect, useMemo, useState,
-} from 'react';
+import { useCallback, useEffect, useLayoutEffect, useMemo, useState } from 'react';
 
 type Key = string | number;
 
@@ -105,9 +102,7 @@ export function useFixedSizeList(props: UseFixedSizeListProps) {
         return () => element.removeEventListener('scroll', handleScroll);
     }, [getScrollElement, scrollingDelay]);
 
-    const {
-        virtualItems, startIndex, endIndex, totalHeight, allItems,
-    } = useMemo(() => {
+    const { virtualItems, startIndex, endIndex, totalHeight, allItems } = useMemo(() => {
         const getItemHeight = (index: number) => {
             if (itemHeight) {
                 return itemHeight(index);
@@ -153,13 +148,17 @@ export function useFixedSizeList(props: UseFixedSizeListProps) {
         const virtualItems = allItems.slice(startIndex, endIndex + 1);
 
         return {
-            virtualItems, startIndex, endIndex, allItems, totalHeight,
+            virtualItems,
+            startIndex,
+            endIndex,
+            allItems,
+            totalHeight,
         };
     }, [scrollTop, listHeight, itemHeight, overscan, itemsCount, estimateItemHeight, measurementCache]);
 
     const measureElement = useCallback((element: Element | null) => {
         if (!element) return;
-        const indexAttribute = element.getAttribute(('data-index')) || '';
+        const indexAttribute = element.getAttribute('data-index') || '';
         const index = parseInt(indexAttribute, 10);
         if (Number.isNaN(index)) {
             console.error('Dynamic element must have a valid data-index attribute');

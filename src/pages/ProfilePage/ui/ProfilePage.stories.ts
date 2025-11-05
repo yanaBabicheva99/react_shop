@@ -22,18 +22,30 @@ export const ProfilePageLite: Story = {
     args: {},
 };
 
-ProfilePageLite.decorators = [ThemeDecorator(Theme.LIGHT), StoreDecorator({
-    profile: {
-        readonly: true,
-    },
-}, { profile: profileReducer })];
+ProfilePageLite.decorators = [
+    ThemeDecorator(Theme.LIGHT),
+    StoreDecorator(
+        {
+            profile: {
+                readonly: true,
+            },
+        },
+        { profile: profileReducer },
+    ),
+];
 
 export const ProfilePageDark: Story = {
     args: {},
 };
 
-ProfilePageDark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({
-    profile: {
-        readonly: true,
-    },
-}, { profile: profileReducer })];
+ProfilePageDark.decorators = [
+    ThemeDecorator(Theme.DARK),
+    StoreDecorator(
+        {
+            profile: {
+                readonly: true,
+            },
+        },
+        { profile: profileReducer },
+    ),
+];

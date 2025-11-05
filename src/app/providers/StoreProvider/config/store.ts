@@ -7,10 +7,7 @@ import { scrollTrackingReducer } from '@/features/ScrollTracking';
 import { rtkApi } from '@/shared/api/rtkApi';
 import { createReducerManager } from './reducerManager';
 
-export function createReduxStore(
-    initialState?: StateSchema,
-    asyncReducers?: ReducersMapObject<StateSchema>,
-) {
+export function createReduxStore(initialState?: StateSchema, asyncReducers?: ReducersMapObject<StateSchema>) {
     const rootReducer: ReducersMapObject<StateSchema> = {
         ...asyncReducers,
         counter: counterReducer,
@@ -29,11 +26,12 @@ export function createReduxStore(
         reducer: reducerManager.reduce as ReducersMapObject<StateSchema>,
         devTools: __IS_DEV__,
         preloadedState: initialState,
-        middleware: (getDefaultMiddleware) => getDefaultMiddleware({
-            thunk: {
-                extraArgument: extraArgs,
-            },
-        }).concat(rtkApi.middleware),
+        middleware: (getDefaultMiddleware) =>
+            getDefaultMiddleware({
+                thunk: {
+                    extraArgument: extraArgs,
+                },
+            }).concat(rtkApi.middleware),
     });
 
     // @ts-ignore

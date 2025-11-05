@@ -36,3 +36,10 @@ describe('template spec', () => {
         cy.removeArticle(articleId);
     });
 });
+
+// Можно испольщовать фикстуры
+// describe('', () => {
+//     it('', () => {
+//         cy.intercept('GET', '**/articles?*', { fixture: 'article-details.json' });
+//     });
+// });

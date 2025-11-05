@@ -1,1 +1,24 @@
-{"newItems":[],"deletedItems":[],"passedItems":[],"failedItems":["chrome_laptop_features_RecommendationArticlesList_Orange_Recommendation_Articles_List.png","chrome_laptop_pages_ArticlesPage_Orange_Articles_Page.png"],"expectedItems":["chrome_laptop_features_RecommendationArticlesList_Orange_Recommendation_Articles_List.png","chrome_laptop_pages_ArticlesPage_Orange_Articles_Page.png"],"actualItems":["chrome_laptop_features_RecommendationArticlesList_Orange_Recommendation_Articles_List.png","chrome_laptop_pages_ArticlesPage_Orange_Articles_Page.png"],"diffItems":["chrome_laptop_features_RecommendationArticlesList_Orange_Recommendation_Articles_List.png","chrome_laptop_pages_ArticlesPage_Orange_Articles_Page.png"],"actualDir":"current","expectedDir":"reference","diffDir":"difference"}
+{
+    "newItems": [],
+    "deletedItems": [],
+    "passedItems": [],
+    "failedItems": [
+        "chrome_laptop_features_RecommendationArticlesList_Orange_Recommendation_Articles_List.png",
+        "chrome_laptop_pages_ArticlesPage_Orange_Articles_Page.png"
+    ],
+    "expectedItems": [
+        "chrome_laptop_features_RecommendationArticlesList_Orange_Recommendation_Articles_List.png",
+        "chrome_laptop_pages_ArticlesPage_Orange_Articles_Page.png"
+    ],
+    "actualItems": [
+        "chrome_laptop_features_RecommendationArticlesList_Orange_Recommendation_Articles_List.png",
+        "chrome_laptop_pages_ArticlesPage_Orange_Articles_Page.png"
+    ],
+    "diffItems": [
+        "chrome_laptop_features_RecommendationArticlesList_Orange_Recommendation_Articles_List.png",
+        "chrome_laptop_pages_ArticlesPage_Orange_Articles_Page.png"
+    ],
+    "actualDir": "current",
+    "expectedDir": "reference",
+    "diffDir": "difference"
+}

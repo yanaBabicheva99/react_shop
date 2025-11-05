@@ -5,7 +5,7 @@ import { Text, TextTheme } from '@/shared/ui/Text';
 import { Page } from '@/widgets/Page';
 
 const ProfilePage = () => {
-    const { id } = useParams<{id: string}>();
+    const { id } = useParams<{ id: string }>();
 
     const { t } = useTranslation('profile');
 

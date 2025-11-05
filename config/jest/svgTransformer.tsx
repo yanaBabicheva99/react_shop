@@ -1,7 +1,5 @@
 import React from 'react';
 
-const svgTransformer = () => (
-    <div />
-);
+const svgTransformer = () => <div />;
 
 export default svgTransformer;

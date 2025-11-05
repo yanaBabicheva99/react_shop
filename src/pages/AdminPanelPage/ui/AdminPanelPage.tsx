@@ -8,17 +8,13 @@ interface AdminPanelPageProps {
 }
 
 const AdminPanelPage = (props: AdminPanelPageProps) => {
-    const {
-        className,
-    } = props;
+    const { className } = props;
 
     const { t } = useTranslation();
 
     return (
         <Page data-testid="AdminPage">
-            <div className={classNames('', {}, [className])}>
-                {t('ADMIN PANEL')}
-            </div>
+            <div className={classNames('', {}, [className])}>{t('ADMIN PANEL')}</div>
         </Page>
     );
 };

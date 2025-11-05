@@ -11,17 +11,12 @@ interface ThemeSwitcherProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 export const ThemeSwitcher = memo((props: ThemeSwitcherProps) => {
-    const {
-        className,
-    } = props;
+    const { className } = props;
 
     const { theme, toggleTheme } = useTheme();
 
     return (
-        <Button
-            className={classNames('', {}, [className])}
-            onClick={toggleTheme}
-        >
+        <Button className={classNames('', {}, [className])} onClick={toggleTheme}>
             {theme === Theme.LIGHT ? <IconSwitcherLight /> : <IconSwitcherDark />}
         </Button>
     );

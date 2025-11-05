@@ -2,8 +2,10 @@ import { StateSchema } from '@/app/providers/StoreProvider';
 import { ArticleView } from '@/entities/Article';
 import {
     getArticleInfinityListLoading,
-    getArticleView, getHasMore,
-    getPageLimit, getPageNumber,
+    getArticleView,
+    getHasMore,
+    getPageLimit,
+    getPageNumber,
 } from '../selectors/articleListSelector';
 
 describe('articleListSelector.test', () => {

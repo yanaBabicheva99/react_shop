@@ -21,19 +21,19 @@ const reducer: ReducersList = {
 };
 
 const AddCommentForm = memo((props: AddCommentFormProps) => {
-    const {
-        className,
-        onSendComment,
-    } = props;
+    const { className, onSendComment } = props;
 
     const text = useSelector(getCommentFormText);
     const dispatch = useAppDispatch();
 
     const { t } = useTranslation();
 
-    const handleChangeText = useCallback((value: string) => {
-        dispatch(addCommentFormActions.setTextComment(value));
-    }, [dispatch]);
+    const handleChangeText = useCallback(
+        (value: string) => {
+            dispatch(addCommentFormActions.setTextComment(value));
+        },
+        [dispatch],
+    );
 
     const onSendCommentHandler = useCallback(() => {
         onSendComment(text);

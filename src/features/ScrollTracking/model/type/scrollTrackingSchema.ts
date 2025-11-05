@@ -1,1 +1,1 @@
-export type ScrollTrackingSchema = Record<string, number>
+export type ScrollTrackingSchema = Record<string, number>;

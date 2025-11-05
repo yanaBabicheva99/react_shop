@@ -7,24 +7,25 @@ import { CommentList } from './CommentList';
 import { Theme } from '@/shared/const/theme';
 
 const args = {
-    comments: [{
-        id: '1',
-        text: 'Text Card comments 1',
-        user: {
+    comments: [
+        {
             id: '1',
-            username: 'username',
-            avatar: Img,
+            text: 'Text Card comments 1',
+            user: {
+                id: '1',
+                username: 'username',
+                avatar: Img,
+            },
         },
-    },
-    {
-        id: '2',
-        text: 'Text Card comments 2',
-        user: {
+        {
             id: '2',
-            username: 'username 2',
-            avatar: JsImg,
+            text: 'Text Card comments 2',
+            user: {
+                id: '2',
+                username: 'username 2',
+                avatar: JsImg,
+            },
         },
-    },
     ],
 };
 

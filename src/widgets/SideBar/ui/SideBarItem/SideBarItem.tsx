@@ -8,15 +8,12 @@ import cls from './SideBarItem.module.scss';
 import { SideBarItemType } from '../../model/types/sidebarItem';
 
 interface SideBarItemProps {
-   item: SideBarItemType;
-   collapsed: boolean;
+    item: SideBarItemType;
+    collapsed: boolean;
 }
 
 export const SideBarItem = memo((props: SideBarItemProps) => {
-    const {
-        item,
-        collapsed,
-    } = props;
+    const { item, collapsed } = props;
 
     const { t } = useTranslation();
     const auth = useSelector(getUserAuthData);
@@ -26,10 +23,7 @@ export const SideBarItem = memo((props: SideBarItemProps) => {
     }
 
     return (
-        <NavLink
-            to={item.to}
-            className={classNames(cls.link, { [cls.collapsed]: collapsed })}
-        >
+        <NavLink to={item.to} className={classNames(cls.link, { [cls.collapsed]: collapsed })}>
             <item.Icon className={cls.icon} />
             <span>{t(item.text)}</span>
         </NavLink>

@@ -19,9 +19,7 @@ import cls from './EditableProfileCard.module.scss';
 import { ProfilePageHeader } from '../ProfilePageHeader/ProfilePageHeader';
 import { getProfileIsLoading } from '../../model/selectors/getProfileIsLoading/getProfileIsLoading';
 import { getProfileError } from '../../model/selectors/getProfileError/getProfileError';
-import {
-    getProfileValidationErrors,
-} from '../../model/selectors/getProfileValidationErrors/getProfileValidationErrors';
+import { getProfileValidationErrors } from '../../model/selectors/getProfileValidationErrors/getProfileValidationErrors';
 
 interface EditableProfileCardProps {
     className?: string;
@@ -33,10 +31,7 @@ const reducersList: ReducersList = {
 };
 
 export const EditableProfileCard = (props: EditableProfileCardProps) => {
-    const {
-        className,
-        id,
-    } = props;
+    const { className, id } = props;
 
     const { t } = useTranslation('profile');
     const dispatch = useDispatch();
@@ -61,33 +56,54 @@ export const EditableProfileCard = (props: EditableProfileCardProps) => {
     const readOnly = useSelector(getProfileReadOnly);
     const validationErrors = useSelector(getProfileValidationErrors);
 
-    const handleChangeFirstname = useCallback((value: string) => {
-        dispatch(profileActions.setFormData({ first: value }));
-    }, [dispatch]);
+    const handleChangeFirstname = useCallback(
+        (value: string) => {
+            dispatch(profileActions.setFormData({ first: value }));
+        },
+        [dispatch],
+    );
 
-    const handleChangeLastname = useCallback((value: string) => {
-        dispatch(profileActions.setFormData({ lastname: value }));
-    }, [dispatch]);
+    const handleChangeLastname = useCallback(
+        (value: string) => {
+            dispatch(profileActions.setFormData({ lastname: value }));
+        },
+        [dispatch],
+    );
 
-    const handleChangeAge = useCallback((value: string) => {
-        dispatch(profileActions.setFormData({ age: Number(value) || 0 }));
-    }, [dispatch]);
+    const handleChangeAge = useCallback(
+        (value: string) => {
+            dispatch(profileActions.setFormData({ age: Number(value) || 0 }));
+        },
+        [dispatch],
+    );
 
-    const handleChangeCity = useCallback((value: string) => {
-        dispatch(profileActions.setFormData({ city: value }));
-    }, [dispatch]);
+    const handleChangeCity = useCallback(
+        (value: string) => {
+            dispatch(profileActions.setFormData({ city: value }));
+        },
+        [dispatch],
+    );
 
-    const handleChangeCurrency = useCallback((value: Currency) => {
-        dispatch(profileActions.setFormData({ currency: value }));
-    }, [dispatch]);
+    const handleChangeCurrency = useCallback(
+        (value: Currency) => {
+            dispatch(profileActions.setFormData({ currency: value }));
+        },
+        [dispatch],
+    );
 
-    const handleChangeCountry = useCallback((value: Country) => {
-        dispatch(profileActions.setFormData({ country: value }));
-    }, [dispatch]);
+    const handleChangeCountry = useCallback(
+        (value: Country) => {
+            dispatch(profileActions.setFormData({ country: value }));
+        },
+        [dispatch],
+    );
 
-    const handleChangeAvatar = useCallback((value: string) => {
-        dispatch(profileActions.setFormData({ avatar: value }));
-    }, [dispatch]);
+    const handleChangeAvatar = useCallback(
+        (value: string) => {
+            dispatch(profileActions.setFormData({ avatar: value }));
+        },
+        [dispatch],
+    );
 
     if (isLoading) {
         return (

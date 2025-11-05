@@ -19,19 +19,16 @@ const options = Object.keys(Currency).map((item) => ({
 }));
 
 export const SelectCurrency = memo((props: SelectCurrencyProps) => {
-    const {
-        className,
-        value,
-        onChange,
-        readOnly,
-        direction = 'top left',
-    } = props;
+    const { className, value, onChange, readOnly, direction = 'top left' } = props;
 
     const { t } = useTranslation();
 
-    const handleChange = useCallback((value: Currency) => {
-        onChange?.(value);
-    }, [onChange]);
+    const handleChange = useCallback(
+        (value: Currency) => {
+            onChange?.(value);
+        },
+        [onChange],
+    );
 
     return (
         <ListBox<Currency>

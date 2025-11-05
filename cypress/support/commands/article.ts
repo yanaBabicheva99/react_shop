@@ -9,18 +9,19 @@ const defaultArticle = {
     createdAt: '26.04.2022',
     userId: '3',
     user: { id: '3', username: '' },
-    type: [
-        'IT',
-    ],
+    type: ['IT'],
     blocks: [],
 };
 
-export const createArticle = (article = defaultArticle) => cy.request({
-    method: 'POST',
-    url: 'http://localhost:8000/articles',
-    headers: { authorization: 'user' },
-    body: article,
-}).then(({ body }) => body);
+export const createArticle = (article = defaultArticle) =>
+    cy
+        .request({
+            method: 'POST',
+            url: 'http://localhost:8000/articles',
+            headers: { authorization: 'user' },
+            body: article,
+        })
+        .then(({ body }) => body);
 
 export const removeArticle = (articleId: string) => {
     cy.request({
@@ -33,8 +34,8 @@ export const removeArticle = (articleId: string) => {
 declare global {
     namespace Cypress {
         interface Chainable {
-            createArticle(article?: Article): Chainable<Article>
-            removeArticle(id: string): Chainable<void>
+            createArticle(article?: Article): Chainable<Article>;
+            removeArticle(id: string): Chainable<void>;
         }
     }
 }

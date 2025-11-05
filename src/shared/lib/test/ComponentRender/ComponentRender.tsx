@@ -18,12 +18,9 @@ const ComponentRender = (component: ReactNode, renderOptions: RenderOptions = {}
     return render(
         <MemoryRouter initialEntries={[route]}>
             <StoreProvider initialState={initialState} asyncReducers={asyncReducers}>
-                <I18nextProvider i18n={i18n}>
-                    {component}
-                </I18nextProvider>
+                <I18nextProvider i18n={i18n}>{component}</I18nextProvider>
             </StoreProvider>
-        </MemoryRouter>
-        ,
+        </MemoryRouter>,
     );
 };
 

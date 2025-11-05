@@ -21,10 +21,7 @@ export const NormalDropdown: Story = {
     args: {
         trigger: <Button theme={ThemeButton.OUTLINE}>Menu</Button>,
         direction: 'top left',
-        options: [
-            { content: 'First' },
-            { content: 'Second' },
-        ],
+        options: [{ content: 'First' }, { content: 'Second' }],
     },
 };
 
@@ -34,10 +31,7 @@ export const DarkDropdown: Story = {
     args: {
         trigger: <Button theme={ThemeButton.OUTLINE}>Menu</Button>,
         direction: 'top right',
-        options: [
-            { content: 'First' },
-            { content: 'Second' },
-        ],
+        options: [{ content: 'First' }, { content: 'Second' }],
     },
 };
 
@@ -47,10 +41,7 @@ export const OrangeDropdown: Story = {
     args: {
         trigger: <Button theme={ThemeButton.OUTLINE}>Menu</Button>,
         direction: 'bottom left',
-        options: [
-            { content: 'First' },
-            { content: 'Second' },
-        ],
+        options: [{ content: 'First' }, { content: 'Second' }],
     },
 };
 

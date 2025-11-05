@@ -12,11 +12,7 @@ interface LoginModalProps {
 }
 
 export const LoginModal = (props: LoginModalProps) => {
-    const {
-        isOpen,
-        onClose,
-        className,
-    } = props;
+    const { isOpen, onClose, className } = props;
 
     const { t } = useTranslation();
 

@@ -12,10 +12,7 @@ interface ArticleBlockCodeProps {
 }
 
 export const ArticleBlockCode = memo((props: ArticleBlockCodeProps) => {
-    const {
-        className,
-        block,
-    } = props;
+    const { className, block } = props;
 
     const copyText = useCallback(() => {
         navigator.clipboard.writeText(block.code);

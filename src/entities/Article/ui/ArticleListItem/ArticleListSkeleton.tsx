@@ -10,16 +10,11 @@ interface ArticleListSkeletonProps {
 }
 
 export const ArticleListSkeleton = (props: ArticleListSkeletonProps) => {
-    const {
-        className,
-        view = ArticleView.SMALL,
-    } = props;
+    const { className, view = ArticleView.SMALL } = props;
 
     if (view === ArticleView.SMALL) {
         return (
-            <Card
-                className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
-            >
+            <Card className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}>
                 <div className={cls.header}>
                     <Skeleton width="100%" height={150} />
                 </div>
@@ -34,9 +29,7 @@ export const ArticleListSkeleton = (props: ArticleListSkeletonProps) => {
     }
 
     return (
-        <Card
-            className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
-        >
+        <Card className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}>
             <div className={cls.header}>
                 <Skeleton width={110} height={16} className={cls.created} />
                 <div className={cls.avatar}>

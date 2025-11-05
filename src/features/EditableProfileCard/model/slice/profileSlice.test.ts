@@ -1,9 +1,7 @@
 import { Currency } from '@/entities/Currency';
 import { Country } from '@/entities/Country';
 import { ValidateProfileError } from '../consts/editableProfileConsts';
-import {
-    updateProfileCardInfo,
-} from '../services/UpdateProfileCardInfo/UpdateProfileCardInfo';
+import { updateProfileCardInfo } from '../services/UpdateProfileCardInfo/UpdateProfileCardInfo';
 import { fetchProfileData } from '../services/FetchProfileData/FetchProfileData';
 import { Profile, ProfileSchema } from '../types/profileSchema';
 import { profileActions, profileReducer } from './profileSlice';
@@ -31,7 +29,9 @@ describe('profileSlice.test', () => {
         const state: DeepPartial<ProfileSchema> = {
             readonly: true,
         };
-        expect(profileReducer(state as ProfileSchema, profileActions.changeReadOnly(false))).toEqual({ readonly: false });
+        expect(profileReducer(state as ProfileSchema, profileActions.changeReadOnly(false))).toEqual({
+            readonly: false,
+        });
     });
 
     test('test reset form', () => {
@@ -102,7 +102,9 @@ describe('profileSlice.test', () => {
             form: data,
             readonly: false,
         };
-        expect(profileReducer(state as ProfileSchema, updateProfileCardInfo.fulfilled({ ...data, username: 'Яна' }, ''))).toEqual({
+        expect(
+            profileReducer(state as ProfileSchema, updateProfileCardInfo.fulfilled({ ...data, username: 'Яна' }, '')),
+        ).toEqual({
             isLoading: false,
             data: { ...data, username: 'Яна' },
             form: { ...data, username: 'Яна' },

@@ -13,20 +13,11 @@ interface ArticleListProps {
     isLoading?: boolean;
     target?: string;
 }
-const getSkeleton = (view: ArticleView) => (
-    new Array(view === ArticleView.BIG ? 4 : 9).fill(0).map((_, ind) => (
-        <ArticleListSkeleton view={view} key={ind} />
-    ))
-);
+const getSkeleton = (view: ArticleView) =>
+    new Array(view === ArticleView.BIG ? 4 : 9).fill(0).map((_, ind) => <ArticleListSkeleton view={view} key={ind} />);
 
 export const ArticleList = memo((props: ArticleListProps) => {
-    const {
-        className,
-        articles = [],
-        articleView,
-        isLoading,
-        target,
-    } = props;
+    const { className, articles = [], articleView, isLoading, target } = props;
 
     return (
         <div data-testid="ArticleList" className={classNames(cls.ArticleList, {}, [className])}>

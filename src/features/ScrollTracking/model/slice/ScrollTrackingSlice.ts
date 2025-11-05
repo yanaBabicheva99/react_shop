@@ -1,8 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { ScrollTrackingSchema } from '../type/scrollTrackingSchema';
 
-const initialState: ScrollTrackingSchema = {
-};
+const initialState: ScrollTrackingSchema = {};
 
 export const scrollTrackingSlice = createSlice({
     name: 'scroll',

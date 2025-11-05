@@ -1,6 +1,4 @@
-import {
-    MutableRefObject, useCallback, useEffect, useRef, useState,
-} from 'react';
+import { MutableRefObject, useCallback, useEffect, useRef, useState } from 'react';
 
 interface UseModalProps {
     isOpen?: boolean;
@@ -16,14 +14,17 @@ export function useModal({ animationDelay, isOpen, onClose }: UseModalProps) {
     const timerRefOpened = useRef() as MutableRefObject<ReturnType<typeof setTimeout> | undefined>;
     const timerRefClosed = useRef() as MutableRefObject<ReturnType<typeof setTimeout> | undefined>;
 
-    const closeHandler = useCallback((onCloseCall = true) => {
-        setIsClosed(true);
-        timerRefClosed.current = setTimeout(() => {
-            setIsClosed(false);
-            setIsOpened(false);
-            if (onCloseCall) onClose?.();
-        }, animationDelay);
-    }, [onClose]);
+    const closeHandler = useCallback(
+        (onCloseCall = true) => {
+            setIsClosed(true);
+            timerRefClosed.current = setTimeout(() => {
+                setIsClosed(false);
+                setIsOpened(false);
+                if (onCloseCall) onClose?.();
+            }, animationDelay);
+        },
+        [onClose],
+    );
 
     useEffect(() => {
         if (isOpen) {
@@ -36,11 +37,14 @@ export function useModal({ animationDelay, isOpen, onClose }: UseModalProps) {
         }
     }, [closeHandler, isMounted, isOpen]);
 
-    const onKeyDown = useCallback((e: KeyboardEvent) => {
-        if (e.key === 'Escape') {
-            closeHandler();
-        }
-    }, [closeHandler]);
+    const onKeyDown = useCallback(
+        (e: KeyboardEvent) => {
+            if (e.key === 'Escape') {
+                closeHandler();
+            }
+        },
+        [closeHandler],
+    );
 
     useEffect(() => {
         if (isOpen) {
@@ -50,13 +54,16 @@ export function useModal({ animationDelay, isOpen, onClose }: UseModalProps) {
         }
     }, [isOpen, onKeyDown]);
 
-    useEffect(() => () => {
-        clearTimeout(timerRefClosed?.current);
-        clearTimeout(timerRefOpened?.current);
-        window.removeEventListener('keydown', (e) => {
-            onKeyDown(e);
-        });
-    }, []);
+    useEffect(
+        () => () => {
+            clearTimeout(timerRefClosed?.current);
+            clearTimeout(timerRefOpened?.current);
+            window.removeEventListener('keydown', (e) => {
+                onKeyDown(e);
+            });
+        },
+        [],
+    );
 
     return {
         isClosed,

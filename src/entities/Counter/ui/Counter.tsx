@@ -20,21 +20,12 @@ export const Counter = () => {
         <div>
             <h1 data-testid="value-title">{counterValue}</h1>
             <div className={cls.btnActions}>
-                <Button
-                    data-testid="increment-button"
-                    onClick={handleIncrement}
-                    theme={ThemeButton.OUTLINE}
-                >
+                <Button data-testid="increment-button" onClick={handleIncrement} theme={ThemeButton.OUTLINE}>
                     {t('Инкремент')}
                 </Button>
-                <Button
-                    data-testid="decrement-button"
-                    onClick={handleDecrement}
-                    theme={ThemeButton.OUTLINE}
-                >
+                <Button data-testid="decrement-button" onClick={handleDecrement} theme={ThemeButton.OUTLINE}>
                     {t('Декремент')}
                 </Button>
-
             </div>
         </div>
     );

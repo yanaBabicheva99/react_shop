@@ -10,9 +10,7 @@ interface NotificationListProps {
 }
 
 export const NotificationList = (props: NotificationListProps) => {
-    const {
-        className,
-    } = props;
+    const { className } = props;
 
     const { data: notifications, isLoading } = useNotificationList(undefined, {
         pollingInterval: 10000,

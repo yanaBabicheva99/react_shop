@@ -25,10 +25,7 @@ const reducersList: ReducersList = {
 };
 
 const LoginForm = memo((props: LoginFormProps) => {
-    const {
-        className,
-        onCloseModal,
-    } = props;
+    const { className, onCloseModal } = props;
 
     const dispatch = useAppDispatch();
     const username = useSelector(getUsername);
@@ -38,18 +35,26 @@ const LoginForm = memo((props: LoginFormProps) => {
 
     const { t } = useTranslation();
 
-    const handleChangeUsername = useCallback((value: string) => {
-        dispatch(loginActions.setUsername(value));
-    }, [dispatch]);
+    const handleChangeUsername = useCallback(
+        (value: string) => {
+            dispatch(loginActions.setUsername(value));
+        },
+        [dispatch],
+    );
 
-    const handleChangePassword = useCallback((value: string) => {
-        dispatch(loginActions.setPassword(value));
-    }, [dispatch]);
+    const handleChangePassword = useCallback(
+        (value: string) => {
+            dispatch(loginActions.setPassword(value));
+        },
+        [dispatch],
+    );
 
     const handleClickLogin = () => {
-        dispatch(loginByUsername({ username, password })).unwrap().then(() => {
-            onCloseModal();
-        });
+        dispatch(loginByUsername({ username, password }))
+            .unwrap()
+            .then(() => {
+                onCloseModal();
+            });
     };
 
     return (

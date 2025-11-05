@@ -23,34 +23,52 @@ export const NormalAvatarButton: Story = {
     args: {},
 };
 
-NormalAvatarButton.decorators = [ThemeDecorator(Theme.LIGHT), StoreDecorator({
-    user: {
-        authData: {
-            id: '1', username: 'admin', avatar: AvatarIcon, roles: [UserRole.ADMIN],
+NormalAvatarButton.decorators = [
+    ThemeDecorator(Theme.LIGHT),
+    StoreDecorator({
+        user: {
+            authData: {
+                id: '1',
+                username: 'admin',
+                avatar: AvatarIcon,
+                roles: [UserRole.ADMIN],
+            },
         },
-    },
-})];
+    }),
+];
 
 export const DarkAvatarButton: Story = {
     args: {},
 };
 
-DarkAvatarButton.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({
-    user: {
-        authData: {
-            id: '1', username: 'admin', avatar: AvatarIcon, roles: [UserRole.ADMIN],
+DarkAvatarButton.decorators = [
+    ThemeDecorator(Theme.DARK),
+    StoreDecorator({
+        user: {
+            authData: {
+                id: '1',
+                username: 'admin',
+                avatar: AvatarIcon,
+                roles: [UserRole.ADMIN],
+            },
         },
-    },
-})];
+    }),
+];
 
 export const OrangeAvatarButton: Story = {
     args: {},
 };
 
-OrangeAvatarButton.decorators = [ThemeDecorator(Theme.ORANGE), StoreDecorator({
-    user: {
-        authData: {
-            id: '1', username: 'admin', avatar: AvatarIcon, roles: [UserRole.ADMIN],
+OrangeAvatarButton.decorators = [
+    ThemeDecorator(Theme.ORANGE),
+    StoreDecorator({
+        user: {
+            authData: {
+                id: '1',
+                username: 'admin',
+                avatar: AvatarIcon,
+                roles: [UserRole.ADMIN],
+            },
         },
-    },
-})];
+    }),
+];

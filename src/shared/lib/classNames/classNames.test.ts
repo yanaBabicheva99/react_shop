@@ -6,17 +6,21 @@ describe('', () => {
     });
 
     it('test mods', () => {
-        expect(classNames('class', {
-            hidden: true,
-            hovered: true,
-        })).toBe('class hidden hovered');
+        expect(
+            classNames('class', {
+                hidden: true,
+                hovered: true,
+            }),
+        ).toBe('class hidden hovered');
     });
 
     it('test mods with one mode', () => {
-        expect(classNames('class', {
-            hidden: true,
-            hovered: undefined,
-        })).toBe('class hidden');
+        expect(
+            classNames('class', {
+                hidden: true,
+                hovered: undefined,
+            }),
+        ).toBe('class hidden');
     });
 
     it('test additional param', () => {

@@ -26,7 +26,7 @@ const articleInfinityListSlice = createSlice({
     }),
     reducers: {
         initState: (state) => {
-            const view = localStorage.getItem(ARTICLE_VIEW_LOCALSTORAGE_KEY) as ArticleView || ArticleView.SMALL;
+            const view = (localStorage.getItem(ARTICLE_VIEW_LOCALSTORAGE_KEY) as ArticleView) || ArticleView.SMALL;
             state.articleView = view;
             state.limit = view === ArticleView.SMALL ? 9 : 4;
             state._inited = true;

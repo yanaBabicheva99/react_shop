@@ -7,9 +7,7 @@ import { Button, ThemeButton } from '@/shared/ui/Button';
 import { HStack } from '@/shared/ui/Stack';
 import { getVisibleEdit } from '../../model/selectors/getVisibleEdit/getVisibleEdit';
 import { profileActions } from '../../model/slice/profileSlice';
-import {
-    updateProfileCardInfo,
-} from '../../model/services/UpdateProfileCardInfo/UpdateProfileCardInfo';
+import { updateProfileCardInfo } from '../../model/services/UpdateProfileCardInfo/UpdateProfileCardInfo';
 
 interface ProfilePageHeaderProps {
     className?: string;
@@ -17,10 +15,7 @@ interface ProfilePageHeaderProps {
 }
 
 export const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
-    const {
-        className,
-        readOnly,
-    } = props;
+    const { className, readOnly } = props;
 
     const { t } = useTranslation();
     const dispatch = useDispatch();
@@ -43,34 +38,20 @@ export const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
             <Text title={t('Профиль')} />
             {isEdit && (
                 <div>
-                    {readOnly
-                        ? (
-                            <Button
-                                theme={ThemeButton.OUTLINE}
-                                onClick={handleChangeReadOnly}
-                                data-testid="Edit"
-                            >
-                                {t('Редактировать')}
+                    {readOnly ? (
+                        <Button theme={ThemeButton.OUTLINE} onClick={handleChangeReadOnly} data-testid="Edit">
+                            {t('Редактировать')}
+                        </Button>
+                    ) : (
+                        <HStack gap="16">
+                            <Button theme={ThemeButton.OUTLINE_RED} onClick={handleCancel} data-testid="Cancel">
+                                {t('Отменить')}
                             </Button>
-                        )
-                        : (
-                            <HStack gap="16">
-                                <Button
-                                    theme={ThemeButton.OUTLINE_RED}
-                                    onClick={handleCancel}
-                                    data-testid="Cancel"
-                                >
-                                    {t('Отменить')}
-                                </Button>
-                                <Button
-                                    theme={ThemeButton.OUTLINE_INVERTED}
-                                    onClick={handleSave}
-                                    data-testid="Save"
-                                >
-                                    {t('Сохранить')}
-                                </Button>
-                            </HStack>
-                        )}
+                            <Button theme={ThemeButton.OUTLINE_INVERTED} onClick={handleSave} data-testid="Save">
+                                {t('Сохранить')}
+                            </Button>
+                        </HStack>
+                    )}
                 </div>
             )}
         </HStack>

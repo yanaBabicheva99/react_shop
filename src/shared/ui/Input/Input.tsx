@@ -1,10 +1,8 @@
-import React, {
-    ChangeEvent, InputHTMLAttributes, memo, useCallback, useEffect, useRef,
-} from 'react';
+import React, { ChangeEvent, InputHTMLAttributes, memo, useCallback, useEffect, useRef } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './Input.module.scss';
 
-interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange'>{
+interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange'> {
     className?: string;
     value?: string | number;
     onChange?: (v: string) => void;
@@ -34,13 +32,16 @@ export const Input = memo((props: InputProps) => {
         }
     }, [autoFocus, props.readOnly]);
 
-    const handleChange = useCallback((e: ChangeEvent<HTMLInputElement>) => {
-        if (onlyNumber) {
-            onChange?.(e.target.value.replace(/[^0-9]/, ''));
-            return;
-        }
-        onChange?.(e.target.value);
-    }, [onChange, onlyNumber]);
+    const handleChange = useCallback(
+        (e: ChangeEvent<HTMLInputElement>) => {
+            if (onlyNumber) {
+                onChange?.(e.target.value.replace(/[^0-9]/, ''));
+                return;
+            }
+            onChange?.(e.target.value);
+        },
+        [onChange, onlyNumber],
+    );
 
     const mods = {
         [cls.readOnly]: props.readOnly,
@@ -48,11 +49,7 @@ export const Input = memo((props: InputProps) => {
 
     return (
         <div className={classNames(cls.InputWrapper, mods, [className])}>
-            {placeholder && (
-                <span className={cls.placeholder}>
-                    {`${placeholder} >`}
-                </span>
-            )}
+            {placeholder && <span className={cls.placeholder}>{`${placeholder} >`}</span>}
             <input
                 type={type}
                 value={value || ''}

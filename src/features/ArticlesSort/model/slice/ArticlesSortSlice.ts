@@ -27,16 +27,26 @@ export const articlesSortSlice = createSlice({
         setType: (state, action: PayloadAction<ArticleType>) => {
             state.type = action.payload;
         },
-        initSortParams: (state, action: PayloadAction<{key: string, value: string | ArticleSortField | SortOrder}>) => {
+        initSortParams: (
+            state,
+            action: PayloadAction<{
+                key: string;
+                value: string | ArticleSortField | SortOrder;
+            }>,
+        ) => {
             const { key, value } = action.payload;
             switch (key) {
-            case 'sort': state.sort = value as ArticleSortField;
-                break;
-            case 'order': state.order = value as SortOrder;
-                break;
-            case 'type': state.type = value as ArticleType;
-                break;
-            default: state.search = value;
+                case 'sort':
+                    state.sort = value as ArticleSortField;
+                    break;
+                case 'order':
+                    state.order = value as SortOrder;
+                    break;
+                case 'type':
+                    state.type = value as ArticleType;
+                    break;
+                default:
+                    state.search = value;
             }
         },
     },

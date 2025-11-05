@@ -22,15 +22,16 @@ export const NormalArticleBlockCode: Story = {
         block: {
             id: '1',
             type: ArticleBlockType.CODE,
-            code: 'const meta: Meta<typeof ArticleBlockCode> = {\n'
-                + '    title: \'entities/ArticleBlockCode\',\n'
-                + '    component: ArticleBlockCode,\n'
-                + '    parameters: {\n'
-                + '        layout: \'centered\',\n'
-                + '    },\n'
-                + '    tags: [\'autodocs\'],\n'
-                + '    argTypes: {},\n'
-                + '};',
+            code:
+                'const meta: Meta<typeof ArticleBlockCode> = {\n' +
+                "    title: 'entities/ArticleBlockCode',\n" +
+                '    component: ArticleBlockCode,\n' +
+                '    parameters: {\n' +
+                "        layout: 'centered',\n" +
+                '    },\n' +
+                "    tags: ['autodocs'],\n" +
+                '    argTypes: {},\n' +
+                '};',
         },
     },
 };
@@ -42,15 +43,16 @@ export const DarkArticleBlockCode: Story = {
         block: {
             id: '1',
             type: ArticleBlockType.CODE,
-            code: 'const meta: Meta<typeof ArticleBlockCode> = {\n'
-                + '    title: \'entities/ArticleBlockCode\',\n'
-                + '    component: ArticleBlockCode,\n'
-                + '    parameters: {\n'
-                + '        layout: \'centered\',\n'
-                + '    },\n'
-                + '    tags: [\'autodocs\'],\n'
-                + '    argTypes: {},\n'
-                + '};',
+            code:
+                'const meta: Meta<typeof ArticleBlockCode> = {\n' +
+                "    title: 'entities/ArticleBlockCode',\n" +
+                '    component: ArticleBlockCode,\n' +
+                '    parameters: {\n' +
+                "        layout: 'centered',\n" +
+                '    },\n' +
+                "    tags: ['autodocs'],\n" +
+                '    argTypes: {},\n' +
+                '};',
         },
     },
 };
@@ -62,15 +64,16 @@ export const OrangeArticleBlockCode: Story = {
         block: {
             id: '1',
             type: ArticleBlockType.CODE,
-            code: 'const meta: Meta<typeof ArticleBlockCode> = {\n'
-                + '    title: \'entities/ArticleBlockCode\',\n'
-                + '    component: ArticleBlockCode,\n'
-                + '    parameters: {\n'
-                + '        layout: \'centered\',\n'
-                + '    },\n'
-                + '    tags: [\'autodocs\'],\n'
-                + '    argTypes: {},\n'
-                + '};',
+            code:
+                'const meta: Meta<typeof ArticleBlockCode> = {\n' +
+                "    title: 'entities/ArticleBlockCode',\n" +
+                '    component: ArticleBlockCode,\n' +
+                '    parameters: {\n' +
+                "        layout: 'centered',\n" +
+                '    },\n' +
+                "    tags: ['autodocs'],\n" +
+                '    argTypes: {},\n' +
+                '};',
         },
     },
 };

@@ -9,9 +9,7 @@ export const validateProfileData = (profile?: Omit<Profile, 'id'>) => {
         return validateErrors;
     }
 
-    const {
-        first, lastname, age, country,
-    } = profile;
+    const { first, lastname, age, country } = profile;
 
     if (!first || !lastname) {
         validateErrors.push(ValidateProfileError.INCORRECT_USER_DATA);

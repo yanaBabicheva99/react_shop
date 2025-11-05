@@ -5,7 +5,10 @@ import {
     fetchArticleList,
     fetchArticleNextPage,
     getArticleView,
-    ArticleViewSwitcher, ArticleInfinityList, getArticleInfinityListLoading, articleInfinityListAction,
+    ArticleViewSwitcher,
+    ArticleInfinityList,
+    getArticleInfinityListLoading,
+    articleInfinityListAction,
 } from '@/features/ArticleInfinityList';
 import { Page } from '@/widgets/Page';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
@@ -18,9 +21,7 @@ interface ArticlesPageProps {
 }
 
 const ArticlesPage = memo((props: ArticlesPageProps) => {
-    const {
-        className,
-    } = props;
+    const { className } = props;
 
     const dispatch = useAppDispatch();
     const isLoading = useSelector(getArticleInfinityListLoading);
@@ -32,9 +33,12 @@ const ArticlesPage = memo((props: ArticlesPageProps) => {
         }
     }, [dispatch]);
 
-    const handleChangeArticleView = useCallback((newView: ArticleView) => {
-        dispatch(articleInfinityListAction.setArticleView(newView));
-    }, [dispatch]);
+    const handleChangeArticleView = useCallback(
+        (newView: ArticleView) => {
+            dispatch(articleInfinityListAction.setArticleView(newView));
+        },
+        [dispatch],
+    );
 
     const fetchData = useCallback(() => {
         dispatch(articleInfinityListAction.setPage(1));
@@ -42,10 +46,7 @@ const ArticlesPage = memo((props: ArticlesPageProps) => {
     }, [dispatch]);
 
     return (
-        <Page
-            onScrollEnd={!isLoading ? onLoadNextPage : undefined}
-            className={classNames('', {}, [className])}
-        >
+        <Page onScrollEnd={!isLoading ? onLoadNextPage : undefined} className={classNames('', {}, [className])}>
             <ArticleViewSwitcher view={articleView} onChangeView={handleChangeArticleView} className={cls.switcher} />
             <ArticlesSort fetchData={fetchData} />
             <ArticleInfinityList />

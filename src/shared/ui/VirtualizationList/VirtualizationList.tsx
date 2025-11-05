@@ -1,7 +1,4 @@
-import React, {
-    useCallback,
-    useRef, useState,
-} from 'react';
+import React, { useCallback, useRef, useState } from 'react';
 import { useFixedSizeList } from '@/shared/lib/hooks/useFixedSizeList/useFixedSizeList';
 
 const items = Array.from({ length: 10000 }, (_, index) => ({
@@ -15,9 +12,7 @@ export const VirtualizationList = () => {
 
     const containerHeight = 600;
 
-    const {
-        isScrolling, virtualItems, totalHeight, measureElement,
-    } = useFixedSizeList({
+    const { isScrolling, virtualItems, totalHeight, measureElement } = useFixedSizeList({
         getItemKey: useCallback((index) => listItems[index].id, [listItems]),
         estimateItemHeight: useCallback(() => 40, []),
         itemsCount: listItems.length,

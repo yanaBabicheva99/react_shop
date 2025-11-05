@@ -20,81 +20,109 @@ export default meta;
 type Story = StoryObj<typeof EditableProfileCard>;
 
 export const EditableProfileCardLite: Story = {
-    args: {
-    },
+    args: {},
 };
 
 EditableProfileCardLite.decorators = [ThemeDecorator(Theme.LIGHT), StoreDecorator()];
 
 export const EditableProfileCardDark: Story = {
-    args: {
-    },
+    args: {},
 };
 
 EditableProfileCardDark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator()];
 
 export const EditableProfileCardLoading: Story = {
-    args: {
-    },
+    args: {},
 };
 
-EditableProfileCardLoading.decorators = [ThemeDecorator(Theme.LIGHT), StoreDecorator({
-    profile: {
-        isLoading: true,
-    },
-}, { profile: profileReducer })];
+EditableProfileCardLoading.decorators = [
+    ThemeDecorator(Theme.LIGHT),
+    StoreDecorator(
+        {
+            profile: {
+                isLoading: true,
+            },
+        },
+        { profile: profileReducer },
+    ),
+];
 
 export const EditableProfileCardLoadingDark: Story = {
-    args: {
-    },
+    args: {},
 };
 
-EditableProfileCardLoadingDark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({
-    profile: {
-        isLoading: true,
-    },
-}, { profile: profileReducer })];
+EditableProfileCardLoadingDark.decorators = [
+    ThemeDecorator(Theme.DARK),
+    StoreDecorator(
+        {
+            profile: {
+                isLoading: true,
+            },
+        },
+        { profile: profileReducer },
+    ),
+];
 
 export const EditableProfileCardError: Story = {
-    args: {
-    },
+    args: {},
 };
 
-EditableProfileCardError.decorators = [ThemeDecorator(Theme.LIGHT), StoreDecorator({
-    profile: {
-        error: 'Error',
-    },
-}, { profile: profileReducer })];
+EditableProfileCardError.decorators = [
+    ThemeDecorator(Theme.LIGHT),
+    StoreDecorator(
+        {
+            profile: {
+                error: 'Error',
+            },
+        },
+        { profile: profileReducer },
+    ),
+];
 
 export const EditableProfileCardErrorDark: Story = {
-    args: {
-    },
+    args: {},
 };
 
-EditableProfileCardErrorDark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({
-    profile: {
-        error: 'Error',
-    },
-}, { profile: profileReducer })];
+EditableProfileCardErrorDark.decorators = [
+    ThemeDecorator(Theme.DARK),
+    StoreDecorator(
+        {
+            profile: {
+                error: 'Error',
+            },
+        },
+        { profile: profileReducer },
+    ),
+];
 
 export const EditableProfileCardValidation: Story = {
-    args: {
-    },
+    args: {},
 };
 
-EditableProfileCardValidation.decorators = [ThemeDecorator(Theme.LIGHT), StoreDecorator({
-    profile: {
-        validateProfileError: [ValidateProfileError.SERVER_ERROR],
-    },
-}, { profile: profileReducer })];
+EditableProfileCardValidation.decorators = [
+    ThemeDecorator(Theme.LIGHT),
+    StoreDecorator(
+        {
+            profile: {
+                validateProfileError: [ValidateProfileError.SERVER_ERROR],
+            },
+        },
+        { profile: profileReducer },
+    ),
+];
 
 export const EditableProfileCardValidationDark: Story = {
-    args: {
-    },
+    args: {},
 };
 
-EditableProfileCardValidationDark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({
-    profile: {
-        validateProfileError: [ValidateProfileError.SERVER_ERROR],
-    },
-}, { profile: profileReducer })];
+EditableProfileCardValidationDark.decorators = [
+    ThemeDecorator(Theme.DARK),
+    StoreDecorator(
+        {
+            profile: {
+                validateProfileError: [ValidateProfileError.SERVER_ERROR],
+            },
+        },
+        { profile: profileReducer },
+    ),
+];

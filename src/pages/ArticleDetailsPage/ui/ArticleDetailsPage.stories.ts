@@ -68,16 +68,18 @@ export default meta;
 type Story = StoryObj<typeof ArticleDetailsPage>;
 
 export const NormalArticleDetailsPage: Story = {
-    args: {
-    },
+    args: {},
 };
 
-NormalArticleDetailsPage.decorators = [ThemeDecorator(Theme.LIGHT), StoreDecorator({
-    user: { authData: { id: '1' } },
-    articleDetails: {
-        data: article,
-    },
-})];
+NormalArticleDetailsPage.decorators = [
+    ThemeDecorator(Theme.LIGHT),
+    StoreDecorator({
+        user: { authData: { id: '1' } },
+        articleDetails: {
+            data: article,
+        },
+    }),
+];
 
 NormalArticleDetailsPage.parameters = {
     fetchMock: {
@@ -100,12 +102,15 @@ export const DarkArticleDetailsPage: Story = {
     args: {},
 };
 
-DarkArticleDetailsPage.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({
-    user: { authData: { id: '1' } },
-    articleDetails: {
-        data: article,
-    },
-})];
+DarkArticleDetailsPage.decorators = [
+    ThemeDecorator(Theme.DARK),
+    StoreDecorator({
+        user: { authData: { id: '1' } },
+        articleDetails: {
+            data: article,
+        },
+    }),
+];
 
 DarkArticleDetailsPage.parameters = {
     fetchMock: {

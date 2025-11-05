@@ -5,7 +5,7 @@ import cls from './NavLink.module.scss';
 
 export enum LinkTheme {
     PRIMARY = 'primary',
-    SECONDARY = 'secondary'
+    SECONDARY = 'secondary',
 }
 
 interface NavLinkProps extends NavLinkRouter {
@@ -14,20 +14,10 @@ interface NavLinkProps extends NavLinkRouter {
 }
 
 export const NavLink: FC<NavLinkProps> = (props) => {
-    const {
-        children,
-        className,
-        theme = LinkTheme.PRIMARY,
-        to,
-        ...otherProps
-    } = props;
+    const { children, className, theme = LinkTheme.PRIMARY, to, ...otherProps } = props;
 
     return (
-        <Link
-            to={to}
-            className={classNames(cls.NavLink, {}, [className, cls[theme]])}
-            {...otherProps}
-        >
+        <Link to={to} className={classNames(cls.NavLink, {}, [className, cls[theme]])} {...otherProps}>
             {children}
         </Link>
     );

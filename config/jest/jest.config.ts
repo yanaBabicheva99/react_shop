@@ -24,36 +24,23 @@ export default {
     },
 
     // An array of regexp pattern strings used to skip coverage collection
-    coveragePathIgnorePatterns: [
-        '/node_modules/',
-    ],
+    coveragePathIgnorePatterns: ['/node_modules/'],
 
     rootDir: '../../',
 
     // The glob patterns Jest uses to detect test files
-    testMatch: [
-        '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)',
-    ],
+    testMatch: ['<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)'],
 
     // The test environment that will be used for testing
     testEnvironment: 'jsdom',
 
     // An array of directory names to be searched recursively up from the requiring module's location
-    moduleDirectories: [
-        'node_modules',
-    ],
+    moduleDirectories: ['node_modules'],
 
     modulePaths: ['<rootDir>/src'],
 
     // An array of file extensions your modules use
-    moduleFileExtensions: [
-        'js',
-        'jsx',
-        'ts',
-        'tsx',
-        'json',
-        'node',
-    ],
+    moduleFileExtensions: ['js', 'jsx', 'ts', 'tsx', 'json', 'node'],
 
     moduleNameMapper: {
         '\\.(s?css)$': 'identity-obj-proxy',
@@ -66,12 +53,15 @@ export default {
 
     reporters: [
         'default',
-        ['jest-html-reporters', {
-            publicPath: '<rootDir>reports/unit',
-            filename: 'report.html',
-            openReport: true,
-            inlineSource: true,
-        }],
+        [
+            'jest-html-reporters',
+            {
+                publicPath: '<rootDir>reports/unit',
+                filename: 'report.html',
+                openReport: true,
+                inlineSource: true,
+            },
+        ],
     ],
 
     // An array of regexp pattern strings that are matched against all test paths, matched tests are skipped

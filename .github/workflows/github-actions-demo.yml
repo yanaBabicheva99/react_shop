@@ -1,56 +1,53 @@
 name: Node.js CI
 
 on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+    push:
+        branches: [main]
+    pull_request:
+        branches: [main]
 
 jobs:
-  build:
+    build:
+        runs-on: ubuntu-latest
 
-    runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+            - name: Use Node JS
+              uses: actions/setup-node@v4
+              with:
+                  node-version: 18.x
 
-    steps:
-      - uses: actions/checkout@v4
-      - name: Use Node JS
-        uses: actions/setup-node@v4
-        with:
-          node-version: 18.x
+            - name: Install dependencies
+              run: npm install
 
-      - name: Install dependencies
-        run: npm install
+            - name: Build
+              run: npm run start:build
+              if: always()
 
-      - name: Build
-        run: npm run start:build
-        if: always()
+            - name: Run lint
+              run: npm run lint:ts
+              if: always()
 
-      - name: Run lint
-        run: npm run lint:ts
-        if: always()
+            - name: Run lint scss
+              run: npm run lint:scss
+              if: always()
 
-      - name: Run lint scss
-        run: npm run lint:scss
-        if: always()
+            - name: Run the tests unit
+              run: npm run test:unit
+              if: always()
 
-      - name: Run the tests unit
-        run: npm run test:unit
-        if: always()
+            - name: Build storybook
+              run: npm run storybook:build
+              if: always()
 
-      - name: Build storybook
-        run: npm run storybook:build
-        if: always()
+            - name: Run the tests UI
+              run: npm run test:ui:ci
+              if: always()
 
-      - name: Run the tests UI
-        run: npm run test:ui:ci
-        if: always()
-
-      - name: artifact my
-        uses: actions/upload-artifact@v4
-        with:
-          name: my-artifact
-          include-hidden-files: true
-          path: .loki
-        if: always()
-
-
+            - name: artifact my
+              uses: actions/upload-artifact@v4
+              with:
+                  name: my-artifact
+                  include-hidden-files: true
+                  path: .loki
+              if: always()

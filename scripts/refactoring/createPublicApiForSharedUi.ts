@@ -34,7 +34,9 @@ componentsDirs?.forEach((directory) => {
         const code = `export * from './${directory.getBaseName()}';`;
         codes.push(code);
     }
-    const file = directory.createSourceFile(indexFilePath, codes.join('\n'), { overwrite: true });
+    const file = directory.createSourceFile(indexFilePath, codes.join('\n'), {
+        overwrite: true,
+    });
     file.save();
 });
 

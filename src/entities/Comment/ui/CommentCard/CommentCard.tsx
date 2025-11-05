@@ -15,11 +15,7 @@ interface CommentCardProps {
 }
 
 export const CommentCard = (props: CommentCardProps) => {
-    const {
-        className,
-        isLoading,
-        comment,
-    } = props;
+    const { className, isLoading, comment } = props;
 
     if (isLoading) {
         return (
@@ -40,12 +36,7 @@ export const CommentCard = (props: CommentCardProps) => {
             <NavLink to={`/profile/${comment.user.id}`}>
                 <HStack max className={cls.header}>
                     {comment.user.avatar && (
-                        <Avatar
-                            url={comment.user.avatar}
-                            alt="avatar"
-                            size={30}
-                            className={cls.avatar}
-                        />
+                        <Avatar url={comment.user.avatar} alt="avatar" size={30} className={cls.avatar} />
                     )}
                     <Text text={comment.user.username} />
                 </HStack>

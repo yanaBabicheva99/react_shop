@@ -28,9 +28,7 @@ const articles = [
         img: Img,
         views: 1022,
         createdAt: '26.02.2022',
-        type: [
-            'IT',
-        ],
+        type: ['IT'],
         userId: '1',
         user: {
             username: 'user',
@@ -55,9 +53,7 @@ const articles = [
         img: Img,
         views: 1022,
         createdAt: '26.02.2022',
-        type: [
-            'IT',
-        ],
+        type: ['IT'],
         userId: '1',
         user: {
             username: 'user',

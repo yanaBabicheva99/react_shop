@@ -19,7 +19,7 @@ interface ListBoxOption {
 interface ListBoxProps<T> {
     className?: string;
     options: ListBoxOption[];
-    value?: T,
+    value?: T;
     onChange: (value: T) => void;
     defaultValue?: T;
     readonly?: boolean;
@@ -28,13 +28,7 @@ interface ListBoxProps<T> {
 }
 
 export const ListBox = <T extends string>(props: ListBoxProps<T>) => {
-    const {
-        className, onChange, value, defaultValue,
-        options,
-        readonly,
-        direction = 'bottom right',
-        label,
-    } = props;
+    const { className, onChange, value, defaultValue, options, readonly, direction = 'bottom right', label } = props;
     const { t } = useTranslation();
 
     const additionalClassesOptions = [dropdownDirectionClasses[direction]];
@@ -45,17 +39,12 @@ export const ListBox = <T extends string>(props: ListBoxProps<T>) => {
             <Listbox as="div" value={value} onChange={onChange} className={classNames(popupCls.Popup, {}, [className])}>
                 <Listbox.Button className={popupCls.trigger} as="div">
                     <Button theme={ThemeButton.OUTLINE} disabled={readonly}>
-                        { value ?? defaultValue ?? t('Выберите значение')}
+                        {value ?? defaultValue ?? t('Выберите значение')}
                     </Button>
                 </Listbox.Button>
                 <Listbox.Options className={classNames(cls.options, {}, additionalClassesOptions)}>
                     {options.map((item) => (
-                        <Listbox.Option
-                            disabled={item.disabled}
-                            key={item.value}
-                            value={item.value}
-                            as={Fragment}
-                        >
+                        <Listbox.Option disabled={item.disabled} key={item.value} value={item.value} as={Fragment}>
                             {({ active, selected }) => {
                                 const mods = {
                                     [cls.selected]: selected,

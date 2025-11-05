@@ -26,21 +26,22 @@ describe('ValidateProfileData.test', () => {
     });
 
     test('test incorrect age', () => {
-        expect(validateProfileData({ ...data, age: undefined })).toEqual([
-            ValidateProfileError.INCORRECT_AGE,
-        ]);
+        expect(validateProfileData({ ...data, age: undefined })).toEqual([ValidateProfileError.INCORRECT_AGE]);
     });
 
     test('test incorrect country', () => {
-        expect(validateProfileData({ ...data, country: undefined })).toEqual([
-            ValidateProfileError.INCORRECT_COUNTRY,
-        ]);
+        expect(validateProfileData({ ...data, country: undefined })).toEqual([ValidateProfileError.INCORRECT_COUNTRY]);
     });
 
     test('test multi incorrect form', () => {
-        expect(validateProfileData({
-            ...data, country: undefined, age: undefined, first: undefined,
-        })).toEqual([
+        expect(
+            validateProfileData({
+                ...data,
+                country: undefined,
+                age: undefined,
+                first: undefined,
+            }),
+        ).toEqual([
             ValidateProfileError.INCORRECT_USER_DATA,
             ValidateProfileError.INCORRECT_AGE,
             ValidateProfileError.INCORRECT_COUNTRY,

@@ -28,9 +28,7 @@ const articles = [
         img: Img,
         views: 1022,
         createdAt: '26.02.2022',
-        type: [
-            'IT',
-        ],
+        type: ['IT'],
         userId: '1',
         user: {
             username: 'user',
@@ -55,9 +53,7 @@ const articles = [
         img: Img,
         views: 1022,
         createdAt: '26.02.2022',
-        type: [
-            'IT',
-        ],
+        type: ['IT'],
         userId: '1',
         user: {
             username: 'user',
@@ -90,40 +86,49 @@ export const NormalArticlesPage: Story = {
     args: {},
 };
 
-NormalArticlesPage.decorators = [ThemeDecorator(Theme.LIGHT), StoreDecorator({
-    articleInfinityList: {
-        ids: [1, 2],
-        entities: {
-            1: articles[0],
-            2: articles[1],
+NormalArticlesPage.decorators = [
+    ThemeDecorator(Theme.LIGHT),
+    StoreDecorator({
+        articleInfinityList: {
+            ids: [1, 2],
+            entities: {
+                1: articles[0],
+                2: articles[1],
+            },
         },
-    },
-})];
+    }),
+];
 
 export const DarkArticlesPage: Story = {
     args: {},
 };
 
-DarkArticlesPage.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({
-    articleInfinityList: {
-        ids: [1, 2],
-        entities: {
-            1: articles[0],
-            2: articles[1],
+DarkArticlesPage.decorators = [
+    ThemeDecorator(Theme.DARK),
+    StoreDecorator({
+        articleInfinityList: {
+            ids: [1, 2],
+            entities: {
+                1: articles[0],
+                2: articles[1],
+            },
         },
-    },
-})];
+    }),
+];
 
 export const OrangeArticlesPage: Story = {
     args: {},
 };
 
-OrangeArticlesPage.decorators = [ThemeDecorator(Theme.ORANGE), StoreDecorator({
-    articleInfinityList: {
-        ids: [1, 2],
-        entities: {
-            1: articles[0],
-            2: articles[1],
+OrangeArticlesPage.decorators = [
+    ThemeDecorator(Theme.ORANGE),
+    StoreDecorator({
+        articleInfinityList: {
+            ids: [1, 2],
+            entities: {
+                1: articles[0],
+                2: articles[1],
+            },
         },
-    },
-})];
+    }),
+];

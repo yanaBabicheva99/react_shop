@@ -2,22 +2,24 @@ import { TestAsyncThunk } from '@/shared/lib/test/TestAsyncThunk/TestAsyncThunk'
 import clearAllMocks = jest.clearAllMocks;
 import { fetchCommentsByArticleId } from '../FetchCommentsByArticleId/FetchCommentsByArticleId';
 
-const data = [{
-    id: '1',
-    text: 'Some text',
-    user: {
+const data = [
+    {
         id: '1',
-        username: 'user 1',
+        text: 'Some text',
+        user: {
+            id: '1',
+            username: 'user 1',
+        },
     },
-},
-{
-    id: '2',
-    text: 'Some text',
-    user: {
+    {
         id: '2',
-        username: 'user 2',
+        text: 'Some text',
+        user: {
+            id: '2',
+            username: 'user 2',
+        },
     },
-}];
+];
 
 describe('FetchCommentsByArticleId.test', () => {
     afterEach(() => {

@@ -1,7 +1,7 @@
 import { EntityState } from '@reduxjs/toolkit';
 import { Article, ArticleView } from '@/entities/Article';
 
-export interface ArticleInfinityListSchema extends EntityState<Article>{
+export interface ArticleInfinityListSchema extends EntityState<Article> {
     isLoading: boolean;
     articleView?: ArticleView;
     error?: string;

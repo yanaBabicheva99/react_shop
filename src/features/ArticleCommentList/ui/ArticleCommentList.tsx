@@ -11,9 +11,7 @@ import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitial
 import { VStack } from '@/shared/ui/Stack';
 import { Loader } from '@/shared/ui/Loader';
 import { fetchCommentsByArticleId } from '../model/servicices/FetchCommentsByArticleId/FetchCommentsByArticleId';
-import {
-    addNewCommentArticle,
-} from '../model/servicices/AddNewCommentArticle/AddNewCommentArticle';
+import { addNewCommentArticle } from '../model/servicices/AddNewCommentArticle/AddNewCommentArticle';
 import { articleCommentList, articleCommentListReducer } from '../model/slice/ArticleCommentListSlice';
 import { getIsLoadingCommentList } from '../model/selectors/ArticleCommentList';
 
@@ -27,10 +25,7 @@ const reducerList: ReducersList = {
 };
 
 export const ArticleCommentList = memo((props: ArticleCommentListProps) => {
-    const {
-        className,
-        id,
-    } = props;
+    const { className, id } = props;
 
     const commentsList = useSelector(articleCommentList.selectAll);
     const isLoading = useSelector(getIsLoadingCommentList);
@@ -41,9 +36,12 @@ export const ArticleCommentList = memo((props: ArticleCommentListProps) => {
         dispatch(fetchCommentsByArticleId(id));
     });
 
-    const handleSendComment = useCallback((text?: string) => {
-        if (text) dispatch(addNewCommentArticle({ text, id }));
-    }, [dispatch, id]);
+    const handleSendComment = useCallback(
+        (text?: string) => {
+            if (text) dispatch(addNewCommentArticle({ text, id }));
+        },
+        [dispatch, id],
+    );
 
     return (
         <DynamicModuleLoader reducers={reducerList} removeAfterMount>
@@ -52,10 +50,7 @@ export const ArticleCommentList = memo((props: ArticleCommentListProps) => {
                 <Suspense fallback={<Loader />}>
                     <AddCommentForm onSendComment={handleSendComment} />
                 </Suspense>
-                <CommentList
-                    comments={commentsList}
-                    isLoading={isLoading}
-                />
+                <CommentList comments={commentsList} isLoading={isLoading} />
             </VStack>
         </DynamicModuleLoader>
     );

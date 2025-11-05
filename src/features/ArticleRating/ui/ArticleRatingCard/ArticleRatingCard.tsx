@@ -12,36 +12,45 @@ interface ArticleRatingCardProps {
 }
 
 export const ArticleRatingCard = (props: ArticleRatingCardProps) => {
-    const {
-        className,
-        id: articleId,
-    } = props;
+    const { className, id: articleId } = props;
 
     const { t } = useTranslation();
 
     const authData = useSelector(getUserAuthData);
 
-    const { isLoading, isFetching, data } = useArticleRecommendationList({ articleId, userId: authData!.id }, {
-        refetchOnMountOrArgChange: true,
-    });
+    const { isLoading, isFetching, data } = useArticleRecommendationList(
+        { articleId, userId: authData!.id },
+        {
+            refetchOnMountOrArgChange: true,
+        },
+    );
     const [rateArticleMutation] = usePostArticleRating();
 
-    const handlePostRating = useCallback((startsCount: number, feedback?: string) => {
-        rateArticleMutation({
-            userId: authData!.id,
-            articleId,
-            rate: startsCount,
-            feedback,
-        });
-    }, [articleId, authData, rateArticleMutation]);
+    const handlePostRating = useCallback(
+        (startsCount: number, feedback?: string) => {
+            rateArticleMutation({
+                userId: authData!.id,
+                articleId,
+                rate: startsCount,
+                feedback,
+            });
+        },
+        [articleId, authData, rateArticleMutation],
+    );
 
-    const handleAccept = useCallback((startsCount: number, feedback?: string) => {
-        handlePostRating(startsCount, feedback);
-    }, [handlePostRating]);
+    const handleAccept = useCallback(
+        (startsCount: number, feedback?: string) => {
+            handlePostRating(startsCount, feedback);
+        },
+        [handlePostRating],
+    );
 
-    const handleCancel = useCallback((startsCount: number) => {
-        handlePostRating(startsCount);
-    }, [handlePostRating]);
+    const handleCancel = useCallback(
+        (startsCount: number) => {
+            handlePostRating(startsCount);
+        },
+        [handlePostRating],
+    );
 
     if (isLoading || isFetching) return <Skeleton width="100%" height={120} />;
 

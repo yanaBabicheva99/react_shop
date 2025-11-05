@@ -5,9 +5,7 @@ import { buildCSSLoader } from '../build/loaders/buildCSSLoader';
 import { buildSVGLoader } from '../build/loaders/buildSVGLoader';
 
 const config: StorybookConfig = {
-    stories: [
-        '../../src/**/*.stories.@(js|jsx|mjs|ts|tsx)',
-    ],
+    stories: ['../../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
     addons: [
         '@storybook/addon-links',
         '@storybook/addon-essentials',
@@ -32,11 +30,13 @@ const config: StorybookConfig = {
         });
 
         config?.module?.rules?.push(buildSVGLoader());
-        config?.plugins?.push(new webpack.DefinePlugin({
-            __IS_DEV__: JSON.stringify(true),
-            __API__: JSON.stringify('https://testmock.ru'),
-            __Project__: JSON.stringify('storybook'),
-        }));
+        config?.plugins?.push(
+            new webpack.DefinePlugin({
+                __IS_DEV__: JSON.stringify(true),
+                __API__: JSON.stringify('https://testmock.ru'),
+                __Project__: JSON.stringify('storybook'),
+            }),
+        );
 
         return config;
     },

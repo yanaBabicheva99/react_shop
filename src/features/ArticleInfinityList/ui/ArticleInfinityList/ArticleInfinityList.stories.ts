@@ -28,9 +28,7 @@ const articles = [
         img: Img,
         views: 1022,
         createdAt: '26.02.2022',
-        type: [
-            'IT',
-        ],
+        type: ['IT'],
         userId: '1',
         user: {
             username: 'user',
@@ -55,9 +53,7 @@ const articles = [
         img: Img,
         views: 1022,
         createdAt: '26.02.2022',
-        type: [
-            'IT',
-        ],
+        type: ['IT'],
         userId: '1',
         user: {
             username: 'user',
@@ -90,76 +86,94 @@ export const NormalArticleInfinityList: Story = {
     args: {},
 };
 
-NormalArticleInfinityList.decorators = [ThemeDecorator(Theme.LIGHT), StoreDecorator({
-    articleInfinityList: {
-        ids: [1, 2],
-        entities: {
-            1: articles[0],
-            2: articles[1],
+NormalArticleInfinityList.decorators = [
+    ThemeDecorator(Theme.LIGHT),
+    StoreDecorator({
+        articleInfinityList: {
+            ids: [1, 2],
+            entities: {
+                1: articles[0],
+                2: articles[1],
+            },
         },
-    },
-})];
+    }),
+];
 
 export const DarkArticleInfinityList: Story = {
     args: {},
 };
 
-DarkArticleInfinityList.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({
-    articleInfinityList: {
-        ids: [1, 2],
-        entities: {
-            1: articles[0],
-            2: articles[1],
+DarkArticleInfinityList.decorators = [
+    ThemeDecorator(Theme.DARK),
+    StoreDecorator({
+        articleInfinityList: {
+            ids: [1, 2],
+            entities: {
+                1: articles[0],
+                2: articles[1],
+            },
         },
-    },
-})];
+    }),
+];
 
 export const OrangeArticleInfinityList: Story = {
     args: {},
 };
 
-OrangeArticleInfinityList.decorators = [ThemeDecorator(Theme.ORANGE), StoreDecorator({
-    articleInfinityList: {
-        ids: [1, 2],
-        entities: {
-            1: articles[0],
-            2: articles[1],
+OrangeArticleInfinityList.decorators = [
+    ThemeDecorator(Theme.ORANGE),
+    StoreDecorator({
+        articleInfinityList: {
+            ids: [1, 2],
+            entities: {
+                1: articles[0],
+                2: articles[1],
+            },
         },
-    },
-})];
+    }),
+];
 
 export const ArticleInfinityListLoading: Story = {
     args: {},
 };
 
-ArticleInfinityListLoading.decorators = [ThemeDecorator(Theme.LIGHT), StoreDecorator({
-    articleInfinityList: {
-        isLoading: true,
-        entities: {},
-        ids: [],
-    },
-})];
+ArticleInfinityListLoading.decorators = [
+    ThemeDecorator(Theme.LIGHT),
+    StoreDecorator({
+        articleInfinityList: {
+            isLoading: true,
+            entities: {},
+            ids: [],
+        },
+    }),
+];
 
 export const ArticleInfinityListLoadingDark: Story = {
     args: {},
 };
 
-ArticleInfinityListLoadingDark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({
-    articleInfinityList: {
-        isLoading: true,
-        entities: {},
-        ids: [],
-    },
-})];
+ArticleInfinityListLoadingDark.decorators = [
+    ThemeDecorator(Theme.DARK),
+    StoreDecorator({
+        articleInfinityList: {
+            isLoading: true,
+            entities: {},
+            ids: [],
+        },
+    }),
+];
 
 export const ArticleInfinityListLoadingOrange: Story = {
     args: {},
 };
 
-ArticleInfinityListLoadingOrange.decorators = [ThemeDecorator(Theme.ORANGE), StoreDecorator({
-    articleInfinityList: {
-        isLoading: true,
-        entities: {},
-        ids: [],
-    },
-})];
+ArticleInfinityListLoadingOrange.decorators = [
+    ThemeDecorator(Theme.ORANGE),
+    StoreDecorator({
+        articleInfinityList: {
+            isLoading: true,
+            entities: {},
+            ids: [],
+        },
+    }),
+];

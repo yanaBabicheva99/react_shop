@@ -6,10 +6,7 @@ describe('getProfileValidationErrors', () => {
     test('', () => {
         const state: DeepPartial<StateSchema> = {
             profile: {
-                validateProfileError: [
-                    ValidateProfileError.SERVER_ERROR,
-                    ValidateProfileError.INCORRECT_USER_DATA,
-                ],
+                validateProfileError: [ValidateProfileError.SERVER_ERROR, ValidateProfileError.INCORRECT_USER_DATA],
             },
         };
         expect(getProfileValidationErrors(state as StateSchema)).toEqual([

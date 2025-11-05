@@ -11,7 +11,7 @@ import cls from './ProfileCard.module.scss';
 export enum ProfileCardTheme {
     loading = 'loading',
     error = 'error',
-    editing = 'editing'
+    editing = 'editing',
 }
 
 interface ProfileCardProps {
@@ -94,16 +94,8 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
                 onChange={onChangeCity}
                 data-testid="city"
             />
-            <SelectCurrency
-                readOnly={readonly}
-                value={currency}
-                onChange={onChangeCurrency}
-            />
-            <SelectCountry
-                readOnly={readonly}
-                value={country}
-                onChange={onChangeCountry}
-            />
+            <SelectCurrency readOnly={readonly} value={currency} onChange={onChangeCurrency} />
+            <SelectCountry readOnly={readonly} value={country} onChange={onChangeCountry} />
             <Input
                 placeholder={t('Введите ссылку фотографии')}
                 value={avatar}

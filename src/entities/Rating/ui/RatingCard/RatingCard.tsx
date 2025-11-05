@@ -22,29 +22,24 @@ interface RatingCardProps {
 }
 
 export const RatingCard = memo((props: RatingCardProps) => {
-    const {
-        className,
-        title,
-        feedbackTitle,
-        hasFeedBack,
-        onAccept,
-        onCancel,
-        rating = 0,
-    } = props;
+    const { className, title, feedbackTitle, hasFeedBack, onAccept, onCancel, rating = 0 } = props;
 
     const { t } = useTranslation();
     const [isOpenModal, setIsOpenModal] = useState(false);
     const [startsCount, setStarsCount] = useState(rating);
     const [feedback, setFeedback] = useState('');
 
-    const onSelectStars = useCallback((starsNumber: number) => {
-        setStarsCount(starsNumber);
-        if (hasFeedBack) {
-            setIsOpenModal(true);
-        } else {
-            onCancel?.(startsCount);
-        }
-    }, [hasFeedBack, onCancel, startsCount]);
+    const onSelectStars = useCallback(
+        (starsNumber: number) => {
+            setStarsCount(starsNumber);
+            if (hasFeedBack) {
+                setIsOpenModal(true);
+            } else {
+                onCancel?.(startsCount);
+            }
+        },
+        [hasFeedBack, onCancel, startsCount],
+    );
 
     const cancelHandle = () => {
         setIsOpenModal(false);
@@ -74,8 +69,12 @@ export const RatingCard = memo((props: RatingCardProps) => {
                     <VStack gap="32" max>
                         {content}
                         <HStack gap="8" justify="end" max>
-                            <Button theme={ThemeButton.OUTLINE} onClick={acceptHandler}>{t('Отправить')}</Button>
-                            <Button theme={ThemeButton.OUTLINE_RED} onClick={cancelHandle}>{t('Закрыть')}</Button>
+                            <Button theme={ThemeButton.OUTLINE} onClick={acceptHandler}>
+                                {t('Отправить')}
+                            </Button>
+                            <Button theme={ThemeButton.OUTLINE_RED} onClick={cancelHandle}>
+                                {t('Закрыть')}
+                            </Button>
                         </HStack>
                     </VStack>
                 </Modal>
@@ -85,18 +84,10 @@ export const RatingCard = memo((props: RatingCardProps) => {
                     <VStack gap="32" max>
                         {content}
                         <VStack gap="16" max>
-                            <Button
-                                theme={ThemeButton.OUTLINE}
-                                onClick={acceptHandler}
-                                fullWidth
-                            >
+                            <Button theme={ThemeButton.OUTLINE} onClick={acceptHandler} fullWidth>
                                 {t('Отправить')}
                             </Button>
-                            <Button
-                                theme={ThemeButton.OUTLINE_RED}
-                                onClick={cancelHandle}
-                                fullWidth
-                            >
+                            <Button theme={ThemeButton.OUTLINE_RED} onClick={cancelHandle} fullWidth>
                                 {t('Закрыть')}
                             </Button>
                         </VStack>

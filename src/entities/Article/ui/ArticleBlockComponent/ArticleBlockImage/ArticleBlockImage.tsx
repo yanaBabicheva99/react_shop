@@ -10,10 +10,7 @@ interface ArticleBlockImageProps {
 }
 
 export const ArticleBlockImage = memo((props: ArticleBlockImageProps) => {
-    const {
-        className,
-        block,
-    } = props;
+    const { className, block } = props;
 
     return (
         <div className={classNames(cls.ArticleBlockImage, {}, [className])}>

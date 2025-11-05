@@ -18,15 +18,13 @@ export default meta;
 type Story = StoryObj<typeof LoginForm>;
 
 export const LoginFormLite: Story = {
-    args: {
-    },
+    args: {},
 };
 
 LoginFormLite.decorators = [ThemeDecorator(Theme.LIGHT), StoreDecorator()];
 
 export const LoginFormDark: Story = {
-    args: {
-    },
+    args: {},
 };
 
 LoginFormDark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator()];

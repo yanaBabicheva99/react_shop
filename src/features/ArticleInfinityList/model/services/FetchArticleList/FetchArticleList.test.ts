@@ -4,19 +4,21 @@ import { StateSchema } from '@/app/providers/StoreProvider';
 import { fetchArticleList } from '../FetchArticleList/FetchArticleList';
 import clearAllMocks = jest.clearAllMocks;
 
-const data = [{
-    id: '1',
-    title: 'Javascript news',
-    subtitle: 'Что нового в JS за 2022 год?',
-    img: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
-    views: 1022,
-    createdAt: '26.02.2022',
-    type: [ArticleType.IT],
-    user: {
-        username: 'user',
-        avatar: '',
+const data = [
+    {
+        id: '1',
+        title: 'Javascript news',
+        subtitle: 'Что нового в JS за 2022 год?',
+        img: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
+        views: 1022,
+        createdAt: '26.02.2022',
+        type: [ArticleType.IT],
+        user: {
+            username: 'user',
+            avatar: '',
+        },
     },
-}] as Article[];
+] as Article[];
 
 describe('FetchArticleList.ts.test', () => {
     afterEach(() => {
@@ -62,7 +64,7 @@ describe('FetchArticleList.ts.test', () => {
         };
         const classThunk = new TestAsyncThunk(fetchArticleList, state);
         classThunk.api.get.mockReturnValue(Promise.resolve({ status: 403 }));
-        const result = await classThunk.callActionCreator({ });
+        const result = await classThunk.callActionCreator({});
         expect(classThunk.api.get).toHaveBeenCalled();
         expect(classThunk.dispatch).toHaveBeenCalledTimes(2);
         expect(result.meta.requestStatus).toBe('rejected');

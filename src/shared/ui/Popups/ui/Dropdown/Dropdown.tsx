@@ -22,20 +22,13 @@ interface DropdownProps {
 }
 
 export const Dropdown = (props: DropdownProps) => {
-    const {
-        className,
-        trigger,
-        options,
-        direction = 'bottom right',
-    } = props;
+    const { className, trigger, options, direction = 'bottom right' } = props;
 
     const additionalMenuClasses = [dropdownDirectionClasses[direction]];
 
     return (
         <Menu as="div" className={classNames(popupCls.Popup, {}, [className])}>
-            <Menu.Button className={popupCls.trigger}>
-                {trigger}
-            </Menu.Button>
+            <Menu.Button className={popupCls.trigger}>{trigger}</Menu.Button>
             <Menu.Items className={classNames(cls.menu, {}, additionalMenuClasses)}>
                 {options.map((option, index) => {
                     const content = (active: boolean) => (

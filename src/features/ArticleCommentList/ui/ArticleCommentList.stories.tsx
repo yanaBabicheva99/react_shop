@@ -44,55 +44,70 @@ export const NormalArticleCommentList: Story = {
     args: {},
 };
 
-NormalArticleCommentList.decorators = [ThemeDecorator(Theme.LIGHT), StoreDecorator({
-    articleCommentList: {
-        ids: [1, 2],
-        entities,
-    },
-})];
+NormalArticleCommentList.decorators = [
+    ThemeDecorator(Theme.LIGHT),
+    StoreDecorator({
+        articleCommentList: {
+            ids: [1, 2],
+            entities,
+        },
+    }),
+];
 
 export const DarkArticleCommentList: Story = {
     args: {},
 };
 
-DarkArticleCommentList.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({
-    articleCommentList: {
-        ids: [1, 2],
-        entities,
-    },
-})];
+DarkArticleCommentList.decorators = [
+    ThemeDecorator(Theme.DARK),
+    StoreDecorator({
+        articleCommentList: {
+            ids: [1, 2],
+            entities,
+        },
+    }),
+];
 
 export const OrangeArticleCommentList: Story = {
     args: {},
 };
 
-OrangeArticleCommentList.decorators = [ThemeDecorator(Theme.ORANGE), StoreDecorator({
-    articleCommentList: {
-        ids: [1, 2],
-        entities,
-    },
-})];
+OrangeArticleCommentList.decorators = [
+    ThemeDecorator(Theme.ORANGE),
+    StoreDecorator({
+        articleCommentList: {
+            ids: [1, 2],
+            entities,
+        },
+    }),
+];
 
 export const LoadingArticleCommentList: Story = {
     args: {},
 };
 
-LoadingArticleCommentList.decorators = [ThemeDecorator(Theme.LIGHT), StoreDecorator({
-    articleCommentList: {
-        ids: [],
-        entities: {},
-        isLoading: true,
-    },
-})];
+LoadingArticleCommentList.decorators = [
+    ThemeDecorator(Theme.LIGHT),
+    StoreDecorator({
+        articleCommentList: {
+            ids: [],
+            entities: {},
+            isLoading: true,
+        },
+    }),
+];
 
 export const LoadingArticleCommentListDark: Story = {
     args: {},
 };
 
-LoadingArticleCommentListDark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({
-    articleCommentList: {
-        ids: [],
-        entities: {},
-        isLoading: true,
-    },
-})];
+LoadingArticleCommentListDark.decorators = [
+    ThemeDecorator(Theme.DARK),
+    StoreDecorator({
+        articleCommentList: {
+            ids: [],
+            entities: {},
+            isLoading: true,
+        },
+    }),
+];

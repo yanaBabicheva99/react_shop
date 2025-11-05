@@ -8,7 +8,8 @@ module.exports = {
         'plugin:react-hooks/recommended',
         'plugin:react/recommended',
         'airbnb',
-    // 'plugin:storybook/recommended',
+        'prettier',
+        // 'plugin:storybook/recommended',
     ],
     parser: '@typescript-eslint/parser',
     parserOptions: {
@@ -27,17 +28,11 @@ module.exports = {
         // 'react-hooks',
     ],
     rules: {
-        'react/jsx-indent': [2, 4],
-        'react/jsx-indent-props': [2, 4],
-        indent: [2, 4],
         'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx', '.tsx'] }],
         'import/no-unresolved': 'off',
         'import/prefer-default-export': 'off',
         'no-unused-vars': 'off',
-        '@typescript-eslint/no-unused-vars': [
-            'error',
-            { argsIgnorePattern: '^_' },
-        ],
+        '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
         'react/require-default-props': 'off',
         'react/react-in-jsx-scope': 'off',
         'react/jsx-props-no-spreading': 'warn',
@@ -54,14 +49,15 @@ module.exports = {
         'jsx-a11y/no-static-element-interactions': 'off',
         'no-param-reassign': 'off',
         'react/jsx-one-expression-per-line': 'off',
-        'max-len': ['error', { code: 120, ignoreComments: true }],
+        // 'max-len': ['error', { code: 120, ignoreComments: true }],
         'no-promise-executor-return': 'warn',
         'react/no-array-index-key': 'off',
         'consistent-return': 'off',
         // 'react-hooks/rules-of-hooks': 'error',
         // 'react-hooks/exhaustive-deps': 'warn',
         'react/jsx-no-useless-fragment': 'off',
-        'i18next/no-literal-string': ['error',
+        'i18next/no-literal-string': [
+            'error',
             {
                 markupOnly: true,
                 ignoreAttribute: [
@@ -79,19 +75,29 @@ module.exports = {
                 ],
             },
         ],
-        'fsd-react-plugin/path-checker': ['error', {
-            alias: '@',
-        }],
-        'fsd-react-plugin/public-api-imports': ['error', {
-            alias: '@',
-            testFilesPatterns: ['**/*.test.*', '**/*.story.*', '**/StoreDecorator.tsx'],
-        }],
-        'fsd-react-plugin/layer-imports': ['error', {
-            alias: '@',
-            ignoreImportPatterns: ['**/StoreProvider', '**/testing'],
-            testFilesPatterns: ['**/*.test.*', '**/*.stories.*', '**/storybook/decorators/**'],
-        }],
-        "unused-imports/no-unused-imports": "error",
+        'fsd-react-plugin/path-checker': [
+            'error',
+            {
+                alias: '@',
+            },
+        ],
+        'fsd-react-plugin/public-api-imports': [
+            'error',
+            {
+                alias: '@',
+                testFilesPatterns: ['**/*.test.*', '**/*.story.*', '**/StoreDecorator.tsx'],
+            },
+        ],
+        'fsd-react-plugin/layer-imports': [
+            'error',
+            {
+                alias: '@',
+                ignoreImportPatterns: ['**/StoreProvider', '**/testing'],
+                testFilesPatterns: ['**/*.test.*', '**/*.stories.*', '**/storybook/decorators/**'],
+            },
+        ],
+        'unused-imports/no-unused-imports': 'error',
+        'react/jsx-max-props-per-line': ['error', { maximum: 4 }],
     },
     globals: {
         __IS_DEV__: true,

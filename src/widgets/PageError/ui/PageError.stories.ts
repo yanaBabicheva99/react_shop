@@ -10,8 +10,7 @@ const meta: Meta<typeof PageError> = {
         layout: 'centered',
     },
     tags: ['autodocs'],
-    argTypes: {
-    },
+    argTypes: {},
 };
 
 export default meta;

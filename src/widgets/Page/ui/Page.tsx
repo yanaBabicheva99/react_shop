@@ -1,6 +1,4 @@
-import {
-    MutableRefObject, ReactNode, UIEvent, useRef,
-} from 'react';
+import { MutableRefObject, ReactNode, UIEvent, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
@@ -20,20 +18,13 @@ interface PageProps extends TestProps {
 }
 
 export const Page = (props: PageProps) => {
-    const {
-        className,
-        children,
-        onScrollEnd,
-        'data-testid': dataTestId,
-    } = props;
+    const { className, children, onScrollEnd, 'data-testid': dataTestId } = props;
 
     const wrapperRef = useRef() as MutableRefObject<HTMLDivElement>;
     const triggerRef = useRef() as MutableRefObject<HTMLDivElement>;
     const { pathname } = useLocation();
 
-    const scrollPosition = useSelector(
-        (state: StateSchema) => getScrollPosition(state, pathname),
-    );
+    const scrollPosition = useSelector((state: StateSchema) => getScrollPosition(state, pathname));
 
     const dispath = useAppDispatch();
 
@@ -48,10 +39,12 @@ export const Page = (props: PageProps) => {
     });
 
     const handleScroll = useThrottle((e: UIEvent<HTMLDivElement>) => {
-        dispath(scrollTrackingActions.setScrollPosition({
-            path: pathname,
-            position: e.currentTarget.scrollTop,
-        }));
+        dispath(
+            scrollTrackingActions.setScrollPosition({
+                path: pathname,
+                position: e.currentTarget.scrollTop,
+            }),
+        );
     }, 500);
 
     return (

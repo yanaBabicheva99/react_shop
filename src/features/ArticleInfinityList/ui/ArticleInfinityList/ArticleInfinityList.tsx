@@ -25,11 +25,7 @@ export const ArticleInfinityList = () => {
 
     return (
         <DynamicModuleLoader reducers={reducer} removeAfterMount={false}>
-            <ArticleList
-                articles={articles}
-                articleView={articleView}
-                isLoading={isLoading}
-            />
+            <ArticleList articles={articles} articleView={articleView} isLoading={isLoading} />
         </DynamicModuleLoader>
     );
 };

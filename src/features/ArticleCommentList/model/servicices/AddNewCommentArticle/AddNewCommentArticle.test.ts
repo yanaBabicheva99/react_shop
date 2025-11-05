@@ -1,8 +1,6 @@
 import { TestAsyncThunk } from '@/shared/lib/test/TestAsyncThunk/TestAsyncThunk';
 import { StateSchema } from '@/app/providers/StoreProvider';
-import {
-    addNewCommentArticle,
-} from '../AddNewCommentArticle/AddNewCommentArticle';
+import { addNewCommentArticle } from '../AddNewCommentArticle/AddNewCommentArticle';
 import clearAllMocks = jest.clearAllMocks;
 
 const state: DeepPartial<StateSchema> = {
@@ -34,7 +32,10 @@ describe('AddNewCommentArticle.test', () => {
     test('fetch data success', async () => {
         const classThunk = new TestAsyncThunk(addNewCommentArticle, state);
         classThunk.api.post.mockReturnValue(Promise.resolve({ data }));
-        const result = await classThunk.callActionCreator({ id: '1', text: 'Some text' });
+        const result = await classThunk.callActionCreator({
+            id: '1',
+            text: 'Some text',
+        });
         expect(classThunk.api.post).toHaveBeenCalled();
         expect(result.meta.requestStatus).toBe('fulfilled');
     });
@@ -44,7 +45,10 @@ describe('AddNewCommentArticle.test', () => {
             ...state,
             articleDetails: undefined,
         });
-        const result = await classThunk.callActionCreator({ id: '1', text: 'Some text' });
+        const result = await classThunk.callActionCreator({
+            id: '1',
+            text: 'Some text',
+        });
         expect(classThunk.api.post).not.toHaveBeenCalled();
         expect(result.payload).toBe('error');
     });
@@ -52,7 +56,10 @@ describe('AddNewCommentArticle.test', () => {
     test('return error', async () => {
         const classThunk = new TestAsyncThunk(addNewCommentArticle, state);
         classThunk.api.post.mockReturnValue(Promise.resolve({ status: 403 }));
-        const result = await classThunk.callActionCreator({ id: '1', text: 'Some text' });
+        const result = await classThunk.callActionCreator({
+            id: '1',
+            text: 'Some text',
+        });
         expect(classThunk.api.post).toHaveBeenCalled();
         expect(result.meta.requestStatus).toBe('rejected');
         expect(result.payload).toBe('error');

@@ -1,6 +1,4 @@
-import React, {
-    memo, ReactNode, useCallback, useContext, useEffect,
-} from 'react';
+import React, { memo, ReactNode, useCallback, useContext, useEffect } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { useModal } from '../../lib/hooks/useModal/useModal';
 import AnimationProviders, {
@@ -21,12 +19,7 @@ interface DrawerProps {
 const height = window.innerHeight - 100;
 
 export const DrawerContent = memo((props: DrawerProps) => {
-    const {
-        className,
-        children,
-        onClose,
-        isOpen,
-    } = props;
+    const { className, children, onClose, isOpen } = props;
     const { Spring, Gesture } = useAnimationLib();
 
     const [{ y }, api] = Spring.useSpring(() => ({ y: height }));
@@ -62,13 +55,7 @@ export const DrawerContent = memo((props: DrawerProps) => {
     };
 
     const bind = Gesture.useDrag(
-        ({
-            last,
-            velocity: [, vy],
-            direction: [, dy],
-            movement: [, my],
-            cancel,
-        }) => {
+        ({ last, velocity: [, vy], direction: [, dy], movement: [, my], cancel }) => {
             if (my < -70) cancel();
 
             if (last) {
@@ -82,7 +69,10 @@ export const DrawerContent = memo((props: DrawerProps) => {
             }
         },
         {
-            from: () => [0, y.get()], filterTaps: true, bounds: { top: 0 }, rubberband: true,
+            from: () => [0, y.get()],
+            filterTaps: true,
+            bounds: { top: 0 },
+            rubberband: true,
         },
     );
 
@@ -113,5 +103,7 @@ export const DrawerAsync = (props: DrawerProps) => {
 };
 
 export const Drawer = (props: DrawerProps) => (
-    <AnimationProviders><DrawerAsync {...props} /></AnimationProviders>
+    <AnimationProviders>
+        <DrawerAsync {...props} />
+    </AnimationProviders>
 );

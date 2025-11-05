@@ -27,9 +27,12 @@ export const NormalArticleRatingCard: Story = {
     args: { id: '1' },
 };
 
-NormalArticleRatingCard.decorators = [ThemeDecorator(Theme.LIGHT), StoreDecorator({
-    user: { authData: { id: '1' } },
-})];
+NormalArticleRatingCard.decorators = [
+    ThemeDecorator(Theme.LIGHT),
+    StoreDecorator({
+        user: { authData: { id: '1' } },
+    }),
+];
 NormalArticleRatingCard.parameters = {
     fetchMock: {
         mocks: [
@@ -46,9 +49,12 @@ export const DarkArticleRatingCard: Story = {
     args: { id: '1' },
 };
 
-DarkArticleRatingCard.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({
-    user: { authData: { id: '1' } },
-})];
+DarkArticleRatingCard.decorators = [
+    ThemeDecorator(Theme.DARK),
+    StoreDecorator({
+        user: { authData: { id: '1' } },
+    }),
+];
 
 DarkArticleRatingCard.parameters = {
     fetchMock: {
@@ -66,9 +72,12 @@ export const OrangeArticleRatingCard: Story = {
     args: { id: '1' },
 };
 
-OrangeArticleRatingCard.decorators = [ThemeDecorator(Theme.ORANGE), StoreDecorator({
-    user: { authData: { id: '1' } },
-})];
+OrangeArticleRatingCard.decorators = [
+    ThemeDecorator(Theme.ORANGE),
+    StoreDecorator({
+        user: { authData: { id: '1' } },
+    }),
+];
 OrangeArticleRatingCard.parameters = {
     fetchMock: {
         mocks: [

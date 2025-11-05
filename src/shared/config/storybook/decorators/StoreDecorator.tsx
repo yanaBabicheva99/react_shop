@@ -22,17 +22,16 @@ const defaultAsyncReducers: ReducersList = {
     user: userReducer,
 };
 
-export const StoreDecorator = (
-    initialState?: DeepPartial<StateSchema>,
-    asyncReducers?: DeepPartial<ReducersMapObject<StateSchema>>,
-) => (Story: StoryFn) => (
-    <StoreProvider
-        initialState={initialState as StateSchema}
-        asyncReducers={{
-            ...defaultAsyncReducers,
-            ...asyncReducers,
-        }}
-    >
-        <Story />
-    </StoreProvider>
-);
+export const StoreDecorator =
+    (initialState?: DeepPartial<StateSchema>, asyncReducers?: DeepPartial<ReducersMapObject<StateSchema>>) =>
+    (Story: StoryFn) => (
+        <StoreProvider
+            initialState={initialState as StateSchema}
+            asyncReducers={{
+                ...defaultAsyncReducers,
+                ...asyncReducers,
+            }}
+        >
+            <Story />
+        </StoreProvider>
+    );

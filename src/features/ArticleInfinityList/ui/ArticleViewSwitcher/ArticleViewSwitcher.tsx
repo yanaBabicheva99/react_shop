@@ -30,15 +30,14 @@ const articleViewItem: ArticleViewItem[] = [
 ];
 
 export const ArticleViewSwitcher = memo((props: ArticleViewSwitcherProps) => {
-    const {
-        className,
-        view = ArticleView.SMALL,
-        onChangeView,
-    } = props;
+    const { className, view = ArticleView.SMALL, onChangeView } = props;
 
-    const onClickView = useCallback((view: ArticleView) => () => {
-        onChangeView(view);
-    }, [onChangeView]);
+    const onClickView = useCallback(
+        (view: ArticleView) => () => {
+            onChangeView(view);
+        },
+        [onChangeView],
+    );
 
     return (
         <div className={classNames('', {}, [className])}>

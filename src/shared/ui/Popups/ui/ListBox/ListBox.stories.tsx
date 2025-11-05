@@ -11,7 +11,11 @@ const meta: Meta<typeof ListBox> = {
     },
     tags: ['autodocs'],
     argTypes: {},
-    decorators: (Story: StoryFn) => <div style={{ padding: '100px' }}><Story /></div>,
+    decorators: (Story: StoryFn) => (
+        <div style={{ padding: '100px' }}>
+            <Story />
+        </div>
+    ),
 };
 
 export default meta;

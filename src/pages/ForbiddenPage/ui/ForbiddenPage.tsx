@@ -8,17 +8,13 @@ interface ForbiddenPageProps {
 }
 
 const ForbiddenPage = (props: ForbiddenPageProps) => {
-    const {
-        className,
-    } = props;
+    const { className } = props;
 
     const { t } = useTranslation();
 
     return (
         <Page data-testid="ForbiddenPage">
-            <div className={classNames('', {}, [className])}>
-                {t('Forbidden Page')}
-            </div>
+            <div className={classNames('', {}, [className])}>{t('Forbidden Page')}</div>
         </Page>
     );
 };

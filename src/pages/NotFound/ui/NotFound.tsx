@@ -9,9 +9,7 @@ interface NotFoundProps {
 
 export const NotFound = (props: NotFoundProps) => {
     const { t } = useTranslation();
-    const {
-        className,
-    } = props;
+    const { className } = props;
 
     return (
         <Page data-testid="NotFoundPage" className={classNames(cls.NotFound, {}, [className])}>

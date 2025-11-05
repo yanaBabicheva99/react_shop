@@ -16,10 +16,8 @@ interface ArticleDetailsPageProps {
 }
 
 const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
-    const {
-        className,
-    } = props;
-    const { id } = useParams<{id: string}>();
+    const { className } = props;
+    const { id } = useParams<{ id: string }>();
     const { t } = useTranslation();
 
     if (!id) {

@@ -15,16 +15,14 @@ interface TabsProps<T> {
 }
 
 export const Tabs = <T extends string>(props: TabsProps<T>) => {
-    const {
-        className,
-        tabs,
-        value,
-        onChange,
-    } = props;
+    const { className, tabs, value, onChange } = props;
 
-    const handleChangeTab = useCallback((tab: TabItem) => () => {
-        onChange(tab.value as T);
-    }, [onChange]);
+    const handleChangeTab = useCallback(
+        (tab: TabItem) => () => {
+            onChange(tab.value as T);
+        },
+        [onChange],
+    );
 
     return (
         <div className={classNames(cls.Tabs, {}, [className])}>

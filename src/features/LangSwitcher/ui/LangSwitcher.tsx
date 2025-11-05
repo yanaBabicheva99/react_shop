@@ -9,10 +9,7 @@ interface LangSwitcherProps {
 }
 
 export const LangSwitcher = memo((props: LangSwitcherProps) => {
-    const {
-        className,
-        collapsed,
-    } = props;
+    const { className, collapsed } = props;
 
     const { t, i18n } = useTranslation();
 
@@ -21,10 +18,7 @@ export const LangSwitcher = memo((props: LangSwitcherProps) => {
     };
 
     return (
-        <Button
-            className={classNames('', {}, [className])}
-            onClick={changeLanguage}
-        >
+        <Button className={classNames('', {}, [className])} onClick={changeLanguage}>
             {t(collapsed ? 'Короткий язык' : 'Язык')}
         </Button>
     );

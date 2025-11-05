@@ -11,8 +11,7 @@ const meta: Meta<typeof SideBar> = {
         layout: 'centered',
     },
     tags: ['autodocs'],
-    argTypes: {
-    },
+    argTypes: {},
 };
 
 export default meta;

@@ -2,9 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { ThemeDecorator } from '@/shared/config/storybook/decorators/ThemeDecorator';
 import Image from '@/shared/assets/test/storybook/img.png';
 import { ArticleBlockType, ArticleType, ArticleView } from '../../model/consts/articleConsts';
-import {
-    Article,
-} from '../../model/types/article';
+import { Article } from '../../model/types/article';
 import { ArticleListItem } from './ArticleListItem';
 import { Theme } from '@/shared/const/theme';
 
@@ -15,11 +13,7 @@ const article = {
     img: Image,
     views: 1022,
     createdAt: '26.02.2022',
-    type: [
-        ArticleType.IT,
-        ArticleType.SCIENCE,
-        ArticleType.ECONOMICS,
-    ],
+    type: [ArticleType.IT, ArticleType.SCIENCE, ArticleType.ECONOMICS],
     user: {
         id: '1',
         username: 'admin',
@@ -31,23 +25,24 @@ const article = {
             type: ArticleBlockType.TEXT,
             title: 'Заголовок этого блока',
             paragraphs: [
-                'Программа, которую по традиции называют «Hello, world!», очень проста. Она выводит куда-либо фразу'
-                + ' «Hello, world!», или другую подобную, средствами некоего языка.',
-                'JavaScript — это язык, программы на котором можно выполнять в разных средах. В нашем случае '
-                + 'речь идёт о браузерах и о серверной платформе Node.js. Если до сих пор вы не написали'
-                + ' ни строчки кода на JS '
-                + 'и читаете этот текст в браузере, на настольном компьютере, это значит, что вы буквально '
-                + 'в считанных секундах от своей первой JavaScript-программы.',
-                'Существуют и другие способы запуска JS-кода в браузере. '
-                + 'Так, если говорить об обычном использовании программ',
+                'Программа, которую по традиции называют «Hello, world!», очень проста. Она выводит куда-либо фразу' +
+                    ' «Hello, world!», или другую подобную, средствами некоего языка.',
+                'JavaScript — это язык, программы на котором можно выполнять в разных средах. В нашем случае ' +
+                    'речь идёт о браузерах и о серверной платформе Node.js. Если до сих пор вы не написали' +
+                    ' ни строчки кода на JS ' +
+                    'и читаете этот текст в браузере, на настольном компьютере, это значит, что вы буквально ' +
+                    'в считанных секундах от своей первой JavaScript-программы.',
+                'Существуют и другие способы запуска JS-кода в браузере. ' +
+                    'Так, если говорить об обычном использовании программ',
             ],
         },
         {
             id: '4',
             type: ArticleBlockType.CODE,
-            code: '<!DOCTYPE html>\n<html>\n  <body>\n    <p id="hello"></p>\n\n    <script>\n   '
-                + '   document.getElementById("hello").innerHTML = "Hello, world!";\n   '
-                + ' </script>\n  </body>\n</html>;',
+            code:
+                '<!DOCTYPE html>\n<html>\n  <body>\n    <p id="hello"></p>\n\n    <script>\n   ' +
+                '   document.getElementById("hello").innerHTML = "Hello, world!";\n   ' +
+                ' </script>\n  </body>\n</html>;',
         },
     ],
 } as Article;
