@@ -53,6 +53,7 @@ module.exports = {
         'no-promise-executor-return': 'warn',
         'react/no-array-index-key': 'off',
         'consistent-return': 'off',
+        'react/no-unstable-nested-components': 'warn',
         // 'react-hooks/rules-of-hooks': 'error',
         // 'react-hooks/exhaustive-deps': 'warn',
         'react/jsx-no-useless-fragment': 'off',
