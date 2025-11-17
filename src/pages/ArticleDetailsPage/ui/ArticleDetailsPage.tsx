@@ -10,6 +10,8 @@ import { VStack } from '@/shared/ui/Stack';
 import { ArticleDetailsPageHeader } from '../ui/ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 import cls from './ArticleDetailsPage.module.scss';
 import { ArticleRatingCard } from '@/features/ArticleRating';
+import { getFeatureFlag } from '@/shared/lib/features';
+import { Counter } from '@/entities/Counter';
 
 interface ArticleDetailsPageProps {
     className?: string;
@@ -19,6 +21,8 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
     const { className } = props;
     const { id } = useParams<{ id: string }>();
     const { t } = useTranslation();
+    const isArticleRating = getFeatureFlag('ArticleRatingEnabled');
+    const isCounter = getFeatureFlag('CounterEnabled');
 
     if (!id) {
         return <Text text={t('Статья не найдена')} theme={TextTheme.ERROR} />;
@@ -30,7 +34,8 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
                 <ArticleDetailsPageHeader />
                 <ArticleDetails id={id} />
                 <ArticleCommentList id={id} />
-                <ArticleRatingCard id={id} />
+                {isArticleRating && <ArticleRatingCard id={id} />}
+                {isCounter && <Counter />}
                 <RecommendationArticlesList />
             </VStack>
         </Page>
